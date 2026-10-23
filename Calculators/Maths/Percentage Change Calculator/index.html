@@ -20,14 +20,18 @@
             <form id="form">
                 
                 <label>Initial Value</label> <br>
-                <input type="number" id="initial-value"> <br> <br>
+                <input type="number" id="initial-value" step="1"> <br> <br>
 
                 <label>Final Value</label> <br> 
-                <input type="number" name="final-value" id="final-value"> <br> <br>
+                <input type="number" name="final-value" id="final-value" step="1"> <br> <br>
+
+                <button id="submit-btn" type="submit">
+                    Submit
+                </button>
 
             </form>
 
-            <div id="result-box">
+            <div id="result-box" class="hide">
                 <h2>Result</h2>
 
                 <!--soon-->

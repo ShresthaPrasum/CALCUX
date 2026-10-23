@@ -54,7 +54,7 @@ form{
     width: 90%;
     height: 30%;
     padding: 20px;
-    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -66,4 +66,18 @@ h2{
     font-weight: 750;
     margin-bottom: 15px;
 
+}
+.hide{
+    display: none;
+}
+button{
+    width: 110px;
+    height: 35px;
+    border: none;
+    border-radius: 15px;
+    text-align: center;
+}
+h3{
+    font-size: 42px;
+    font-weight: 700;
 }
