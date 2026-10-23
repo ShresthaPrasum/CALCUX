@@ -14,22 +14,20 @@
         }
 
         html,body{
-            background: linear-gradient(45deg,rgb(239, 254, 255),rgb(210, 255, 246));
+            background-color: rgb(164, 255, 246);
             scroll-behavior: smooth;
             font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             height: 100%;
         }
 
         header{
-            display: block;
+            display: none;
             position: fixed;
             height: 100%;
             z-index: 0;
             top: 0;
             right: 0;
             width: 100%;
-            align-items: center;
-            justify-content: center;
             transition: all 0.3s ease;
         }
 
@@ -38,11 +36,10 @@
             position: absolute;
             justify-content: center;
             align-items: center;
-            background-color: antiquewhite;
+            
             width: 20%;
             height: 100%;
             right: 0;
-            
         }
 
         nav ul{
@@ -72,9 +69,10 @@
             font-size: 1rem;
         }
 
-        main{
-            position: relative;
+        .main{
+            /* position: relative; */
             height: 100%;
+            transition: all 0.6s ease;
         }
 
         .logo{
@@ -89,6 +87,23 @@
             cursor: pointer;
             z-index: 6967;
         }
+
+        .nav{
+            transform: translateX(-20%);
+        }
+
+        .active{
+            display: block;
+        }
+        
+
+        .hero{
+            display: flex;
+            justify-content:center;
+            background: linear-gradient(45deg,rgb(226, 253, 255),rgb(210, 255, 246));
+            padding:40px;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
@@ -102,10 +117,46 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <div class="main">
         <div class="hero">
             <i class="fas fa-bars logo"></i>
         </div>
-    </main>
+    </div>
+
+    <script>
+        const navbtn = document.querySelector('.logo');
+
+        const navContainer = document.querySelector('header');
+
+        const mainContainer = document.querySelector('.main')
+
+        const ulContainer = document.querySelectorAll('ul');
+
+        const ulList = document.querySelectorAll('nav ul li a')
+        let active = false;
+
+
+        navbtn.addEventListener('click',()=>{
+            if(!active){
+                active= true;
+                navContainer.classList.add('active')
+                mainContainer.classList.add('nav')
+            }
+
+            else{
+                active= false;
+                navContainer.classList.remove('active');
+                mainContainer.classList.remove('nav');
+            }
+        })
+
+        ulList.forEach(e => {
+            e.addEventListener('click', ()=>{
+                active  = false;
+                navContainer.classList.remove('active')
+                mainContainer.classList.remove('nav')    
+            })
+        });
+    </script>
 </body>
 </html>
