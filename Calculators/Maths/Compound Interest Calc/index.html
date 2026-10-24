@@ -7,6 +7,54 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="container">
+
+        <h1>Compound Interest Calculator</h1>
+
+        <div id="calculator">
+
+            <h2>CAlCULATE!</h2>
+            <p>Find Compound intrest of given details by entering all inputs!</p>
+
+            <form id="form">
+
+                <label>Principle (Balance)</label>
+                <br>
+                <input type="number" step="0.01" id="principle" placeholder="1000$">
+                <br> <br>
+
+                <label>Rate of interest (%)</label>
+                <br>
+                <input type="number" step="0.1" id="rate" placeholder="7%">
+                <br> <br>
+
+                <label>Time (months)</label>
+                <br>
+                <input type="number" step="1" id="months" placeholder="12">
+                <br> <br>
+
+                <label>Frequency:</label> <br> 
+
+                <select name="frequency" id="frequency">
+
+                    <option value="1">Yearly(1/yr)</option>
+
+                    <option value="2">Semi Annualy (2/yr)</option>
+
+                    <option value="4">Quaterly Annualy (4/yr)</option>
+
+                </select>
+
+
+            </form>
+
+            <div id="output">
+
+            </div>
+
+        </div>
+
+    </div>
     
     <script src="script.js"></script>
 </body>
