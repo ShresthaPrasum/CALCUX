@@ -7,6 +7,47 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div id="container">
+
+        <h1>Progress Calculator</h1>
+        <p class="info">Progress Calculator is a mathmatical calculator which calculates your progress to the goal in percentage.</p>
+
+        <div id="app">
+
+            <h2>Calculate!</h2>
+            <p class="must">You must enter the details asked below to find how much progress have you done!</p>
+
+            <form id="form">
+
+                <label>
+                    Goal:
+                </label>
+                <br> 
+                <input type="number" step="0.1" id="goal">
+                <br> <br>
+
+                <label>
+                    Progress:
+                </label>
+                <br>
+                <input type="number" step="0.1" id="progress">
+                <br> <br>
+
+                <button type="submit">
+                    Submit
+                </button>
+
+            </form>
+
+            <div class="result hide">
+                <h2>Result</h2>
+                <p>lorem</p>
+            </div>
+
+        </div>
+
+    </div>
     
     <script src="script.js"></script>
 </body>
