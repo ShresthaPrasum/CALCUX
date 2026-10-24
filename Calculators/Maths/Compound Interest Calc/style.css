@@ -13,11 +13,13 @@ body{
     height: 100vh;
 }
 #container{
-    height: 60vh;
-    width: 60vw;
+    height: 67vh;
+    width: 67vw;
     background-color: rgb(54, 51, 51);
     display: flex;
     flex-direction: column;
+    border: none;
+    border-radius: 10px;
 }
 h1{
     font-size: 64px;
@@ -54,4 +56,31 @@ button{
     height: 25px;
     border: none;
     border-radius: 10px;
+    margin-bottom: 15px;
+}
+#outputt{
+    width: 210px;
+    height: 25px;
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#output{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 750;
+}
+#output-text{
+    margin-bottom: 10px;
+    text-align: center;
+}
+.hide{
+    display: none;
+}
+#amountt{
+    align-items: center;
+    justify-content: center;
 }
