@@ -56,3 +56,30 @@ km.addEventListener('input', (e)=>{
     mi.value = val/1.609334;
     li.value = val/(9.461 * (10**12));
 })
+inn.addEventListener('input', (e)=>{
+    e.preventDefault();
+    let val = inn.value;
+    mm.value = val * 25.4;
+    cm.value = val * 2.54;
+    m.value = val * 0.0254;
+    km.value = val/39370.08;
+    ft.value = val /12;
+    yd.value = val/36;
+    mi.value = val/63360;
+    li.value = val / (3.725 * (10**7))
+})
+ft.addEventListener('input', (e)=>{
+    e.preventDefault();
+    let val = ft.value;
+    mm.value = val * 304.8;
+    cm.value = val * 30.48;
+    m.value = val * 0.3048;
+    km.value = val/3280.84;
+    inn.value = val * 12;
+    yd.value = val /3;
+    mi.value = val/5280;
+    li.value = val / (3.104*(10**6));
+})
+yd.addEventListener('input', (e)=>{
+    e.preventDefault();
+})
