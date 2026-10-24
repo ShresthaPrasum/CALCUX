@@ -55,3 +55,11 @@ p{
     align-items: center;
     justify-content: center;
  }
+ label{
+    font-weight: bold;
+ }
+ #label{
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
+ }

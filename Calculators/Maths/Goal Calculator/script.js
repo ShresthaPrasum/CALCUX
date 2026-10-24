@@ -12,7 +12,7 @@ form.addEventListener('submit', (e)=>{
     output.style.display = "flex";
     output.classList.remove('hide');
     output.innerHTML = `
-        <h2> Your Progress: </h2>
+        <h2> Progress Remaining: </h2>
         <h2>${percent1.toFixed(2)}%  </h3>
         
        
@@ -25,5 +25,15 @@ form.addEventListener('submit', (e)=>{
         document.querySelector('#progresss').style.width = "100%"
     }else{
     document.querySelector('#progresss').style.width = `${percent1}%`;
+    }
+    if(percent1>=100){
+        output.innerHTML = `
+        <h2> GOAL REACHED! </h2>
+          <h2>${percent1.toFixed(2)}%</h2>
+
+        <div id="progress-bar">
+            <div id="progresss"> </div>
+        </div>
+        `;
     }
 })
