@@ -204,7 +204,7 @@
             <ul>
                 <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
                 <li><a href="#"><i class="fa-solid fa-calculator"></i>Calculators</a></li>
-                <li><a href="#"><i class="fas fa-question"></i></i>How it works</a></li>
+                <li><a href="#"><i class="fas fa-question"></i>How it works</a></li>
                 <li><a href="#"><i class="fas fa-circle-info"></i>About Us</a></li>
             </ul>
         </nav>
@@ -281,21 +281,30 @@
         // const bgColor = window.getComputedStyle(document.body).backgroundColor;
         const bgColor = window.getComputedStyle(document.body).getPropertyValue('background-color');
 
+        let currentInput = '';
+
         console.log(bgColor);
+
 
         calcbtns.forEach(e =>{
             e.addEventListener('click',()=>{
-                const btnValue = e.textContent;
+                const btnValue = e.textContent.trim();
 
                 if(btnValue ==='C'){
+                    currentInput = '';
                     calcdisplay.textContent = ''
                 }
                 else if(btnValue === '⌫'){
-                    calcdisplay.textContent =calcdisplay.textContent.slice(0, -1);
+                    currentInput = currentInput.slice(0, -1);
+                    calcdisplay.textContent= currentInput;
                 }
                 else if(btnValue === '='){
                     try{
-                        
+                        const exp = currentInput.replace(/×/g,'*');
+
+                        const result = eval(exp);
+                        calcdisplay.textContent = result;
+                        currentInput = result.toString();
                     }
                     catch{
                         calcdisplay.textContent = 'Error';
@@ -303,7 +312,9 @@
                 }
                 else{
 
-                    calcdisplay.textContent += e.textContent;
+                    currentInput += btnValue;
+                    calcdisplay.textContent = currentInput;
+                    
                 }
             });
         });
