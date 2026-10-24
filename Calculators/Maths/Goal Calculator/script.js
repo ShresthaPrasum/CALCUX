@@ -13,6 +13,17 @@ form.addEventListener('submit', (e)=>{
     output.classList.remove('hide');
     output.innerHTML = `
         <h2> Your Progress: </h2>
-        <p> You are ${percent1.toFixed(2)}% done with your work! </p>
-    `
+        <h2>${percent1.toFixed(2)}%  </h3>
+        
+       
+
+        <div id="progress-bar">
+            <div id="progresss"></div>
+        </div>
+    `;
+    if(percent1 > 100){
+        document.querySelector('#progresss').style.width = "100%"
+    }else{
+    document.querySelector('#progresss').style.width = `${percent1}%`;
+    }
 })
