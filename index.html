@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calcux - Calculate anything</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Chewy&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pixelify+Sans:wght@400..700&family=Stack+Sans+Notch:wght@200..700&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Pixelify+Sans:wght@400..700&amp;family=Unbounded:wght@200..900&amp;display=swap" rel="stylesheet">
 
     <style>
@@ -129,10 +130,10 @@
         }
         
 
-        .hero, .calculator, .frequently-used, .howitworks{
+        .hero, .calculator, .frequently-used, .howitworks, .about-us{
             display: flex;
             background: linear-gradient(45deg,rgb(219, 237, 249),rgb(166, 193, 195));
-            padding: 70px;
+            padding: 5vw;
             height: 100vh;
              font-family: var(--font-family);
             border-bottom: 1px solid var(--grey-text);
@@ -144,16 +145,21 @@
             width: 70%;
             justify-content: center;
             align-items: center;
+            gap: 40px;
             margin: 0 auto;
             height: 90vh;
         }
 
         .hero-first h1{
-            font-size: 3.5rem;
+            font-size: clamp(3vw, 3.5rem, 6vw);
             line-height: 1.2;
             letter-spacing: -1.5px;
             /* font-family: var(--font-family); */
             margin-bottom: 10px;
+        }
+
+        .hero-first span{
+            white-space: nowrap;
         }
 
         .horizontal{
@@ -174,23 +180,23 @@
         }
 
         .mini-calculator{
-            width: 400px;
-            min-height: 400px;
+            width: 25vw;
+
             background-color: rgb(9, 9, 9);
             border-radius: 10px;
-            padding: 1.5rem;
+            padding: 2vw;
             border: 2px solid   black;
         }
 
         .calculator-display{
             color: white;
-            min-height: 90px;
-            padding: 1.5rem 1rem;
+            height: 7vw;
+            padding: 1.5vw 1vw;
             border-radius: 8px;
             border: 2px solid black;
             background-color: rgba(68, 68, 68, 0.522);
             text-align: right;
-            font-size: 2rem;
+            font-size: 2vw;
             font-weight: 777;
             margin-bottom: 1rem;
             overflow-wrap: break-word;
@@ -199,15 +205,15 @@
         .calculator-btns{
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 0.5rem;
+            gap: 0.5vw;
         }
 
         .calc-btn{
             color: white;
-            padding: 1rem;
+            padding: 1vw;
             background-color: black;
             border: 2px solid grey;
-            font-size: 1.2rem;
+            font-size: 1.2vw;
             border-radius: 8px;
             cursor: pointer;
             transition: transform 0.3s ease-in-out;
@@ -235,14 +241,15 @@
         .hero-btn a{
             padding: 1rem 1.4rem;
             background-color:rgb(62, 205, 224);
-            font-size: 1vw;
+            font-size: clamp(1.2vw, 12px, 20px);
             border-radius: 10px;
             /* font-family: var(--font-family); */
         }
 
-        .calculator, .frequently-used{
-            height: 85vh;
-            font-family: "Bubblegum Sans", cursive;
+        .calculator, .frequently-used,.about-us{
+            min-height: fit-content;
+            
+            font-family: "Stack Sans Notch", sans-serif;
             flex-direction: column;
         }
 
@@ -353,11 +360,43 @@
             color: aliceblue;
             padding: 1rem 1.4rem;
             background-color: rgb(63, 68, 207);
-            font-size: 1vw;
+            font-size: 1rem;
             border-radius: 10px;
             margin-top: 10px;
         }
 
+        .about-us{
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-container{
+            width: 88%; 
+            padding: 60px;
+            border-radius: 12px;
+            min-height: 30vw;
+            background-color: blueviolet;
+            color: white;
+
+        }
+
+        .about-container h1{
+            font-size: 4rem;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .about-container p{
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .about-container a{
+            padding: 1rem 1.4rem;
+            background-color: rgb(215 4 209);
+            border-radius: 8px;
+            font-size: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -390,7 +429,7 @@
             <div class="container">
                 <div class="hero-first">
                     <h1>
-                        Calculate the numbers and solve problem
+                        <span>Calculate the</span> <br> <span>numbers and</span> <span>solve problem</span>  
                     </h1>
                     <p>
                         From calculating percentage changes to solving economics problems and improving it.
@@ -527,8 +566,20 @@
             </div>
         </div>
 
-        <div class="about us">
+        <div class="about-us">
+            <div class="about-container">
+                <h1>
+                    ABOUT THE APP
+                </h1>
 
+                <p>
+                    Calcux is a all in one calculation hub designed to make problem solving effortless. From calculating percentage changes, compound interest and perfect square to solving complex physics motion problem and engineering problems. Calcux is created by professional developer who knows what they are actually making in detail.
+                </p>
+
+                <a class="about-btn">
+                    View our work
+                </a>
+            </div>
         </div>
     </div>
 
