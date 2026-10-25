@@ -151,7 +151,7 @@
         }
 
         .hero-first h1{
-            font-size: clamp(3vw, 4vw, 7vw);
+            font-size: clamp(3vw, 3.8vw, 7vw);
             line-height: 1.2;
             letter-spacing: -1.5px;
             /* font-family: var(--font-family); */
@@ -319,8 +319,8 @@
             display: grid;
             grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
             place-items: center;
-            margin: 1.8rem;
-            gap: 1.5rem;
+            margin: 1.8rem 0rem;
+            gap: 1rem;
             width: 100%;
         }
 
@@ -344,16 +344,16 @@
         }
 
         .freq-card p{
-            color: white;
+            color: rgba(255, 255, 255, 0.763);
             font-size: 0.8rem;
             margin-bottom: 1.6rem;
         }
 
         .freq-card a{
             padding: 0.5rem 1rem;
-            border: 1px solid rgb(60, 153, 156);
+            border: 1px solid rgb(34, 147, 151);
             border-radius: 8px;
-            color: rgb(0, 213, 255);
+            color: rgb(4, 198, 237);
         }
         
         .freq-btn{
@@ -366,65 +366,78 @@
         }
 
         .about-us{
+            height: 45vh;
             align-items: center;
             justify-content: center;
         }
 
         .about-container{
             width: 88%; 
-            padding: 60px;
+            padding: clamp(30px, 5vw, 5vw);
             border-radius: 12px;
-            min-height: 30vw;
+            min-height: 26vw;
             background-color: blueviolet;
             color: white;
 
         }
 
         .about-container h1{
-            font-size: 4rem;
+            font-size: clamp(24px, 4vw, 4vw);
             line-height: 1;
             margin-bottom: 12px;
         }
 
         .about-container p{
-            font-size: 1.5rem;
-            margin-bottom: 30px;
+            font-size: clamp(12px, 1.6vw, 1.6vw);
+            margin-bottom: clamp(10px, 2vw, 2vw);
         }
 
         .about-container a{
-            padding: 1rem 1.4rem;
+            padding: clamp(10px,1vw,1vw) clamp(14px, 1.4vw, 1.4vw);
             background-color: rgb(215 4 209);
             border-radius: 8px;
-            font-size: 1rem;
+            font-size: clamp(10px, 1vw,1vw);
         }
 
         @media (max-width: 721px){
+            .layout-header h1{
+                font-size:clamp(30px,6vw,6vw);
+            }
+
+            .layout-header p{
+                font-size: 2.4  vw !important;
+            }
+
             .hero-first h1{
                 font-size: 8vw;
             }
+
             .brand{
                 left: 25px;
             }
+
             .container{
                 width: 90%;
                 height: 100vh;
             }
+
             .hero-visual{
                 display: none;
             }
         }
+
+        @media(max-width: 728px){
+        }
     </style>
 </head>
 <body>
-    <header>
-        
+    <header>  
         <nav>
-            
             <ul>
                 <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
-                <li><a href="#"><i class="fa-solid fa-calculator"></i>Calculators</a></li>
-                <li><a href="#"><i class="fas fa-question"></i>How it works</a></li>
-                <li><a href="#"><i class="fas fa-circle-info"></i>About Us</a></li>
+                <li><a href="#calculators"><i class="fa-solid fa-calculator"></i>Calculators</a></li>
+                <li><a href="#frequently-used"><i class="fa-solid fa-earth-americas"></i>Most Popular</a></li>
+                <li><a href="#about-us"><i class="fas fa-circle-info"></i>About Us</a></li>
             </ul>
         </nav>
     </header>
@@ -441,7 +454,7 @@
         </i>
         </div>
         
-        <div class="hero">
+        <div class="hero" id='hero'>
             <div class="container">
                 <div class="hero-first">
                     <h1>
@@ -451,8 +464,8 @@
                         From calculating percentage changes to solving economics problems and improving it.
                     </p>
                     <div class="hero-btn">
-                        <a href="">View all calculators</a>
-                        <a href="">About Us</a>
+                        <a href="#calculators">View all calculators</a>
+                        <a href="#about-us">About Us</a>
                     </div>
                 </div>
     
@@ -487,7 +500,7 @@
             </div>
         </div>
 
-        <div class="calculator">
+        <div class="calculator "id="calculators">
             <div class="layout-header">
                 <h1>EVERY CALCULATORS</h1>
                 <p>
@@ -537,7 +550,7 @@
             </div>
         </div>
 
-        <div class="frequently-used">
+        <div class="frequently-used" id="frequently-used">
             <div class="layout-header">
                 <h1>Frequently Used</h1>
 
@@ -577,12 +590,12 @@
                     </div>
                 </div>
                
-                    <a href="#calculator" class="freq-btn">View All Tools-></a>
+                    <a href="#calculators" class="freq-btn">View All Tools-></a>
                 
             </div>
         </div>
 
-        <div class="about-us">
+        <div class="about-us" id="about-us">
             <div class="about-container">
                 <h1>
                     ABOUT THE APP
@@ -592,7 +605,7 @@
                     Calcux is a all in one calculation hub designed to make problem solving effortless. From calculating percentage changes, compound interest and perfect square to solving complex physics motion problem and engineering problems. Calcux is created by professional developer who knows what they are actually making in detail.
                 </p>
 
-                <a class="about-btn">
+                <a class="about-btn" href="#calculators">
                     View our work
                 </a>
             </div>
