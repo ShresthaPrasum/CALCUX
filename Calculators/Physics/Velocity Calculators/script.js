@@ -35,22 +35,46 @@ document.querySelector('.submit').addEventListener('click', (e)=>{
 
 document.querySelector('.submitt').addEventListener('click', (e)=>{
     e.preventDefault();
-    initvel = parseInt(document.querySelector('#init-vel').value);
-    acc = parseInt(document.querySelector('#acc').value);
-    time = parseInt(document.querySelector('#timee').value);
+    initvel = parseFloat(document.querySelector('#init-vel').value);
+    acc = parseFloat(document.querySelector('#acc').value);
+    time = parseFloat(document.querySelector('#timee').value);
     
     vel = (acc * time) + initvel;
     document.querySelector('#fin-vel').value = vel;
 })
 document.querySelector('#numberr').addEventListener('input', (e)=>{
     e.preventDefault();
-    let newdistance = document.querySelector('#numberr').value;
-    let newtime = document.querySelector('#time').value;
+    let newdistance = parseFloat(document.querySelector('#numberr').value);
+    let newtime = parseFloat(document.querySelector('#time').value);
     document.querySelector('.velocity').value = newdistance/newtime;
 })
 document.querySelector('#time').addEventListener('input', (e)=>{
     e.preventDefault();
-    let newtime = document.querySelector('#time').value;
-    let newdistance = document.querySelector('#numberr').value;
+    let newtime = parseFloat(document.querySelector('#time').value);
+    let newdistance = parseFloat(document.querySelector('#numberr').value);
     document.querySelector('.velocity').value = newdistance/newtime;
+})
+document.querySelector('#init-vel').addEventListener('input', (e)=>{
+    e.preventDefault();
+    let newvel = parseFloat(document.querySelector('#init-vel').value);
+    let newacc = parseFloat(document.querySelector('#acc').value);
+    let newtimee = parseFloat(document.querySelector('#timee').value);
+    let newvell = (newtimee *  newacc) + newvel;
+    document.querySelector('#fin-vel').value = newvell;
+})
+document.querySelector('#acc').addEventListener('input', (e)=>{
+    e.preventDefault();
+    let newvel = parseFloat(document.querySelector('#init-vel').value);
+    let newacc = parseFloat(document.querySelector('#acc').value);
+    let newtimee = parseFloat(document.querySelector('#timee').value);
+    let newvell = (newtimee *  newacc) + newvel;
+    document.querySelector('#fin-vel').value = newvell;
+})
+document.querySelector('#timee').addEventListener('input', (e)=>{
+    e.preventDefault();
+    let newvel = parseFloat(document.querySelector('#init-vel').value);
+    let newacc = parseFloat(document.querySelector('#acc').value);
+    let newtimee = parseFloat(document.querySelector('#timee').value);
+    let newvell = parseFloat((newtimee *  newacc) + newvel);
+    document.querySelector('#fin-vel').value = newvell;
 })
