@@ -10,7 +10,7 @@ let li = document.querySelector('#li');
 
 mm.addEventListener('input', (e)=>{
     e.preventDefault();
-    val = mm.value;
+    let val = mm.value;
     cm.value = val/10;
     m.value = val/1000;
     km.value = val/1000000;
@@ -29,7 +29,7 @@ cm.addEventListener('input', (e)=>{
     inn.value = val/2.54;
     ft.value = val/30.48;
     yd.value = val/91.44;
-    mi.value = val/160933.4;
+    mi.value = val/160934.4;
     li.value = val/(9.461 * (10 ** 17) );
 })
 m.addEventListener('input', (e)=>{
@@ -41,7 +41,7 @@ m.addEventListener('input', (e)=>{
     inn.value = val/0.0254;
     ft.value = val/0.3048;
     yd.value = val/0.9144;
-    mi.value = val/1609.334;
+    mi.value = val/1609.344;
     li.value = val/(9.461 * (10**15));
 })
 km.addEventListener('input', (e)=>{
@@ -66,7 +66,7 @@ inn.addEventListener('input', (e)=>{
     ft.value = val /12;
     yd.value = val/36;
     mi.value = val/63360;
-    li.value = val / (3.725 * (10**7))
+    li.value = val / (3.725 * (10**17))
 })
 ft.addEventListener('input', (e)=>{
     e.preventDefault();
@@ -78,8 +78,41 @@ ft.addEventListener('input', (e)=>{
     inn.value = val * 12;
     yd.value = val /3;
     mi.value = val/5280;
-    li.value = val / (3.104*(10**6));
+    li.value = val / (3.104*(10**16));
 })
 yd.addEventListener('input', (e)=>{
     e.preventDefault();
+    let val = yd.value;
+    mm.value = val * 914.4;
+    cm.value = val * 91.44;
+    m.value = val * 0.9144;
+    km.value = val/1093.61;
+    inn.value = val * 36;
+    ft.value = val * 3;
+    mi.value = val/1760;
+    li.value = val /(1.036 * (10**16));
+})
+mi.addEventListener('input', (e)=>{
+    e.preventDefault();
+    let val = mi.value;
+    mm.value = val * 1609344;
+    cm.value = val * 160934.4;
+    m.value = val * 1609.344;
+    km.value = val* 1.609344;
+    inn.value = val*63360;
+    ft.value = val*5280;
+    yd.value = val * 1760;
+    li.value = val/(5.879 * (10**12));
+})
+li.addEventListener('input', (e)=>{
+    e.preventDefault();
+    let val = li.value;
+    mm.value = val * 9.461 * (10**18);
+    cm.value = val * 9.461 * (10**17);
+    m.value = val * 9.461 * (10**15);
+    km.value = val* 9.461 * (10**12);
+    inn.value = val * 3.725 * (10**17);
+    ft.value =  val * 3.104 * (10**16);
+    yd.value = val*1.036*(10**16);
+    mi.value = val* 5.879 * (10**12);
 })
