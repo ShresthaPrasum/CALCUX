@@ -4,21 +4,23 @@
     box-sizing: border-box;
 }
 body{
-    background-color: black;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100vw;
-    height: 100vh;
+    font-family: "Stack Sans Notch", sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(45deg,rgb(219, 237, 249),rgb(166, 193, 195));
 }
 #container{
-    background-color: rgb(86, 81, 81);
-    width: 65vw;
-    height: 65vh;
+    min-height: 67vh;
+    width: 67vw;
+    background-color: rgb(51, 127, 126);
+    display: flex;
+    flex-direction: column;
     border: none;
+    padding: 40px;
     border-radius: 10px;
-    padding: 50px;
 }
 #distancee{
     margin: 20px 0px;
@@ -41,8 +43,21 @@ label{
 #accleration, #distancee{
     flex-direction: column;
 }
-input[type="number"]{
-    width: 220px;
+input[type="number"],select{
+    text-indent: 10px;
+    color: rgb(33, 36, 39);
+    min-height: 36px;
+    opacity: 1;
+    text-align: left;
+    width: 90%;
+    font-size: 18px;
+    line-height: 40px;
+    font-weight: 500;
+    border-radius: 6px;
+    border-width: 1px;
+    border-style: solid;
+    outline: none;
+    margin-bottom: 20px;
 }
 .hide{
     display: none;

@@ -23,13 +23,12 @@ body{
     border-radius: 10px;
 }
 h1{
-    font-size: 50px;
-    font-weight: 800;
+    font-size: 2.8rem;
     text-align: center;
+    margin-bottom: 10px;
 }
 p{
-    font-size: 21px;
-    font-weight: 600;
+    font-size: 18px;
 }
 #details{
     text-align: center;
@@ -41,8 +40,6 @@ p{
     height: 50vh;
     width: 50vw;
     border-radius: 15px;
-    background-color: rgb(33, 32, 32);
-    border: 1px solid black;
     padding: 30px;
 }
 form{
@@ -50,21 +47,33 @@ form{
     margin: 10px;
 }
 #result-box{
-    position: absolute;
-    bottom: 10px;
-    background-color: rgb(82, 80, 80);
-    width: 90%;
-    height: 30%;
-    padding: 20px;
+    background-color: rgb(19, 137, 166);
+    padding: 10px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border-radius: 12px;
+}
+input[type="number"],select{
+    text-indent: 10px;
+    color: rgb(33, 36, 39);
+    min-height: 36px;
+    opacity: 1;
+    text-align: left;
+    width: 90%;
+    font-size: 18px;
+    line-height: 40px;
+    font-weight: 500;
+    border-radius: 6px;
+    border-width: 1px;
+    border-style: solid;
+    outline: none;
 }
 h2{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 48px;
+    font-size: 2.5rem;
     font-weight: 750;
     margin-bottom: 15px;
 
@@ -73,13 +82,14 @@ h2{
     display: none;
 }
 button{
-    width: 110px;
-    height: 35px;
+    padding: 1rem 1.4rem;
     border: none;
-    border-radius: 15px;
-    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    cursor: pointer;
 }
 h3{
-    font-size: 42px;
+    font-size: 20px;
     font-weight: 700;
 }
