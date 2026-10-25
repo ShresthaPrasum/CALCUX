@@ -15,15 +15,15 @@
 
         <div id="app">
 
-            <div id="radios">
+            <div id="radios" class="radios">
 
-                <input type="radio" name="select" class="select">
+                <input type="radio" name="select" class="select" checked id="distance">
                 <label>Distance Covered</label>
-                <br>
+                <br> 
 
-                <input type="radio" name="select" class="select">
+                <input type="radio" name="select" class="select" id="acclerationm">
                 <label>Accleration </label>
-                <br>
+                <br> <br>
 
                 <!-- <input type="radio" name="select" class="select">
                 <label>Average Velocity</label>
@@ -33,37 +33,41 @@
 
             <div id="distancee">
 
-                <label>Distance Covered (m)</label> <br>
+                <label>Distance Covered:</label> <br>
                 <input type="number" id="numberr"> 
                 <br> <br>
 
-                <label>Time taken (sec)</label> <br>
+                <label>Time taken:</label> <br>
                 <input type="number" id="time">
                 <br> <br>
 
-                <label>Velocity (m/s)</label> <br>
+                <label>Velocity:</label> <br>
                 <input type="number" class="velocity">
                 <br> <br>
 
+                <button class="submit">Submit</button>
+
             </div>
 
-            <div id="accleration">
+            <div id="accleration" class="hide">
 
-                <label>Initial Velocity</label> <br>
+                <label>Initial Velocity:</label> <br>
                 <input type="number" id="init-vel">
                 <br> <br>
 
-                <label>Acclearation</label> <br>
+                <label>Acclearation:</label> <br>
                 <input type="number" id="acc"> 
                 <br> <br>
 
-                <label>Time</label> <br>
+                <label>Time:</label> <br>
                 <input type="number" id="timee">
                 <br> <br>
 
-                <label>Final Velocity</label> <br>
+                <label>Final Velocity:</label> <br>
                 <input type="number" id="fin-vel">
                 <br> <br>
+
+                <button class="submitt">Submit</button>
 
             </div>
 
