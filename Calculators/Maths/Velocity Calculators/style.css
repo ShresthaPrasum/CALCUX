@@ -14,8 +14,8 @@ body{
 }
 #container{
     background-color: rgb(86, 81, 81);
-    width: 50vw;
-    height: 50vh;
+    width: 65vw;
+    height: 65vh;
     border: none;
     border-radius: 10px;
     padding: 50px;
@@ -37,6 +37,12 @@ h1{
 }
 label{
     font-weight: bold;
+}
+#accleration, #distancee{
+    flex-direction: column;
+}
+input[type="number"]{
+    width: 220px;
 }
 .hide{
     display: none;
