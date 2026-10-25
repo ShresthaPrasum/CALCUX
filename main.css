@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    background: linear-gradient(45deg,rgb(219, 237, 249),rgb(166, 193, 195));
+    scroll-behavior: smooth;
+    height: 100%;
+    
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    z-index: 10;
+}
+
+a:hover{
+    transform: scale(1.05);
+    
+    border: 2px solid rgb(0, 170, 255);
+}
+
+.main{
+    display:flex;
+    flex-direction: column  ;
+    padding: 4vw;
+    height:100vh;
+    font-family: "Stack Sans Notch", sans-serif;
+}
+
+.layout-header{
+    text-align: center;
+}
+
+.layout-header h1{
+    font-size: 7vh;
+    font-weight: bolder;
+    word-spacing: -6px;
+    margin-bottom: 8px;
+}
+
+.layout-header p{
+    color: var(--grey-text);
+    font-size: 1.2rem;
+
+}
+
+.layout-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.calc-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.calc-card{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 12px;
+    min-height: 180px;
+    gap: 10px;
+    color: white;
+    background-color: rgb(25, 94,118);
+}
+
+.calc-card h3{
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.calc-card p{
+    color: whitesmoke;
+}

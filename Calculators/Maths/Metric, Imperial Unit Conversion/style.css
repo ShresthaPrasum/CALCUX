@@ -4,21 +4,23 @@
     box-sizing: border-box;
 }
 body{
-    background-color: black;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100vw;
-    height: 100vh;
+    font-family: "Stack Sans Notch", sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(45deg,rgb(219, 237, 249),rgb(166, 193, 195));
 }
 #container{
-    width: 85vw;
-    height: 90vh;
+    min-height: 67vh;
+    width: 67vw;
+    background-color: rgb(51, 127, 126);
+    display: flex;
+    flex-direction: column;
     border: none;
+    padding: 40px;
     border-radius: 10px;
-    background-color: rgb(47, 46, 46);
-    padding: 35px;
 }
 h1{
     font-size: 56px;
@@ -27,7 +29,7 @@ h1{
     margin-bottom: 10px;
 }
 p{
-    font-size: 25px;
+    font-size: 1rem;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -37,7 +39,7 @@ h2{
     text-align: center;
 }
 #metric, #imperial{
-    background-color: rgb(125, 119, 119);
+    background-color: rgb(44, 101, 116);
     padding: 10px;
     margin: 15px;
     border: 2px solid black;
@@ -53,6 +55,18 @@ label{
     font-weight: bold;
     font-size: 18px;
 }
-input[type="number"]{
-    height: 21px;
+input[type="number"],select{
+    text-indent: 10px;
+    color: rgb(33, 36, 39);
+    min-height: 36px;
+    opacity: 1;
+    text-align: left;
+    width: 100%;
+    font-size: 18px;
+    line-height: 40px;
+    font-weight: 500;
+    border-radius: 6px;
+    border-width: 1px;
+    border-style: solid;
+    outline: none;
 }

@@ -23,10 +23,11 @@
         }
 
         html,body{
-            background-color: rgb(164, 255, 246);
+            background-color: rgb(62, 205, 224);
             scroll-behavior: smooth;
             font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             height: 100%;
+            
         }
 
         header{
@@ -48,7 +49,7 @@
             flex-direction: column;
             top: 0;
             right: 0;
-            width: 17%;
+            width: fit-content;
             height: 100%;
         }
 
@@ -94,6 +95,15 @@
         a{
             text-decoration: none;
             color: inherit;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            z-index: 10;
+        }
+
+        a:hover{
+            transform: scale(1.05);
+            
+            border: 2px solid rgb(0, 170, 255);
         }
 
         .nav-main{
@@ -103,9 +113,8 @@
         }
 
         .main{
-            /* position: relative; */
-            height: 100%;
-            transition: all 0.6s ease;
+            border-right: 1px solid var(--grey-text);
+            transition  : all 0.6s ease;
         }
 
         .logo{
@@ -122,7 +131,7 @@
         }
 
         .nav{
-            transform: translateX(-17%);
+            transform: translateX(-248px);
         }
 
         .active{
@@ -164,7 +173,7 @@
 
         .horizontal{
             position: absolute;
-            top: 10%;
+            top: 70px;
             width: 100%;
             border: 1px solid rgba(23, 23, 23, 0.192);
         }
@@ -427,6 +436,7 @@
         }
 
         @media(max-width: 728px){
+            
         }
     </style>
 </head>
@@ -510,11 +520,11 @@
 
             <div class="layout-main">
                 <div class="calc-grid">
-                    <a href="index.html" class="calc-card">
+                    <a href="math.html" class="calc-card">
                         <h3>Mathematics</h3>
                         <p>Calculate the angles°, percentage% change, simple interest or convert units(cm, m , km)</p>
                     </a>
-                    <a href="index.html" class="calc-card">
+                    <a href="physic.html" class="calc-card">
                         <h3>
                             Physics
                         </h3>
@@ -615,7 +625,11 @@
     <script>
         const navbtn = document.querySelector('.logo');
 
+        const classHeader = document.querySelector('.header');
+
         const navContainer = document.querySelector('header');
+
+        const nav = document.querySelector('nav');
 
         const mainContainer = document.querySelector('.main')
 
@@ -626,6 +640,7 @@
         const calcdisplay = document.querySelector('.calculator-display')
 
         const calcbtns = document.querySelectorAll('.calc-btn')
+        
         let active = false;
 
         // const bgColor = window.getComputedStyle(document.body).backgroundColor;
@@ -675,6 +690,7 @@
                 active= true;
                 navContainer.classList.add('active')
                 mainContainer.classList.add('nav')
+                nav.append(navbtn);
             }
 
             else{
@@ -682,7 +698,9 @@
                 // navContainer.classList.remove('active');
                 setTimeout(()=>{
                     navContainer.classList.remove('active')
-                }, 500)
+                    classHeader.append(navbtn);
+                }, 550)
+
                 mainContainer.classList.remove('nav');
             }
         })
@@ -691,9 +709,11 @@
             e.addEventListener('click', ()=>{
                 active  = false;
                 // navContainer.classList.remove('active')
+
                 setTimeout(()=>{
                     navContainer.classList.remove('active')
-                }, 500)
+                    classHeader.append(navbtn);
+                }, 550)
                 mainContainer.classList.remove('nav')    
             })
         });
