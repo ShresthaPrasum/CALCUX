@@ -14,7 +14,9 @@
 
         <div class="choose">
 
-            <input type="radio" name="choose" value="speed">
+            <h3>Select one of these!</h3>
+
+            <input type="radio" name="choose" value="speed" checked>
             <label>Speed Difference</label>
             <br><br>
 
@@ -30,17 +32,19 @@
 
         <div id="calc">
 
+            <h3>Fill up all the details for the result!</h3>
+
             <div id="speed">
 
-            <label>Initial Speed (u)</label> <br>
+            <label>Initial Speed</label> <br>
             <input type="number" step="0.1" id="u">
             <br> <br>
 
-            <label>Final speed (v)</label> <br>
+            <label>Final speed</label> <br>
             <input type="number" step="0.1" id="v">
             <br> <br>
 
-            <label>Time (s)</label> <br>
+            <label>Time</label> <br>
             <input type="number" step="0.1" id="t">
             <br><br>
 
@@ -50,7 +54,7 @@
 
             </div>
 
-            <div id="distance">
+            <div id="distance" class="hide">
 
                 <label>Speed</label> <br>
                 <input type="number" step="0.1" id="sp"> 
@@ -71,7 +75,7 @@
 
             </div>
 
-            <div id="force">
+            <div id="force" class="hide">
 
                 <label>Mass </label> <br>
                 <input type="number" step="0.1" id="mass">
