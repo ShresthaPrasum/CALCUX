@@ -38,3 +38,20 @@ speedbtn.addEventListener('click', (e)=>{
     document.querySelector('#a').value = acc.toFixed(2);
     console.log(acc);
 })
+distancebtn.addEventListener('click', (e)=>{
+    e.preventDefault();
+    const speeddd = parseFloat(document.querySelector('#sp').value);
+    const distancee = parseFloat(document.querySelector('#di').value);
+    const timee = parseFloat(document.querySelector('#ti').value);
+    let acc = (2 * (distancee - (speeddd * timee))) / (timee ** 2);
+    document.querySelector('#acc').value = acc.toFixed(2);
+    console.log(acc);
+})
+forcebtn.addEventListener('click', (e)=>{
+    e.preventDefault();
+    const masss = parseFloat(document.querySelector('#masss').value);
+    const forcee = parseFloat(document.querySelector('#forcee').value);
+    let acc = forcee/masss;
+    document.querySelector('#accleration ').value = acc.toFixed(2);
+    console.log(acc);
+})
