@@ -116,7 +116,7 @@ document.querySelector('#a').addEventListener('input', (e)=>{
         document.querySelector('#a').value = 0;
     }else{
         finspeed = (acc*time) + initspeed;
-        document.querySelector('#v').value = finspeed.tpFixed(2);
+        document.querySelector('#v').value = finspeed.toFixed(2);
     }
 })
 document.querySelector('#sp').addEventListener('input', (e)=>{
@@ -170,5 +170,42 @@ document.querySelector('#acc').addEventListener('input', (e)=>{
     }else{
         speeddd = (distancee / timee) - ((acc * timee) / 2);
         document.querySelector('#sp').value = speeddd.toFixed(2);
+    }
+})
+document.querySelector('#masss').addEventListener('input', (e)=>{
+    e.preventDefault();
+    masss = parseFloat(document.querySelector('#masss').value);
+    forcee = parseFloat(document.querySelector('#forcee').value);
+    if(isNaN(masss) || isNaN(forcee)){
+        console.log("nofull details");
+        document.querySelector('#accleration').value = 0;
+    }else{
+        acc = forcee/masss;
+        document.querySelector('#accleration').value = acc;
+    }
+})
+document.querySelector('#forcee').addEventListener('input', (e)=>{
+    e.preventDefault();
+    masss = parseFloat(document.querySelector('#masss').value);
+    forcee = parseFloat(document.querySelector('#forcee').value);
+    if(isNaN(forcee) || isNaN(masss)){
+        console.log("not full details");
+        document.querySelector('#accleration').value = 0;
+    }else{
+        acc = forcee/masss;
+        document.querySelector('#accleration').value = acc;
+    }
+})
+document.querySelector('#accleration').addEventListener('input',(e)=>{
+    e.preventDefault();
+    masss = parseFloat(document.querySelector('#masss').value);
+    forcee = parseFloat(document.querySelector('#forcee').value);
+    acc = parseFloat(document.querySelector('#accleration').value);
+    if(isNaN(forcee) || isNaN(masss)){
+        console.log("not full details");
+        document.querySelector('#accleration').value =0;
+    }else{
+        forcee = masss * acc;
+        document.querySelector('#forcee').value = forcee.toFixed(2);
     }
 })
