@@ -19,13 +19,23 @@ a{
     z-index: 10;
 }
 
-a:hover{
+.back{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.calc-card:hover{
     transform: scale(1.05);
     
     border: 2px solid rgb(0, 170, 255);
 }
 
 .main{
+    position: relative;
     display:flex;
     flex-direction: column  ;
     padding: 4vw;

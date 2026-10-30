@@ -100,11 +100,7 @@
             z-index: 10;
         }
 
-        a:hover{
-            transform: scale(1.05);
-            
-            border: 2px solid rgb(0, 170, 255);
-        }
+        
 
         .nav-main{
             display: flex;
@@ -305,6 +301,11 @@
             color: white;
             background-color: rgb(25, 94, 118);
         }
+
+        .calc-card:hover{
+            transform: scale(1.05);
+            border: 2px solid rgb(0, 170, 255);
+        }
         
         .calc-card h3{
             font-size: 2.5rem;
@@ -316,7 +317,7 @@
         }
 
         .frequently-used{
-            height: auto;
+            height: fit-content;
             font-family: var(--font-family);
         }
 
@@ -326,7 +327,7 @@
 
         .freq-grid{
             display: grid;
-            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
             place-items: center;
             margin: 1.8rem 0rem;
             gap: 1rem;
@@ -342,9 +343,13 @@
             border: 1px solid var(--grey-text);
             padding: 2rem;
             min-height: 180px;
+            
             border-radius: 12px;
             color: white;
+            transition: all 0.3s ease-in-out;
         }
+
+        
 
         .freq-card h3{
             font-size: 1.4rem;
@@ -364,6 +369,10 @@
             border-radius: 8px;
             color: rgb(4, 198, 237);
         }
+
+        .freq-card a:hover{
+            border: 1px solid rgb(0, 251, 255)
+        }
         
         .freq-btn{
             color: aliceblue;
@@ -371,8 +380,11 @@
             background-color: rgb(63, 68, 207);
             font-size: 1rem;
             border-radius: 10px;
+            cursor: pointer;
             margin-top: 10px;
         }
+
+        
 
         .about-us{
             height: 45vh;
