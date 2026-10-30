@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCM Calculator</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pixelify+Sans:wght@400..700&family=Stack+Sans+Notch:wght@200..700&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Pixelify+Sans:wght@400..700&amp;family=Unbounded:wght@200..900&amp;display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Stack Sans Notch", sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(45deg,rgb(219, 237, 249),rgb(166, 193, 195));
+        }
+
+        #container{
+            position: relative;
+            background-color: rgb(51,127,126);
+            width: 50vw;
+            min-height: 67vh;
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .back{
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        h1{
+            font-size: 2.8rem;
+            text-align: center;
+        }
+
+        p{
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .lcm{
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+        #number-input{
+            display: flex;
+            align-self: flex-start;
+            text-indent: 10px;
+            color: black;
+            min-height: 36px;
+            opacity: 1;
+            text-align: left;
+            width: 100%;
+            font-size: 18px;
+            line-height: 40px;
+            font-weight: 555;
+            border-radius: 6px;
+            border-width: 1px;
+            border-style: solid;
+            outline: none;
+        }
+
+        #calc-btn{
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .result{
+            min-height: 2rem;
+            text-align: center;
+            padding: 14px;
+            margin-top: 1.3rem;
+            overflow-wrap: break-word;
+            font-size: 1.2rem;
+            font-weight: bold;
+            background-color: #1a6169;
+            border-radius: 8px;
+        }
+
+        /* .mode{
+            display: flex;
+            justify-content: center;
+            gap: 2px;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .mode input[type="radio"]{
+            accent-color: #1a6169;
+            width: 20px;
+            height: 20px;
+        }
+
+        .mode label{
+            font-size: 1.2rem;
+            margin-right: 10px;
+        } */
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>LCM Calculator</h1>
+        <p>Enter the numbers separated by commas to calculate the LCM and HCF</p>
+        <a href="/math.html" class="back" >←Back</a>
+
+        <div class="lcm">
+            <!-- <div class="mode">
+                <input type="radio" name="select" class="select" checked id="LCM">
+                <label for="LCM">LCM(Lowest Common Multiple)</label>
+
+                <input type="radio" name="select" class="select" id="HCF"> 
+                <label for="HCF">HCF(Highest Common Factor)</label>
+            </div> -->
+            <label for="number-input">Numbers:</label>
+            <input type="text" id="number-input" placeholder="eg: 12, 15, 20, 30">
+        </div>
+
+        <button id="calc-btn">Calculate</button>
+
+        <div class="result-section">
+            <div class="result">
+                Result: --
+            </div>
+        </div>
+    </div>
+    <script>
+        // 😭😭😭
+        function HCF(a,b){
+            while(b!= 0){
+                let temp = b;
+                b= a%b;
+                a=temp;
+            }
+
+            return a < 0 ? -a : a;
+        }
+
+        function LCM(a,b){
+            if(a===0|| b===0){
+                return 0;
+            }
+
+            let product = a*b;
+
+            if(product < 0){
+                product = -product;
+            }
+
+            return product/ HCF(a,b);
+        
+        }
+        document.getElementById('number-input').addEventListener('input',()=>{
+            const input = document.getElementById('number-input').value;
+
+            const result = document.querySelector('.result');
+
+            const numbers= input.split(',').map(num=>
+                parseInt(num.trim())).filter(num=> !isNaN(num));
+
+            if(numbers.length === 0){
+            result.textContent = "Please enter valid numbers!";
+            return;
+            }
+
+            let lcmAns = numbers[0];
+
+            for(let i = 1; i < numbers.length; i++){
+                lcmAns = LCM(lcmAns, numbers[i]);
+            }
+
+            let hcfAns = numbers[0];
+            for (let i = 1; i < numbers.length; i++) {
+                hcfAns = HCF(hcfAns, numbers[i]);
+            }
+
+            
+
+            result.textContent = `LCM: ${lcmAns}, HCF: ${hcfAns}`;
+        })
+
+        
+    </script>
+</body>
+</html>
