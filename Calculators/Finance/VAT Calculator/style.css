@@ -43,9 +43,16 @@ input[type="number"]{
 label{
     font-weight: bold;
     margin-bottom: 5px;
+    font-size: 18px;
 }
 h2{
     font-size: 38px;
     font-weight: 650;
     margin: 15px 0px;
+}
+.hide{
+    display: none;
+}
+#includee, #excludee{
+    margin-top: 10px;
 }
