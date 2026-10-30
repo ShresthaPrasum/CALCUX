@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fall</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pixelify+Sans:wght@400..700&family=Stack+Sans+Notch:wght@200..700&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Pixelify+Sans:wght@400..700&amp;family=Unbounded:wght@200..900&amp;display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Stack Sans Notch", sans-serif;
+            height: 100vh;
+            color: white;
+            background: linear-gradient(45deg,rgb(219, 237, 249),rgb(166, 193, 195));
+        }
+
+        #container{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            height: fit-content;
+            max-width: 70vw;
+            width: fit-content;
+            background-color: rgb(51,127,126);
+            border: none;
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .back{
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        h1{
+            font-size: clamp(2rem, 3.8vw, 3.5rem);
+            text-align: center;
+        }
+
+        p{
+            font-size: clamp(0.7rem, 1.1vw, 1.8rem);
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .potential-energy{
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        input[type="number"], input[type="text"], select{
+            display: flex;
+            align-self: flex-start;
+            text-indent: 10px;
+            color: black;
+            min-height: 36px;
+            opacity: 1;
+            text-align: left;
+            width: 100%;
+            font-size: 1.4rem;
+            line-height: 40px;
+            font-weight: 555;
+            border-radius: 6px;
+            border-width: 1px;
+            border-style: solid;
+            outline: none;
+        }
+
+        #velocity{
+            width: 80%;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Potential Energy</h1>
+        <p> Calculate the motion of the object, speed(m/s2), momentum, gravity(g) and pressure(kg/m2).</p>
+        <a href="/physic.html" class="back">←Back</a>
+
+        <div class="potential-energy">
+            <label for="gravity">Acceleration due to gravity</label>
+            <input type="number" name="gravity" id="gravity" value="9.80665" readonly>
+
+            <label for="mass">Mass</label>
+            <input type="number" name="mass" id="mass">
+
+            <label for="Height">Height</label>
+            <input type="number" name="height" id="height">
+
+            <label for="potential-energy">Potential Energy</label>
+            <input type="number" name="potential-energy" id="potential-energy">
+            
+        </div>
+    </div>
+
+    <script>
+        let gravityInput = document.getElementById('gravity');
+
+        let massInput = document.getElementById('mass')
+
+        let heightInput = document.getElementById('height')
+
+        let energyInput = document.getElementById('potential-energy')
+
+        let inputs = document.querySelectorAll('input');
+
+        inputs.forEach(e=>{
+            e.addEventListener('input', (e)=>{
+                g = gravityInput.value.trim();
+                m = massInput.value.trim();
+                e = energyInput.value.trim();
+                h = heightInput.value.trim();
+
+                const gValueHas = g !== '';
+                const mValueHas = m !== '';
+                const eValueHas = e !== '';
+                const hValueHas = h !== '';
+
+                let filledCount = (gValueHas ? 1 : 0) + (mValueHas ? 1 : 0) + (eValueHas ? 1 : 0) + (hValueHas ? 1 : 0);
+
+                if (filledCount < 3) {
+                    inputs.forEach(e=>{
+                        e.placeholder = "Please fill at least 3 fields"
+                    })
+                    return;
+                }
+                else{
+                    inputs.forEach(e=>{
+                        e.placeholder = ""
+                    })
+                }
+
+                
+
+            })
+        })
+    </script>
+</body>
+</html>
