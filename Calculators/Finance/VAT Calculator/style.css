@@ -55,4 +55,5 @@ h2{
 }
 #includee, #excludee{
     margin-top: 10px;
+    flex-direction: column;
 }
