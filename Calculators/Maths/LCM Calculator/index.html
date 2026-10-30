@@ -28,8 +28,8 @@
         #container{
             position: relative;
             background-color: rgb(51,127,126);
-            width: 50vw;
-            min-height: 67vh;
+            min-width: fit-content;
+            min-height: fit-content;
             padding: 40px;
             border-radius: 10px;
         }
@@ -44,12 +44,12 @@
         }
 
         h1{
-            font-size: 2.8rem;
+            font-size: clamp(1.2rem, 4vw, 2.5rem);
             text-align: center;
         }
 
         p{
-            font-size: 16px;
+            font-size: clamp(0.8rem, 1vw, 1.2rem);
             text-align: center;
             margin-bottom: 1rem;
         }
@@ -93,7 +93,7 @@
             overflow-wrap: break-word;
             font-size: 1.2rem;
             font-weight: bold;
-            background-color: #1a6169;
+            background-color: rgb(39 107 106);
             border-radius: 8px;
         }
 
@@ -119,7 +119,7 @@
 </head>
 <body>
     <div id="container">
-        <h1>LCM Calculator</h1>
+        <h1>LCM AND HCF</h1>
         <p>Enter the numbers separated by commas to calculate the LCM and HCF</p>
         <a href="/math.html" class="back" >←Back</a>
 
@@ -135,7 +135,6 @@
             <input type="text" id="number-input" placeholder="eg: 12, 15, 20, 30">
         </div>
 
-        <button id="calc-btn">Calculate</button>
 
         <div class="result-section">
             <div class="result">
@@ -192,8 +191,6 @@
             for (let i = 1; i < numbers.length; i++) {
                 hcfAns = HCF(hcfAns, numbers[i]);
             }
-
-            
 
             result.textContent = `LCM: ${lcmAns}, HCF: ${hcfAns}`;
         })
