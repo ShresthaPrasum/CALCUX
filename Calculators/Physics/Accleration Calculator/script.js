@@ -76,7 +76,7 @@ document.querySelector('#u').addEventListener('input', (e)=>{
         document.querySelector('#a').value = 0;
     }else{
     acc = (finspeed - initspeed)/time;
-    document.querySelector('#a').value = acc;
+    document.querySelector('#a').value = acc.toFixed(2);
     }
 })
 document.querySelector('#v').addEventListener('input', (e)=>{
@@ -89,7 +89,7 @@ document.querySelector('#v').addEventListener('input', (e)=>{
         document.querySelector('#a').value = 0;
     }else{
         acc = (finspeed - initspeed)/time;
-        document.querySelector('#a').value = acc;
+        document.querySelector('#a').value = acc.toFixed(2);
     }
 })
 document.querySelector('#t').addEventListener('input', (e)=>{
@@ -102,7 +102,7 @@ document.querySelector('#t').addEventListener('input', (e)=>{
         document.querySelector('#a').value = 0;
     }else{
         acc = (finspeed - initspeed)/time;
-        document.querySelector('#a').value = acc;
+        document.querySelector('#a').value = acc.toFixed(2);
     }
 })
 document.querySelector('#a').addEventListener('input', (e)=>{
@@ -116,6 +116,59 @@ document.querySelector('#a').addEventListener('input', (e)=>{
         document.querySelector('#a').value = 0;
     }else{
         finspeed = (acc*time) + initspeed;
-        document.querySelector('#v').value = finspeed;
+        document.querySelector('#v').value = finspeed.tpFixed(2);
+    }
+})
+document.querySelector('#sp').addEventListener('input', (e)=>{
+    e.preventDefault();
+    speeddd = document.querySelector('#sp').value;
+    distancee = document.querySelector('#di').value
+    timee = document.querySelector('#ti').value;
+    if(isNaN(speeddd) || isNaN(distancee) || isNaN(timee) || isNaN(acc)){
+        console.log("no full details ");
+        document.querySelector('#acc').value = 0;
+    }else{
+        acc= (2 * (distancee - (speeddd * timee))) / (timee ** 2);
+        document.querySelector('#acc').value = acc.toFixed(2);
+    }
+})
+document.querySelector('#di').addEventListener('input', (e)=>{
+    e.preventDefault();
+    distancee = document.querySelector('#di').value;
+    speeddd = document.querySelector('#sp').value;
+    timee = document.querySelector('#ti').value;
+    if(isNaN(distancee) || isNaN(speeddd) || isNaN(timee)|| isNaN(acc)){
+        console.log("no details");
+        document.querySelector('#acc').value = 0;
+    }else{
+        acc = (2 * (distancee - (speeddd * timee))) / (timee ** 2);
+        document.querySelector('#acc').value = acc.toFixed(2);
+    }
+})
+document.querySelector('#ti').addEventListener('input', (e)=>{
+    e.preventDefault();
+    timee = document.querySelector('#ti').value;
+    speeddd = document.querySelector('#sp').value;
+    distancee = document.querySelector('#di').value;
+    if(isNaN(distancee) || isNaN(speeddd) || isNaN(timee)|| isNaN(acc)){
+        console.log("no details");
+        document.querySelector('#acc').value = 0;
+    }else{
+        acc = (2 * (distancee - (speeddd * timee))) / (timee ** 2);
+        document.querySelector('#acc').value = acc.toFixed(2);
+    }
+})
+document.querySelector('#acc').addEventListener('input', (e)=>{
+    e.preventDefault();
+    acc = document.querySelector('#acc').value;
+    distancee = document.querySelector('#di').value;
+    speeddd = document.querySelector('#sp').value;
+    timee = document.querySelector('#ti').value;
+    if(isNaN(distancee) || isNaN(speeddd) || isNaN(timee)|| isNaN(acc)){
+        console.log("no details");
+        document.querySelector('#acc').value = 0;
+    }else{
+        speeddd = (distancee / timee) - ((acc * timee) / 2);
+        document.querySelector('#sp').value = speeddd.toFixed(2);
     }
 })
