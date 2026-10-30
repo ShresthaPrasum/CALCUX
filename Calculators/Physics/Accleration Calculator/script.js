@@ -79,3 +79,43 @@ document.querySelector('#u').addEventListener('input', (e)=>{
     document.querySelector('#a').value = acc;
     }
 })
+document.querySelector('#v').addEventListener('input', (e)=>{
+    e.preventDefault();
+    finspeed = parseFloat(document.querySelector('#v').value);
+    initspeed = parseFloat(document.querySelector('#u').value);
+    time = parseFloat(document.querySelector('#t').value);
+    if(isNaN(finspeed) || isNaN(initspeed) || isNaN(acc) || isNaN(time)){
+        console.log("no full details");
+        document.querySelector('#a').value = 0;
+    }else{
+        acc = (finspeed - initspeed)/time;
+        document.querySelector('#a').value = acc;
+    }
+})
+document.querySelector('#t').addEventListener('input', (e)=>{
+     e.preventDefault();
+    time = parseFloat(document.querySelector('#t').value);
+    initspeed = parseFloat(document.querySelector('#u').value);
+    finspeed = parseFloat(document.querySelector('#v').value);
+    if(isNaN(finspeed) || isNaN(initspeed) || isNaN(acc) || isNaN(time)){
+        console.log("no full details");
+        document.querySelector('#a').value = 0;
+    }else{
+        acc = (finspeed - initspeed)/time;
+        document.querySelector('#a').value = acc;
+    }
+})
+document.querySelector('#a').addEventListener('input', (e)=>{
+    e.preventDefault();
+    initspeed = parseFloat(document.querySelector('#u').value);
+    finspeed = parseFloat(document.querySelector('#v').value);
+    time = parseFloat(document.querySelector('#t').value);
+    acc = document.querySelector('#a').value;
+    if(isNaN(finspeed) || isNaN(initspeed) || isNaN(acc) || isNaN(time)){
+        console.log("no full details");
+        document.querySelector('#a').value = 0;
+    }else{
+        finspeed = (acc*time) + initspeed;
+        document.querySelector('#v').value = finspeed;
+    }
+})
