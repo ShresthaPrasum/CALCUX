@@ -65,7 +65,7 @@
             margin-bottom: 1.2rem;
         }
 
-        input[type="text"]{
+        input[type="number"], input[type="text"], select{
             display: flex;
             align-self: flex-start;
             text-indent: 10px;
@@ -83,6 +83,15 @@
             outline: none;
         }
 
+        #velocity{
+            width: 80%;
+        }
+
+        #unit{
+            width: 20%;
+            height: 42px;
+            outline: none;
+        }
         
 
     </style>
@@ -95,29 +104,78 @@
 
         <div class="free-fall">
             <label for="gravity">Acceleration due to gravity (g)</label>
-            <input type="text" id="gravity" value="9.80665" readonly placeholder="Result:">
+            <input type="number" id="gravity" value="9.80665" readonly">
+            
 
-            <label>Initial Velocity (v₀)</label>
-            <input type="text"  readonly placeholder="Result:">
+            <label for="initalVelocity">Initial Velocity (v₀)</label>
+
+                <input type="number"  id="initialVelocity"  placeholder="Enter the value"> 
+                
+            
 
             <label for="height">Height (h)</label>
-            <input type="text" id="height" placeholder="Enter the value">
+            <input type="number" id="height" placeholder="Enter the value">
 
             <label for="time">Time of fall (t)</label>
             <input type="text" id="time" readonly placeholder="Result:"> 
 
             <label for="velocity">Final Velocity (v)</label>
-            <input type="text" id="velocity" readonly placeholder="Result:"> 
+
+            <div style="display: flex; align-items: center;">
+                <input type="text" id="velocity" readonly placeholder="Result:"> 
+                <select id="unit">
+                    <option value="meter">m/s</option>
+                    <option value="kilometer">km/h</option>
+                </select>
+            </div>
             
         </div>
 
-        <div class="result">
-            Result: --
-        </div>
-        
     </div>
 
     <script>
+
+
+
+        let timeInput = document.getElementById('time');
+
+        let v = document.getElementById('velocity');
+
+        let input = document.querySelectorAll('input , select');
+
+
+
+        const g = 9.80665;
+
+        input.forEach(e =>{
+            e.addEventListener('input',(btn)=>{
+                let heightInput = parseFloat(document.getElementById("height").value);
+
+                let u = parseFloat(document.querySelector('#initialVelocity').value);
+
+                let unit = document.querySelector('#unit').value;
+
+                const finalVelocity = Math.sqrt((u*u)+(2*g*heightInput));
+
+
+                const time = (-u + finalVelocity)/g;
+
+                const kmh = finalVelocity * 3.6;
+
+                timeInput.value = `${time.toFixed(2)} s`;
+
+                if(unit === 'meter'){
+
+                    v.value = `${finalVelocity.toFixed(2)} m/s`;
+                }
+
+                else{
+                    v.value = `${kmh.toFixed(2)} km/h`
+                }
+
+                
+            })
+        })
 
     </script>
 </body>
