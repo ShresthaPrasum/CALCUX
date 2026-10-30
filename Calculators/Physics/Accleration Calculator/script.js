@@ -9,6 +9,17 @@ let fromspeed = document.querySelector('#speed');
 let fromdistance = document.querySelector('#distance');
 let fromforce = document.querySelector('#force');
 
+let initspeed;
+let finspeed;
+let time;
+let speeddd;
+let timee;
+let distancee;
+let masss;
+let forcee;
+let acc;
+
+
 speed.addEventListener('change', (e)=>{
     e.preventDefault();
     fromspeed.style.display = "block";
@@ -30,28 +41,41 @@ mass.addEventListener('change', (e)=>{
 
 speedbtn.addEventListener('click', (e)=>{
     e.preventDefault();
-    const initspeed = parseFloat(document.querySelector('#u').value);
-    const finspeed = parseFloat(document.querySelector('#v').value);
-    const time = parseFloat(document.querySelector('#t').value);
+    initspeed = parseFloat(document.querySelector('#u').value);
+    finspeed = parseFloat(document.querySelector('#v').value);
+    time = parseFloat(document.querySelector('#t').value);
 
-    let acc = (finspeed - initspeed) / time;
+    acc = (finspeed - initspeed) / time;
     document.querySelector('#a').value = acc.toFixed(2);
     console.log(acc);
 })
 distancebtn.addEventListener('click', (e)=>{
     e.preventDefault();
-    const speeddd = parseFloat(document.querySelector('#sp').value);
-    const distancee = parseFloat(document.querySelector('#di').value);
-    const timee = parseFloat(document.querySelector('#ti').value);
-    let acc = (2 * (distancee - (speeddd * timee))) / (timee ** 2);
+    speeddd = parseFloat(document.querySelector('#sp').value);
+    distancee = parseFloat(document.querySelector('#di').value);
+    timee = parseFloat(document.querySelector('#ti').value);
+    acc = (2 * (distancee - (speeddd * timee))) / (timee ** 2);
     document.querySelector('#acc').value = acc.toFixed(2);
     console.log(acc);
 })
 forcebtn.addEventListener('click', (e)=>{
     e.preventDefault();
-    const masss = parseFloat(document.querySelector('#masss').value);
-    const forcee = parseFloat(document.querySelector('#forcee').value);
-    let acc = forcee/masss;
-    document.querySelector('#accleration ').value = acc.toFixed(2);
+    masss = parseFloat(document.querySelector('#masss').value);
+    forcee = parseFloat(document.querySelector('#forcee').value);
+    acc = forcee/masss;
+    document.querySelector('#accleration').value = acc.toFixed(2);
     console.log(acc);
+})
+document.querySelector('#u').addEventListener('input', (e)=>{
+    e.preventDefault();
+    initspeed = parseFloat(document.querySelector('#u').value);
+    finspeed = parseFloat(document.querySelector('#v').value);
+    time = parseFloat(document.querySelector('#t').value);
+    if(isNaN(finspeed) || isNaN(initspeed) || isNaN(!acc) || isNaN(time)){
+        console.log("didnt enter full details");
+        document.querySelector('#a').value = 0;
+    }else{
+    acc = (finspeed - initspeed)/time;
+    document.querySelector('#a').value = acc;
+    }
 })
