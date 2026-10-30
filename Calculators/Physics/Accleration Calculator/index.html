@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accleration Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="container">
+
+        <h1>Accleration Calculator</h1>
+
+        <div class="choose">
+
+            <h3>Select one of these!</h3>
+
+            <input type="radio" name="choose" value="speed" checked id="speedd">
+            <label>Speed Difference</label>
+            <br><br>
+
+            <input type="radio" name="choose" value="distance" id="dista">
+            <label>Distance Travelled</label>
+            <br><br>
+
+            <input type="radio" name="choose" value="mass" id="mass">
+            <label>Mass and Volume</label>
+            <br><br>
+
+
+        </div>
+
+        <div id="calc">
+
+            <h3>Fill up all the details for the result!</h3>
+
+            <div id="speed">
+
+            <label>Initial Speed</label> <br>
+            <input type="number" step="0.1" id="u">
+            <br> <br>
+
+            <label>Final speed</label> <br>
+            <input type="number" step="0.1" id="v">
+            <br> <br>
+
+            <label>Time</label> <br>
+            <input type="number" step="0.1" id="t">
+            <br><br>
+
+            <label>Accleration </label> <br>
+            <input type="number" step="0.1" id="a">
+            <br><br>
+
+            <button id="speed-btn">Submit!</button>
+
+            </div>
+
+            <div id="distance" class="hide">
+
+                <label>Speed</label> <br>
+                <input type="number" step="0.1" id="sp"> 
+                <br> <br>
+
+                <label>Distance</label> <br>
+                <input type="number" step="0.1" id="di">
+                <br> <br>
+
+                <label>Time</label> <br>
+                <input type="number" step="0.1" id="ti"> 
+                <br> <br>
+
+                <label>Accleration</label> <br>
+                <input type="number" step="0.1" id="acc">
+                <br><br>
+
+                <button id="distance-btn">Submit</button>
+
+            </div>
+
+            <div id="force" class="hide">
+
+                <label>Mass </label> <br>
+                <input type="number" step="0.1" id="masss">
+                <br><br>
+
+                <label>Force </label> <br>
+                <input type="number" step="0.1" id="forcee">
+                <br> <br>
+
+                <label>Accleration</label> <br>
+                <input type="number" step="0.1" id="accleration">
+                <br><br>
+
+                <button id="force-btn">Submit</button>
+
+            </div>
+
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
