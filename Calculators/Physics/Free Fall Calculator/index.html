@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fall</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pixelify+Sans:wght@400..700&family=Stack+Sans+Notch:wght@200..700&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Pixelify+Sans:wght@400..700&amp;family=Unbounded:wght@200..900&amp;display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Stack Sans Notch", sans-serif;
+            height: 100vh;
+            color: white;
+            background: linear-gradient(45deg,rgb(219, 237, 249),rgb(166, 193, 195));
+        }
+
+        #container{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            height: fit-content;
+            max-width: 70vw;
+            width: fit-content;
+            background-color: rgb(51,127,126);
+            border: none;
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .back{
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        h1{
+            font-size: clamp(2rem, 3.8vw, 3.5rem);
+            text-align: center;
+        }
+
+        p{
+            font-size: clamp(0.7rem, 1.3vw, 1.8rem);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .free-fall{
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        input[type="text"]{
+            display: flex;
+            align-self: flex-start;
+            text-indent: 10px;
+            color: black;
+            min-height: 36px;
+            opacity: 1;
+            text-align: left;
+            width: 100%;
+            font-size: 1.4rem;
+            line-height: 40px;
+            font-weight: 555;
+            border-radius: 6px;
+            border-width: 1px;
+            border-style: solid;
+            outline: none;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Free Fall</h1>
+        <p> Calculate the velocity of a falling object along with the distance it travels.</p>
+        <a href="/physic.html" class="back">←Back</a>
+
+        <div class="free-fall">
+            <label for="gravity">Acceleration due to gravity (g)</label>
+            <input type="text" id="gravity" value="9.80665" readonly placeholder="Result:">
+
+            <label>Initial Velocity (v₀)</label>
+            <input type="text"  readonly placeholder="Result:">
+
+            <label for="height">Height (h)</label>
+            <input type="text" id="height" placeholder="Enter the value">
+
+            <label for="time">Time of fall (t)</label>
+            <input type="text" id="time" readonly placeholder="Result:"> 
+
+            <label for="velocity">Final Velocity (v)</label>
+            <input type="text" id="velocity" readonly placeholder="Result:"> 
+            
+        </div>
+
+        <div class="result">
+            Result: --
+        </div>
+        
+    </div>
+
+    <script>
+
+    </script>
+</body>
+</html>
