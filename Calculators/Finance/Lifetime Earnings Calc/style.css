@@ -64,3 +64,10 @@ h2{
     font-size: 36px;
     margin-bottom: 15px;
 }
+button{
+    padding: 1rem 1.4rem;
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
