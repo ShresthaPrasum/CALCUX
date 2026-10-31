@@ -20,6 +20,7 @@ body{
     flex-direction: column;
     padding: 40px;
     border-radius: 10px;
+    position: relative;
 }
 h1{
     font-size: 56px;
@@ -56,4 +57,12 @@ h2{
 #includee, #excludee{
     margin-top: 10px;
     flex-direction: column;
+}
+.back{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 30px;
+    left: 30px;
 }

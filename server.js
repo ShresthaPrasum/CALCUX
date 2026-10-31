@@ -30,6 +30,17 @@ app.get('/physics', (req,res)=>{
 app.get('/finance', (req,res)=>{
     res.sendFile(path.join(__dirname, 'finance.html'));
 })
+app.get('/finance/compound-interest', (req,res)=>{
+    res.sendFile(path.join(__dirname, 'Calculators', 'Finance', 'Compound Interest Calc', 'index.html'));
+})
+app.get('/finance/lifetime-earnings', (req,res)=>{
+    res.sendFile(path.join(__dirname, 'Calculators', 'Finance', 'Lifetime Earnings Calc', 'index.html'));
+})
+
+app.get('/finance/vat-calculator', (req,res)=>{
+    res.sendFile(path.join(__dirname, 'Calculators', 'Finance', 'VAT Calculator', 'index.html'));
+})
+
 
 app.listen(port, ()=>{
     console.log("server running on http://localhost:5000");
