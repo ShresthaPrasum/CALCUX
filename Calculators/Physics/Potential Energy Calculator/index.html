@@ -116,7 +116,7 @@
             <label for="mass">Mass</label>
             <div class="inputSection">
                 <input type="number" name="mass" id="mass">
-                <select name="unit" class="unit" id="massUnti">
+                <select name="unit" class="unit" id="massUnit">
                     <option value="gram">Gram(g)</option>
                     <option value="kilogram">KiloGram(kg)</option>
                 </select>
@@ -146,7 +146,11 @@
 
         let energyInput = document.getElementById('potential-energy')
 
-        let inputs = document.querySelectorAll('input');
+        let inputs = document.querySelectorAll('input, select');
+
+        let massUnit = document.querySelector('#massUnit')
+
+        let heightUnit = document.querySelector('#heightUnit')
 
         inputs.forEach(e=>{
             e.addEventListener('input', (e)=>{
@@ -156,6 +160,18 @@
                 m = massInput.value.trim();
 
                 h = heightInput.value.trim();
+
+                mU = massUnit.value;
+
+                hU= heightUnit.value;
+
+                if(mU === "gram"){
+                    m = m/1000;
+                }
+                
+                if(hU==="kilometer"){
+                    h =  h * 1000;
+                }
 
                 const gValueHas = null;
                 if(g !== ''){
@@ -189,7 +205,9 @@
                     })
                 }
                 
-                energyInput.value = `${m*g*h} J`;
+                let energy = (m*g*h).toFixed(4)
+                
+                energyInput.value = `${energy} J`;
 
             })
         })
