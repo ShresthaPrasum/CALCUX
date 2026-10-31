@@ -29,7 +29,8 @@
 - There is a simple calculator that works very properly in the home page :)
 - You can experiment with our calculator by putting different values in the input section
 - Makes the user far better than other non user
-- Enhances and boost productivity
+- Enhances and boosts productivity
+- Specified and Classified calculators like Physics, Maths and etc!!
 
 <hr>
 
@@ -37,6 +38,8 @@
 - We used AI to know the Eval function existence while creating the calculator. 
 
 - For the formulas needed for the calculator
+
+- For the live calculation system of (#exclude-price's event listener!)!!
 
 <hr>
 
