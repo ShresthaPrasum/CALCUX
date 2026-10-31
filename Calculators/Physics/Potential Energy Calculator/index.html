@@ -83,8 +83,22 @@
             outline: none;
         }
 
-        #velocity{
+        .inputSection{
+            display: flex;
+            align-items: center;
+        }
+
+        #mass, #height{
             width: 80%;
+   
+        }
+
+        .unit{
+            width: 20%;
+            font-size: 18px;
+            height: 42px;
+            outline: none;
+            text-indent: 5px;  
         }
 
     </style>
@@ -97,16 +111,28 @@
 
         <div class="potential-energy">
             <label for="gravity">Acceleration due to gravity</label>
-            <input type="number" name="gravity" id="gravity" value="9.80665" readonly>
+            <input type="number" name="gravity" id="gravity" value="9.80665">
 
             <label for="mass">Mass</label>
-            <input type="number" name="mass" id="mass">
+            <div class="inputSection">
+                <input type="number" name="mass" id="mass">
+                <select name="unit" class="unit" id="massUnti">
+                    <option value="gram">Gram(g)</option>
+                    <option value="kilogram">KiloGram(kg)</option>
+                </select>
+            </div>
 
             <label for="Height">Height</label>
-            <input type="number" name="height" id="height">
+            <div class="inputSection">
+                <input type="number" name="height" id="height">
+                <select name="unit" class="unit" id="heightUnit">
+                    <option value="meter">Meter(m)</option>
+                    <option value="kilometer">KiloMeter(km)</option>
+                </select>
+            </div>
 
             <label for="potential-energy">Potential Energy</label>
-            <input type="number" name="potential-energy" id="potential-energy">
+            <input type="text" name="potential-energy" id="potential-energy" readonly>
             
         </div>
     </div>
@@ -124,21 +150,36 @@
 
         inputs.forEach(e=>{
             e.addEventListener('input', (e)=>{
+
                 g = gravityInput.value.trim();
+
                 m = massInput.value.trim();
-                e = energyInput.value.trim();
+
                 h = heightInput.value.trim();
 
-                const gValueHas = g !== '';
-                const mValueHas = m !== '';
-                const eValueHas = e !== '';
-                const hValueHas = h !== '';
+                const gValueHas = null;
+                if(g !== ''){
+                    ValueHas = true;
+                }
+                const mValueHas = null;
+                if(m !== ''){
+                    ValueHas = true;
+                }
+                const hValueHas = null;
+                if(h!==""){
+                    ValueHas = true;
+                }
 
-                let filledCount = (gValueHas ? 1 : 0) + (mValueHas ? 1 : 0) + (eValueHas ? 1 : 0) + (hValueHas ? 1 : 0);
 
-                if (filledCount < 3) {
+                if (g === ''|| m === '' || h==='') {
                     inputs.forEach(e=>{
-                        e.placeholder = "Please fill at least 3 fields"
+                        if(e.name==="potential-energy"){
+                            e.placeholder = "Result:"
+                        }
+                        else{
+
+                            e.placeholder = "Please fill this field too"
+                        }
                     })
                     return;
                 }
@@ -147,8 +188,8 @@
                         e.placeholder = ""
                     })
                 }
-
                 
+                energyInput.value = `${m*g*h} J`;
 
             })
         })
