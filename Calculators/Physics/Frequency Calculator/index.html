@@ -81,7 +81,7 @@
         .inputSection{
             display: flex;
         }
-        #wavelength, #period{
+        #wavelength{
             width: 80%;
         }
 
@@ -120,18 +120,87 @@
             </div>
 
             <label for="period">Period(T)</label>
-            <div class="inputSection">
-                <input type="number" name="period" id="period">
-                <select name="timeunit" id="timeunit">
-                    <option value="second">Second</option>
-                    <option value="millisecond">Millisecond</option>
-                    <option value="microsecond">Microsecond</option>
-                </select>
-            </div>
+
+                <input type="text" name="period" id="period" readonly>
 
             <label for="frequency">Frequency(f)</label>
             <input type="text" name="frequency" id="frequency" readonly>
         </div>
     </div>
+    <script>
+        let velocity = document.getElementById('velocity')
+
+        let velocityDisplay = document.getElementById('velocityvalue')
+
+        let waveLength = document.getElementById('wavelength')
+
+        let periodTime = document.getElementById('period')
+
+        let f = document.getElementById('frequency')
+
+        let lengthUnit = document.getElementById('lengthunit');
+
+        let inputs = document.querySelectorAll('input, select')
+
+
+        const lightSpeed = {
+            'lightVacuum' : 299792458,
+            'lightAir' : 299702547,
+            'lightWater' : 225238511,
+            'lightGlass' : 199861639
+        }
+        
+        inputs.forEach(e=>{
+            e.addEventListener('input',()=>{
+                let velocityValue = velocity.value;
+
+                let velocityDisplayValue = null;
+
+
+                let l = waveLength.value;
+
+                let lengthUnitValue = lengthUnit.value;
+
+                if(lengthUnitValue === "centimeter"){
+                    l = l/100;
+                }
+                else if(lengthUnitValue === "millimeter"){
+                    l = l/1000;
+                }
+
+                for(const key in lightSpeed){
+                    if(velocityValue === key){
+                        velocityDisplay.value = lightSpeed[key];
+                        velocityDisplayValue = lightSpeed[key]
+                    }
+                }
+
+                let fValue;
+
+                if((velocityDisplayValue/l)<500 && (velocityDisplayValue/l)>0.1){
+                     fValue = ((velocityDisplayValue/l).toFixed(3))
+                }
+
+                else if((velocityDisplayValue/l)<0.1){
+                    fValue = ((velocityDisplayValue/l).toFixed(8))
+                }
+
+                else{
+                    fValue = ((velocityDisplayValue/l).toFixed(0))
+                }
+                
+
+                let tValue = (1/fValue).toPrecision(3)
+
+                
+
+                f.value = `${fValue} Hz`;
+
+                periodTime.value = `${tValue} s`;
+
+                
+            })
+        })
+    </script>
 </body>
 </html>
