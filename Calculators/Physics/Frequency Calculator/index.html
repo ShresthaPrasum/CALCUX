@@ -156,7 +156,6 @@
 
                 let velocityDisplayValue = null;
 
-
                 let l = waveLength.value;
 
                 let lengthUnitValue = lengthUnit.value;
@@ -187,17 +186,14 @@
 
                 else{
                     fValue = ((velocityDisplayValue/l).toFixed(0))
-                }
-                
+                }            
 
                 let tValue = (1/fValue).toPrecision(3)
-
-                
+        
 
                 f.value = `${fValue} Hz`;
 
                 periodTime.value = `${tValue} s`;
-
                 
             })
         })

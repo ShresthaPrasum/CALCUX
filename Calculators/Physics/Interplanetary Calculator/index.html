@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interplanetary Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pixelify+Sans:wght@400..700" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: "Pixelify Sans", sans-serif;
+            display: flex;
+            background: linear-gradient(45deg,rgb(46, 44, 44),rgb(0, 0, 0));
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: white;
+        }
+
+        .solar-system{
+            display: flex;
+            flex-direction: column;
+
+            min-height: 100vh;
+            width: 100%;
+        }
+        .solar-card{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(7, 7, 7);
+        }
+        h1{
+            font-size: clamp(1.8rem, 4vw, 4vw);
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .solar-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(292px, 1fr));
+            gap: 3rem;
+            width: 100%;
+            min-height: 85vh;
+            padding: 30px;
+        }
+
+        .solar-card{
+            display: grid;
+            border-radius: 15px;
+            padding: 15px;
+            cursor: pointer;
+        }
+         img{   
+            width: fit-content;
+            height: 200px;
+            object-fit: cover;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="solar-system">
+        <h1>Interplanetary Calculator</h1>
+        <p></p>
+        <div class="solar-grid">
+            <div class="solar-card">
+                <img src="24962_2.png" alt="">
+                <h2>Mercury</h2>
+            </div>
+            <div class="solar-card">
+                <img src="24962_8.png" alt="">
+                <h2>Venus</h2>
+            </div>
+            <div class="solar-card">
+                <img src="24962_5.png" alt="">
+                <h2>Home</h2>
+            </div>
+            <div class="solar-card">
+                <img src="24962_7.png" alt="">
+                <h2>Mars</h2>
+            </div>
+            <div class="solar-card">
+                <img src="24962_3.png" alt="">
+                <h2>Jupiter</h2>
+            </div>
+            <div class="solar-card">
+                <img src="24962_4.png" alt="">
+                <h2>Saturn</h2>
+            </div>
+            <div class="solar-card">
+                <img src="24962_6.png" alt="">
+                <h2>Uranus</h2>
+            </div>
+            <div class="solar-card">
+                <img src="24962_9.png" alt="">
+                <h2>Neptune</h2>
+            </div>
+        </div>
+
+    </div>
+    <div class="calculator">
+
+    </div>
+</body>
+</html>
