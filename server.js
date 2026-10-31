@@ -17,6 +17,12 @@ app.get('/math/lcm-calculator', (req,res)=>{
 app.get('/math/conversion',(req,res)=>{
     res.sendFile(path.join(__dirname, 'Calculators', 'Maths', 'Metric, Imperial Unit Conversion', 'index.html'))
 })
+app.get('/math/percentage-change', (req,res)=>{
+    res.sendFile(path.join(__dirname,'Calculators', 'Maths', 'Percentage Change Calculator', 'index.html'));
+})
+app.get('/math/perfect-square', (req,res)=>{
+    res.sendFile(path.join(__dirname, 'Calculators', 'Maths', 'Perfect Square Calculator', 'index.html'))
+})
 
 app.get('/physics', (req,res)=>{
     res.sendFile(path.join(__dirname, 'physic.html'));
