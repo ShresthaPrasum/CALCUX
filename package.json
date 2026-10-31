@@ -1,0 +1,23 @@
+{
+  "name": "calcux",
+  "version": "1.0.0",
+  "description": "- Calcux is a all in one calculation hub designed to make problem solving effortless. From calculating percentage changes, compound interest and perfect square to solving complex physics motion problem and engineering problems. Calcux is created by professional developer who knows what they are actually making in detail.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShresthaPrasum/CALCUX.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ShresthaPrasum/CALCUX/issues"
+  },
+  "homepage": "https://github.com/ShresthaPrasum/CALCUX#readme",
+  "dependencies": {
+    "express": "^5.3.0",
+    "path": "^0.12.7"
+  }
+}
