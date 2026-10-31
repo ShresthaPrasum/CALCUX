@@ -17,20 +17,22 @@
         body{
             font-family: "Pixelify Sans", sans-serif;
             display: flex;
-            background: linear-gradient(45deg,rgb(46, 44, 44),rgb(0, 0, 0));
+            background: linear-gradient(45deg,rgb(22, 22, 22),rgb(0, 0, 0));
             align-items: center;
             justify-content: center;
             min-height: 100vh;
             color: white;
         }
 
-        .solar-system{
+        .calculator{
             display: flex;
             flex-direction: column;
-
+            align-items: center;
             min-height: 100vh;
-            width: 100%;
+            margin-top: 20px;
+            width: 80%;
         }
+
         .solar-card{
             display: flex;
             flex-direction: column;
@@ -38,78 +40,427 @@
             justify-content: center;
             background-color: rgb(7, 7, 7);
         }
-        h1{
-            font-size: clamp(1.8rem, 4vw, 4vw);
-            text-align: center;
-            margin-top: 20px;
+
+        .header{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .header h1{
+            font-size: clamp(1.8rem, 5vw, 3.5rem);
+            color: rgb(0, 255, 255);
+            text-shadow: 0px 0px 12px rgb(0, 234, 255);
+            /* text-align: center; */
+            margin: 20px 0 6px 0;
+        }
+
+        .header p{
+            /* text-align: center; */
+            font-size: clamp(9px, 1vw, 2rem);
+            color: rgb(0, 183, 255);
+            margin-bottom: 20px;
+            text-shadow: 0px 0px 7px aqua;
         }
 
         .solar-grid{
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(292px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
             width: 100%;
-            min-height: 85vh;
-            padding: 30px;
         }
 
         .solar-card{
-            display: grid;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid rgba(255, 255, 255, 0.1);
             border-radius: 15px;
             padding: 15px;
             cursor: pointer;
         }
-         img{   
-            width: fit-content;
-            height: 200px;
-            object-fit: cover;
+
+        .solar-card h2{
+            text-align: center;
         }
 
+         img{   
+            width: fit-content;
+            height: 140px;
+            object-fit: cover;
+            filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.336));
+        }
 
+        .card-first{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .planet-data{
+            display: flex;
+            background-color: rgba(0, 0, 0, 0.452);
+            border-radius: 12px;
+            flex-direction: column;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 18px;
+            width: 80%;
+            margin-top: 15px;
+        }
+
+        .planet-data p{
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .data-value{
+            color: rgb(0, 204, 255);
+            text-shadow:  0px 0px 7px aqua;
+        }
+
+        .input{
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            gap: 20px;
+            border-radius: 6px;
+            border: 1px solid rgb(145, 184, 188);
+            margin-bottom: 20px;
+        }
+
+    
+
+        .input-group{
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .input-group label{
+            font-size: 1rem;
+            color: aqua;
+        }
+
+        .input-group input{
+            color: white;
+            width: 180px;
+            border-radius: 8px;
+            border: 1px solid grey;
+            background-color: black;
+            font-size: 1rem;
+            padding: 14px;
+
+        }
     </style>
 </head>
 <body>
-    <div class="solar-system">
-        <h1>Interplanetary Calculator</h1>
-        <p></p>
+    <div class="calculator">
+        <div class="header">
+
+            <h1>Interplanetary Calculator</h1>
+            <p>
+                Calculate your weight and jump height across the solar system
+            </p>
+
+            <div class="input">
+                <div class="input-group">
+                    <label for="weight">Weight in Earth (kg):</label>
+                    <br>
+                    <input type="text" name="weight" id="weight">
+                </div>
+                <div class="input-group">
+                    <label for="JumpHeight">JumpHeight in Earth (cm) </label>
+                    <br>
+                    <input type="text" name="JumpHeight" id="JumpHeight">
+                </div>
+            </div>
+        </div>
+
         <div class="solar-grid">
             <div class="solar-card">
-                <img src="24962_2.png" alt="">
-                <h2>Mercury</h2>
+
+                <div class="card-first">
+                    <img src="24962_2.png" alt="">
+                    <h2>Mercury</h2>
+                </div>
+
+                <div class="planet-data">
+                    <p>
+                        <span class="data-name">
+                            Weight:
+                        </span>
+                        <span class="data-value">
+                            60kg
+                        </span>
+                    </p>
+                    <p>
+                        <span class="data-name">
+                            JumpHeight:
+                        </span>
+                        <span class="data-value">
+                            2m
+                        </span>
+                    </p>
+                    <p>
+                        <span class="data-name">
+                            Gravity
+                        </span>
+                        <span class="data-value">
+                            9.8m/s2
+                        </span>
+                    </p>
+                    
+                </div>
             </div>
             <div class="solar-card">
-                <img src="24962_8.png" alt="">
-                <h2>Venus</h2>
+                <div>
+                    <img src="24962_8.png" alt="">
+                    <h2>Venus</h2>
+                </div>
+
+                <div class="planet-data">
+                    <p>
+                        <span class="data-name">
+                            Weight:
+                        </span>
+                        <span class="data-value">
+                            60kg
+                        </span>
+                    </p>
+                    <p>
+                        <span class="data-name">
+                            JumpHeight:
+                        </span>
+                        <span class="data-value">
+                            2m
+                        </span>
+                    </p>
+                    <p>
+                        <span class="data-name">
+                            Gravity
+                        </span>
+                        <span class="data-value">
+                            9.8m/s2
+                        </span>
+                    </p>
+                    
+                </div>
             </div>
             <div class="solar-card">
-                <img src="24962_5.png" alt="">
-                <h2>Home</h2>
+                <div>
+                    <img src="24962_5.png" alt="">
+                    <h2>Home</h2>
+                </div>
+
+                <div class="planet-data">
+                    <p>
+                        <span class="data-name">
+                            Weight:
+                        </span>
+                        <span class="data-value">
+                            60kg
+                        </span>
+                    </p>
+                    <p>
+                        <span class="data-name">
+                            JumpHeight:
+                        </span>
+                        <span class="data-value">
+                            2m
+                        </span>
+                    </p>
+                    <p>
+                        <span class="data-name">
+                            Gravity
+                        </span>
+                        <span class="data-value">
+                            9.8m/s2
+                        </span>
+                    </p>
+                </div>
             </div>
             <div class="solar-card">
-                <img src="24962_7.png" alt="">
-                <h2>Mars</h2>
+                <div>
+                    <img src="24962_7.png" alt="">
+                    <h2>Mars</h2>
+                </div>
+
+                <div class="planet-data">
+                    <p>
+                        <span class="data-name">
+                            Weight:
+                        </span>
+                        <span class="data-value">
+                            60kg
+                        </span>
+                    </p>
+                    <p>
+                        <span class="data-name">
+                            JumpHeight:
+                        </span>
+                        <span class="data-value">
+                            2m
+                        </span>
+                    </p>
+                    <p>
+                        <span class="data-name">
+                            Gravity
+                        </span>
+                        <span class="data-value">
+                            9.8m/s2
+                        </span>
+                    </p>
+                </div>
             </div>
             <div class="solar-card">
-                <img src="24962_3.png" alt="">
-                <h2>Jupiter</h2>
+                <div>
+                    <img src="24962_3.png" alt="">
+                    <h2>Jupiter</h2>
+                </div>
+
+                <div class="planet-data">
+                    <p>
+                        <span class="data-name">
+                            Weight:
+                        </span>
+                        <span class="data-value">
+                            60kg
+                        </span>
+                    </p>
+                    <p>
+                        <span class="data-name">
+                            JumpHeight:
+                        </span>
+                        <span class="data-value">
+                            2m
+                        </span>
+                    </p>
+                    <p>
+                        <span class="data-name">
+                            Gravity
+                        </span>
+                        <span class="data-value">
+                            9.8m/s2
+                        </span>
+                    </p>
+                </div>
             </div>
             <div class="solar-card">
-                <img src="24962_4.png" alt="">
-                <h2>Saturn</h2>
+                <div>
+                    <img src="24962_4.png" alt="">
+                    <h2>Saturn</h2>
+                </div>
+
+                <div class="planet-data">
+                    <p>
+                        <span class="data-name">
+                            Weight:
+                        </span>
+                        <span class="data-value">
+                            60kg
+                        </span>
+                    </p>
+                    <p>
+                        <span class="data-name">
+                            JumpHeight:
+                        </span>
+                        <span class="data-value">
+                            2m
+                        </span>
+                    </p>
+                    <p>
+                        <span class="data-name">
+                            Gravity
+                        </span>
+                        <span class="data-value">
+                            9.8m/s2
+                        </span>
+                    </p>
+                </div>
             </div>
             <div class="solar-card">
-                <img src="24962_6.png" alt="">
-                <h2>Uranus</h2>
+                <div>
+                    <img src="24962_6.png" alt="">
+                    <h2>Uranus</h2>
+                </div>
+
+                <div class="planet-data">
+                    <p>
+                        <span class="data-name">
+                            Weight:
+                        </span>
+                        <span class="data-value">
+                            60kg
+                        </span>
+                    </p>
+                    <p>
+                        <span class="data-name">
+                            JumpHeight:
+                        </span>
+                        <span class="data-value">
+                            2m
+                        </span>
+                    </p>
+                    <p>
+                        <span class="data-name">
+                            Gravity
+                        </span>
+                        <span class="data-value">
+                            9.8m/s2
+                        </span>
+                    </p>
+                </div>
             </div>
             <div class="solar-card">
-                <img src="24962_9.png" alt="">
-                <h2>Neptune</h2>
+                <div>
+                    <img src="24962_9.png" alt="">
+                    <h2>Neptune</h2>
+                </div>
+
+                <div class="planet-data">
+                    <p>
+                        <span class="data-name">
+                            Weight:
+                        </span>
+                        <span class="data-value">
+                            60kg
+                        </span>
+                    </p>
+                    <p>
+                        <span class="data-name">
+                            JumpHeight:
+                        </span>
+                        <span class="data-value">
+                            2m
+                        </span>
+                    </p>
+                    <p>
+                        <span class="data-name">
+                            Gravity
+                        </span>
+                        <span class="data-value">
+                            9.8m/s2
+                        </span>
+                    </p>
+                </div>
             </div>
         </div>
 
     </div>
-    <div class="calculator">
 
-    </div>
+    <script>
+        let weight =document.getElementById('weight');
+
+        let jumpHeight = document.getElementById('JumpHeight');
+
+        let planetData = document.querySelectorAll('planet-data')
+
+        console.log(planetData)
+    </script>
 </body>
 </html>
