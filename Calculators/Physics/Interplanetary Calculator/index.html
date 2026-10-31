@@ -32,7 +32,14 @@
             margin-top: 20px;
             width: 80%;
         }
-
+        .back{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
         .solar-card{
             display: flex;
             flex-direction: column;
@@ -78,6 +85,7 @@
             border: 2px solid rgba(255, 255, 255, 0.1);
             border-radius: 15px;
             padding: 15px;
+            overflow: hidden;
             cursor: pointer;
         }
 
@@ -106,7 +114,7 @@
             flex-direction: column;
             border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 18px;
-            width: 80%;
+            width: fit-content;
             margin-top: 15px;
         }
 
@@ -119,6 +127,7 @@
         .data-value{
             color: rgb(0, 204, 255);
             text-shadow:  0px 0px 7px aqua;
+            overflow-x:auto;
         }
 
         .input{
@@ -160,6 +169,7 @@
 </head>
 <body>
     <div class="calculator">
+        <a href="/physic.html" class="back">←Back</a>
         <div class="header">
 
             <h1>Interplanetary Calculator</h1>
@@ -454,7 +464,18 @@
     </div>
 
     <script>
-        const planetNumbers = (document.querySelectorAll('.solar-card')).length;
+
+        const planetGravities = [
+            0.38, 
+            0.91, 
+            1.0,  
+            0.38, 
+            2.53, 
+            1.07, 
+            0.89, 
+            1.14  
+        ];
+        const planets = (document.querySelectorAll('.solar-card'));
         
         document.querySelectorAll('input').forEach(e=>{
             e.addEventListener('input',()=>{
@@ -463,24 +484,32 @@
         })
 
         function renderValue(){
-            let weight = parseFloat(document.getElementById('weight').value);
+            let ew = parseFloat(document.getElementById('weight').value);
     
-                let jumpHeight = parseFloat(document.getElementById('JumpHeight').value);
+                let jh = parseFloat(document.getElementById('JumpHeight').value);
     
-                let planetData = document.querySelectorAll('.data-value')
-    
-                // console.log(planetData)
+                planets.forEach((card, i) => {
 
-                for(i=0; i<planetNumbers;i++){
-                    let numberOfData = 0;
-                    for(j=numberOfData; j<numberOfData+3; j++){
-                        // planetData[j].textContent = "oss" 
-                        console.log(j)
+                    const dataValues = card.querySelectorAll('.data-value');
 
-                        
-                    }      
-                    numberOfData++    
-                }
+                    const ratio = planetGravities[i];
+
+                    let w = (ew * ratio).toFixed(2);
+
+                    let j = (jh / ratio).toFixed(2);
+
+                    let g = (ratio * 9.81).toFixed(2);
+
+
+ 
+                    dataValues[0].textContent = `${w} kg`;
+
+                    dataValues[1].textContent = `${j} cm`;
+
+                    dataValues[2].textContent = `${g} m/s²`;
+
+                });
+                
         }
 
         renderValue();
