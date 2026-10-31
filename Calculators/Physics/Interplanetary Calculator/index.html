@@ -171,12 +171,12 @@
                 <div class="input-group">
                     <label for="weight">Weight in Earth (kg):</label>
                     <br>
-                    <input type="text" name="weight" id="weight">
+                    <input type="text" name="weight" id="weight" value="60">
                 </div>
                 <div class="input-group">
                     <label for="JumpHeight">JumpHeight in Earth (cm) </label>
                     <br>
-                    <input type="text" name="JumpHeight" id="JumpHeight">
+                    <input type="text" name="JumpHeight" id="JumpHeight" value="42">
                 </div>
             </div>
         </div>
@@ -454,13 +454,37 @@
     </div>
 
     <script>
-        let weight =document.getElementById('weight');
+        const planetNumbers = (document.querySelectorAll('.solar-card')).length;
+        
+        document.querySelectorAll('input').forEach(e=>{
+            e.addEventListener('input',()=>{
+                renderValue();
+            })
+        })
 
-        let jumpHeight = document.getElementById('JumpHeight');
+        function renderValue(){
+            let weight = parseFloat(document.getElementById('weight').value);
+    
+                let jumpHeight = parseFloat(document.getElementById('JumpHeight').value);
+    
+                let planetData = document.querySelectorAll('.data-value')
+    
+                // console.log(planetData)
 
-        let planetData = document.querySelectorAll('planet-data')
+                for(i=0; i<planetNumbers;i++){
+                    let numberOfData = 0;
+                    for(j=numberOfData; j<numberOfData+3; j++){
+                        // planetData[j].textContent = "oss" 
+                        console.log(j)
 
-        console.log(planetData)
+                        
+                    }      
+                    numberOfData++    
+                }
+        }
+
+        renderValue();
+        
     </script>
 </body>
 </html>
