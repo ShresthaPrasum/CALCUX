@@ -27,6 +27,29 @@ app.get('/math/perfect-square', (req,res)=>{
 app.get('/physics', (req,res)=>{
     res.sendFile(path.join(__dirname, 'physic.html'));
 })
+app.get('/physics/accleration-calculator',(req,res)=>{
+    res.sendFile(path.join(__dirname, 'Calculators', 'Physics', 'Accleration Calculator', 'index.html'));
+})
+app.get('/physics/freefall-calculator', (req,res)=>{
+    res.sendFile(path.join(__dirname, 'Calculators', 'Physics', 'Free Fall Calculator', 'index.html'));
+})
+app.get('/physics/frequency-calculator', (req,res)=>{
+    res.sendFile(path.join(__dirname, 'Calculators', 'Physics', 'Frequency Calculator', 'index.html'));
+})
+app.get('/physics/interplanetary-calculator', (req,res)=>{
+    res.sendFile(path.join(__dirname, 'Calculators', 'Physics', 'Interplanetary Calculator', 'index.html'));
+})
+app.get('/physics/potential-energy', (req,res)=>{
+    res.sendFile(path.join(__dirname, 'Calculators', 'Physics', 'Potential Energy Calculator', 'index.html'));
+})
+app.get('/physics/velocity-calculator', (req,res)=>{
+    res.sendFile(path.join(__dirname, 'Calculators', 'Physics', 'Velocity Calculators', 'index.html'));
+})
+app.get('/physics/work-calculator', (req,res)=>{
+    res.sendFile(path.join(__dirname, 'Calculators', 'Physics', 'Work Calculator', 'index.html'));
+})
+
+
 app.get('/finance', (req,res)=>{
     res.sendFile(path.join(__dirname, 'finance.html'));
 })
