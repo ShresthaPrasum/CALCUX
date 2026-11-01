@@ -5,6 +5,10 @@ const path = require('path');
 
 app.use(express.static(__dirname));
 
+app.get('/', (req,res)=>{
+    res.sendFile(path.join(__dirname, 'index.html'));
+})
+
 app.get('/math', (req,res)=>{
     res.sendFile(path.join(__dirname, 'math.html'));
 })
@@ -25,7 +29,7 @@ app.get('/math/perfect-square', (req,res)=>{
 })
 
 app.get('/physics', (req,res)=>{
-    res.sendFile(path.join(__dirname, 'physic.html'));
+    res.sendFile(path.join(__dirname,  'physic.html'));
 })
 app.get('/physics/accleration-calculator',(req,res)=>{
     res.sendFile(path.join(__dirname, 'Calculators', 'Physics', 'Accleration Calculator', 'index.html'));
@@ -65,6 +69,7 @@ app.get('/finance/vat-calculator', (req,res)=>{
 })
 
 
-app.listen(port, ()=>{
-    console.log("server running on http://localhost:5000");
-})
+// app.listen(port, ()=>{
+//     console.log("server running on http://localhost:5000");
+// })
+module.exports = app;
