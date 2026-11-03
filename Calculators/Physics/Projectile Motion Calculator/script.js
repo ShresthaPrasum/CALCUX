@@ -24,3 +24,65 @@ submitbtn.addEventListener('click', (e)=>{
     document.querySelector('#distance').value = distance.toFixed(3);
     document.querySelector('#time').value = time.toFixed(3);
 })
+document.querySelector('#init-vel').addEventListener('input', ()=>{
+    const v = parseFloat(document.querySelector('#init-vel').value);
+    const ang = parseFloat(document.querySelector('#angle').value);
+    const height = parseFloat(document.querySelector('#init-height').value);
+    if(!v || !ang || !height){
+        console.log("waiting for all values");
+        return;
+    }
+    const angg = (ang*Math.PI)/180;
+    const vx = v*Math.cos(angg);
+    const vy = v* Math.sin(angg);
+
+    const time = (vy+ Math.sqrt(vy*vy + 2 * 9.8 * height))/9.8;
+    const distance = vx*time;
+    const max_height = height + (vy*vy)/(2*9.8);
+    
+    document.querySelector('#max-height').value = max_height.toFixed(3);
+    document.querySelector('#distance').value = distance.toFixed(3);
+    document.querySelector('#time').value = time.toFixed(3);
+})
+
+document.querySelector('#angle').addEventListener('input', ()=>{
+    const v = parseFloat(document.querySelector('#init-vel').value);
+    const ang = parseFloat(document.querySelector('#angle').value);
+    const height = parseFloat(document.querySelector('#init-height').value);
+    if(!v || !ang || !height){
+        console.log("waiting for all values");
+        return;
+    }
+    const angg = (ang*Math.PI)/180;
+    const vx = v*Math.cos(angg);
+    const vy = v* Math.sin(angg);
+
+    const time = (vy+ Math.sqrt(vy*vy + 2 * 9.8 * height))/9.8;
+    const distance = vx*time;
+    const max_height = height + (vy*vy)/(2*9.8);
+    
+    document.querySelector('#max-height').value = max_height.toFixed(3);
+    document.querySelector('#distance').value = distance.toFixed(3);
+    document.querySelector('#time').value = time.toFixed(3);
+})
+
+document.querySelector('#init-height').addEventListener('input', ()=>{
+    const v = parseFloat(document.querySelector('#init-vel').value);
+    const ang = parseFloat(document.querySelector('#angle').value);
+    const height = parseFloat(document.querySelector('#init-height').value);
+    if(!v || !ang || !height){
+        console.log("waiting for all values");
+        return;
+    }
+    const angg = (ang*Math.PI)/180;
+    const vx = v*Math.cos(angg);
+    const vy = v* Math.sin(angg);
+
+    const time = (vy+ Math.sqrt(vy*vy + 2 * 9.8 * height))/9.8;
+    const distance = vx*time;
+    const max_height = height + (vy*vy)/(2*9.8);
+    
+    document.querySelector('#max-height').value = max_height.toFixed(3);
+    document.querySelector('#distance').value = distance.toFixed(3);
+    document.querySelector('#time').value = time.toFixed(3);
+})
