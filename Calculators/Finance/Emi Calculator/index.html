@@ -40,10 +40,6 @@
             margin-bottom: 1.2rem;
         }
 
-        
-    
-
-
 
     </style>
 </head>
@@ -95,9 +91,53 @@
 
         let interest = document.getElementById('interest')
 
-        let emi = document.getElementById('emi')
+        let tenure = document.getElementById('tenure')
 
-        let tpayable = document.getElementById('tpayable')
+        let inputs= document.querySelectorAll('input')
+
+        let emi = document.getElementById('emi');
+
+        let tPayable = document.getElementById('totalpayable')
+
+        let tInterest= document.getElementById('totalinterest');
+
+        inputs.forEach(e=>{
+            e.addEventListener('input',()=>{
+                calculateEmi();
+            })
+        })
+
+        function calculateEmi(){
+            let principal = parseFloat(loan.value);
+
+            let i = parseFloat(interest.value);
+
+            let t = parseFloat(tenure.value);
+
+            let monthlyRate = (i/12)/100;
+
+            let totalMonths = t * 12;
+
+            let emii;
+            let totalPay;
+            let totlaInterest = 0;
+
+            
+            let compoundFac = Math.pow( 1 + monthlyRate, totalMonths)
+
+            emii = ((principal * monthlyRate * compoundFac) / (compoundFac -1)).toFixed(2);
+            
+            totalPay = (emii * totalMonths).toFixed(2);
+
+            totlaInterest = (totalPay - principal).toFixed(2);
+
+            emi.value = emii
+            tPayable.value = totalPay;
+
+            tInterest.value = totlaInterest;
+        }
+
+        calculateEmi();
     </script>
 </body>
 </html>
