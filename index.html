@@ -402,31 +402,46 @@
         }
 
         .about-container{
+            display: flex;
             width: 88%; 
-            padding: clamp(30px, 5vw, 5vw);
+            padding: 3vw;
             border-radius: 12px;
-            min-height: 26vw;
-            background-color: blueviolet;
+            min-height: fit-content;
+            background-color: rgb(70, 11, 125);
             color: white;
 
         }
 
+        .about-first{
+            width: 70%;
+        }
+
         .about-container h1{
-            font-size: clamp(24px, 4vw, 4vw);
+            font-size: 3vw;
             line-height: 1;
             margin-bottom: 12px;
         }
 
-        .about-container p{
-            font-size: clamp(12px, 1.6vw, 1.6vw);
+        .about-first p{
+            font-size: 1.4vw;
             margin-bottom: clamp(10px, 2vw, 2vw);
         }
 
         .about-container a{
-            padding: clamp(10px,1vw,1vw) clamp(14px, 1.4vw, 1.4vw);
+            padding: 1vw 1.4vw;
             background-color: rgb(215 4 209);
             border-radius: 8px;
             font-size: clamp(10px, 1vw,1vw);
+        }
+
+        .about-second h3{
+            font-size:3vw;
+            
+        }
+
+        .about-card p{
+            font-size: clamp(12px, 1.8vw, 1.8vw);
+            margin-bottom: 10px;
         }
 
         @media (max-width: 721px){
@@ -631,17 +646,26 @@
 
         <div class="about-us" id="about-us">
             <div class="about-container">
-                <h1>
-                    ABOUT CALCUX
-                </h1>
-
-                <p>
-                    Calcux is a all in one calculation hub designed to make problem solving effortless. From calculating percentage changes, compound interest and perfect square to solving complex physics motion problem and engineering problems. Calcux is created by professional developer who knows what they are actually making in detail.
-                </p>
-
-                <a class="about-btn" href="#calculators">
-                    View our work
-                </a>
+                <div class="about-first">
+                    <h1>
+                        ABOUT CALCUX
+                    </h1>
+    
+                    <p>
+                        Calcux is a all in one calculation hub designed to make problem solving effortless. From calculating percentage changes, compound interest and perfect square to solving complex physics motion problem and engineering problems. Calcux is created by professional developer who knows what they are actually making in detail.
+                    </p>
+    
+                    <a class="about-btn" href="#calculators">
+                        View our work
+                    </a>
+                </div>
+                <div class="about-second">
+                    <h3>Team Mama</h3>
+                    <div class="about-card">
+                        <p>1. Zyrox</p>
+                        <p>2. Mama_Chess</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
