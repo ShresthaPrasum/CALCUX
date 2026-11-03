@@ -17,7 +17,18 @@ body{
 .second-container{
     display: flex;
     align-items: flex-start;
-    /* flex-direction: column; */
+}
+
+.relative{
+    position: relative;
+}
+
+.creator-details{
+    margin-bottom: 6px;
+}
+
+.column{
+    flex-direction: column;
 }
 
 .profile img{
@@ -28,11 +39,11 @@ body{
     display: flex;
 }
 
-.align-item{
+.ai{
     align-items: center;
 }
 
-.justify-content{
+.jc{
     justify-content: center;
 }
 
@@ -44,5 +55,8 @@ body{
     color: white;
 }
 
+.border{
+    border: 1px solid ;
+}
 
 
