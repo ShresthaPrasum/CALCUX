@@ -14,13 +14,14 @@ body{
 }
 #container{
     background-color: rgb(51, 127, 126);
-    width: 67vw;
+    width: 60vw;
     min-height: fit-content;
     display: flex;
     flex-direction: column;
     border: none;
     padding: 50px;
     border-radius: 10px;
+    position: relative;
 }
 h1{
     font-size: 40px;
@@ -63,4 +64,12 @@ button{
     color: rgb(59, 104, 252);
     font-weight: 500;
     font-size: 18px;
+}
+.back{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
 }
