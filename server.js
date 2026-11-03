@@ -27,6 +27,9 @@ app.get('/math/percentage-change', (req,res)=>{
 app.get('/math/perfect-square', (req,res)=>{
     res.sendFile(path.join(__dirname, 'Calculators', 'Maths', 'Perfect Square Calculator', 'index.html'))
 })
+app.get('/math/probability-calculator', (req,res)=>{
+    res.sendFile(path.join(__dirname, 'Calculators', 'Maths', 'Probability Calculator', 'index.html'));
+})
 
 app.get('/physics', (req,res)=>{
     res.sendFile(path.join(__dirname,  'physic.html'));
@@ -52,6 +55,9 @@ app.get('/physics/velocity-calculator', (req,res)=>{
 app.get('/physics/work-calculator', (req,res)=>{
     res.sendFile(path.join(__dirname, 'Calculators', 'Physics', 'Work Calculator', 'index.html'));
 })
+app.get('/physics/projectile-motion', (req,res)=>{
+    res.sendFile((path.join(__dirname, 'Calculators', 'Physics', 'Projectile Motion Calculator', 'index.html')));
+})
 
 
 app.get('/finance', (req,res)=>{
@@ -69,7 +75,7 @@ app.get('/finance/vat-calculator', (req,res)=>{
 })
 
 
-// app.listen(port, ()=>{
-//     console.log("server running on http://localhost:5000");
-// })
-module.exports = app;
+app.listen(port, ()=>{
+    console.log("server running on http://localhost:5000");
+})
+// module.exports = app;

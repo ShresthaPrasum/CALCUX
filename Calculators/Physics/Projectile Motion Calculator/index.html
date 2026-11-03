@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projectile Motion Calculator</title>
+    <link rel="stylesheet" href="/Calculators/Physics/Projectile Motion Calculator/style.css">
+</head>
+<body>
+
+    <div id="container">
+
+        <a href="/physics" class="back">
+            Back
+        </a>
+
+        <h1>Projectile Motion Calculator</h1>
+
+        <div id="app">
+
+            <h2>Fill up all the details and the answer will be displayed!</h2>
+
+            <label>Initial Velocity (m/s)</label> <br>
+            <input type="number" step="0.01" id="init-vel">
+            <br> <br>
+
+            <label>Angle of launch (deg)</label> <br>
+            <input type="number" step="0.01" id="angle">
+            <br> <br>
+
+            <label>Initial Height (m)</label> <br>
+            <input type="number" step="0.01" id="init-height">
+            <br> <br>
+
+
+            <label>Maximum Height reached (m)</label> <br>
+            <input type="number" step="0.01" id="max-height" readonly placeholder="Only for outputs!" class="outputss">
+            <br> <br>
+
+            <label>Distance travelled (m)</label> <br>
+            <input type="number" step="0.01" id="distance" readonly placeholder="Only for outputs!" class="outputss">
+            <br> <br>
+
+            <label>Time taken (sec)</label> <br>
+            <input type="number" step="0.01" id="time" readonly placeholder="Only for outputs!" class="outputss">
+            <br> <br>
+
+            <button id="submit">
+                Submit
+            </button>
+
+        </div>
+
+    </div>
+    
+    <script src="/Calculators/Physics/Projectile Motion Calculator/script.js"></script>
+</body>
+</html>
