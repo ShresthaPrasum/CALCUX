@@ -5,61 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VAT Calculator</title>
     <link rel="stylesheet" href="/Calculators/Finance/VAT Calculator/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pixelify+Sans:wght@400..700&family=Stack+Sans+Notch:wght@200..700&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Pixelify+Sans:wght@400..700&amp;family=Unbounded:wght@200..900&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/global.css">
 </head>
 <body>
    
     <div id="container">
-        <a href="/finance" class="back" >←Back</a>
-        <h1>VAT Calculator</h1>
-
-        <div id="choose">
-
-            <h2>Select One:</h2>
-
-            <input type="radio" id="include" name="choose" checked>
-            <label>Include VAT</label>
-            <br> <br>
-
-            <input type="radio" name="choose" id="exclude">
-            <label>Exclude VAT</label>
-            <br>
-
+        <div>
+            <a href="/finance" class="back" >←Back</a>
+            <h1>VAT Calculator</h1>
+    
+            <div id="choose">
+    
+                <input type="radio" id="include" name="choose" checked>
+                <label>Include VAT</label>
+                <br>
+    
+                <input type="radio" name="choose" id="exclude">
+                <label>Exclude VAT</label>
+    
+            </div>
+    
+            <div id="calc">
+    
+                <h2>Enter all the details!</h2>
+    
+                <label>Amount:</label> <br>
+                <input type="number" step="0.01" id="amount">
+                <br> 
+    
+                <label>VAT Rate:</label><br>
+                <input type="number" step="0.01" id="vat">
+                <br>
+    
+                <div id="includee">
+    
+                    <label>Price:</label><br>
+                    <input type="number" step="0.01" id="include-price">
+                    <br> 
+    
+                    <label>Tax Amount:</label> <br>
+                    <input type="number" step="0.01" id="tax-amount">
+                    <br> 
+    
+                </div>
+    
+                <div id="excludee" class="hide">
+    
+                    <label>Price:</label> <br>
+                    <input type="number" step="0.01" id="exclude-price">
+                    <br>
+    
+                    <label>Tax Amount:</label> <br>
+                    <input type="number" step="0.01" id="tax-amountt">
+                    <br> 
+    
+                </div>
+    
+            </div>
         </div>
 
-        <div id="calc">
-
-            <h2>Enter all the details!</h2>
-
-            <label>Amount:</label> <br>
-            <input type="number" step="0.01" id="amount">
-            <br> <br>
-
-            <label>VAT Rate:</label><br>
-            <input type="number" step="0.01" id="vat">
-            <br><br>
-
-            <div id="includee">
-
-            <label>Price:</label><br>
-            <input type="number" step="0.01" id="include-price">
-            <br> <br>
-
-            <label>Tax Amount:</label> <br>
-            <input type="number" step="0.01" id="tax-amount">
-            <br> <br>
-
-            </div>
-
-            <div id="excludee" class="hide">
-
-                <label>Price:</label> <br>
-                <input type="number" step="0.01" id="exclude-price">
-                <br><br>
-
-                <label>Tax Amount:</label> <br>
-                <input type="number" step="0.01" id="tax-amountt">
-                <br> <br>
-
+        <div class="second-container flex">
+            <div class="profile">
+                <img src="/zyrox.jpg" alt="zyrox.jpg">
+                <div class="creator-details">
+                    <h3>Creator</h3>
+                    <h3>Zyrox</h3>
+                </div>
+                <img src="/mama_chess.jpg" alt="">
+                <div class="creator-details">
+                    <h3>Css Designer</h3>
+                    <h3>Mama_Chess</h3>
+                </div>
             </div>
 
         </div>

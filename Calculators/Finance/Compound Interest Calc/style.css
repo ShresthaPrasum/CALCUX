@@ -14,13 +14,12 @@ body{
 }
 #container{
     position: relative;
-    min-height: fit-content;
-    width: 67vw;
+
     background-color: rgb(51, 127, 126);
     display: flex;
-    flex-direction: column;
     border: none;
     padding: 40px;
+    gap: 20px;
     border-radius: 10px;
 }
 .back{
@@ -32,7 +31,7 @@ body{
     left: 30px;
 }
 h1{
-    font-size: 50px;
+    font-size: 2.8vw;
     font-weight: 800;
     line-height: 1;
     text-align: center;

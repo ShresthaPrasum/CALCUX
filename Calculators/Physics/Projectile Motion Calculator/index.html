@@ -5,49 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projectile Motion Calculator</title>
     <link rel="stylesheet" href="/Calculators/Physics/Projectile Motion Calculator/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pixelify+Sans:wght@400..700&family=Stack+Sans+Notch:wght@200..700&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Pixelify+Sans:wght@400..700&amp;family=Unbounded:wght@200..900&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/global.css">
 </head>
 <body>
 
     <div id="container">
+        <div>
 
-        <a href="/physics" class="back">
-            Back
-        </a>
+            <a href="/physics" class="back">
+                <-Back
+            </a>
+    
+            <h1>Projectile Motion Calculator</h1>
+    
+            <div id="app">
+    
+                <h2>Enter the details: </h2>
+    
+                <label>Initial Velocity (m/s)</label> <br>
+                <input type="number" step="0.01" id="init-vel">
+                <br> <br>
+    
+                <label>Angle of launch (deg)</label> <br>
+                <input type="number" step="0.01" id="angle">
+                <br> <br>
+    
+                <label>Initial Height (m)</label> <br>
+                <input type="number" step="0.01" id="init-height">
+                <br> <br>
+    
+    
+                <label>Maximum Height reached (m)</label> <br>
+                <input type="number" step="0.01" id="max-height" readonly placeholder="Only for outputs!" class="outputss">
+                <br> <br>
+    
+                <label>Distance travelled (m)</label> <br>
+                <input type="number" step="0.01" id="distance" readonly placeholder="Only for outputs!" class="outputss">
+                <br> <br>
+    
+                <label>Time taken (sec)</label> <br>
+                <input type="number" step="0.01" id="time" readonly placeholder="Only for outputs!" class="outputss">
+                <br> <br>
 
-        <h1>Projectile Motion Calculator</h1>
-
-        <div id="app">
-
-            <h2>Fill up all the details and the answer will be displayed!</h2>
-
-            <label>Initial Velocity (m/s)</label> <br>
-            <input type="number" step="0.01" id="init-vel">
-            <br> <br>
-
-            <label>Angle of launch (deg)</label> <br>
-            <input type="number" step="0.01" id="angle">
-            <br> <br>
-
-            <label>Initial Height (m)</label> <br>
-            <input type="number" step="0.01" id="init-height">
-            <br> <br>
-
-
-            <label>Maximum Height reached (m)</label> <br>
-            <input type="number" step="0.01" id="max-height" readonly placeholder="Only for outputs!" class="outputss">
-            <br> <br>
-
-            <label>Distance travelled (m)</label> <br>
-            <input type="number" step="0.01" id="distance" readonly placeholder="Only for outputs!" class="outputss">
-            <br> <br>
-
-            <label>Time taken (sec)</label> <br>
-            <input type="number" step="0.01" id="time" readonly placeholder="Only for outputs!" class="outputss">
-            <br> <br>
-
-            <button id="submit">
-                Submit
-            </button>
+    
+            </div>
+        </div>
+        
+        <div class="second-container flex">
+            <div class="profile">
+                <img src="/zyrox.jpg" alt="zyrox.jpg">
+                <div class="creator-details">
+                    <h3>Creator</h3>
+                    <h3>Zyrox</h3>
+                </div>
+                <img src="/mama_chess.jpg" alt="">
+                <div class="creator-details">
+                    <h3>Css Designer</h3>
+                    <h3>Mama_Chess</h3>
+                </div>
+            </div>
 
         </div>
 

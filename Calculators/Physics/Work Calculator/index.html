@@ -5,38 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work Calculator</title>
     <link rel="stylesheet" href="/Calculators/Physics/Work Calculator/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pixelify+Sans:wght@400..700&family=Stack+Sans+Notch:wght@200..700&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Pixelify+Sans:wght@400..700&amp;family=Unbounded:wght@200..900&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/global.css">
 </head>
 <body>
 
     <div id="container">
-        <a href="/physics" class="back">Back</a>
-        <h1>Work Calculator</h1>
+        <div>
 
+            <a href="/physics" class="back" ><-Back</a>
+            <h1>Work Calculator</h1>
+    
+            <div id="calc">
+    
+                <h2>Fill up all the asked details!</h2>
+    
+                <label>Force (N)</label> <br>
+                <input type="number" step="0.01" id="force">
+                <br>
+    
+                <label>Angle of force (deg)</label> <br>
+                <input type="number" step="0.01" id="angle">
+                <br> 
+    
+                <label>Displacement (m)</label> <br>
+                <input type="number" step="0.01" id="displacement">
+                <br> 
+    
+                <label>Work</label> <br>
+                <input type="number" step="0.01" id="work" placeholder="Please enter other details first!"> 
+                <br>
+    
+    
+                <button id="submitbtn">
+                    Submit!
+                </button>
+    
+            </div>
+        </div>
 
-        <div id="calc">
-
-            <h2>Fill up all the asked details!</h2>
-
-            <label>Force (N)</label> <br>
-            <input type="number" step="0.01" id="force">
-            <br> <br>
-
-            <label>Angle of force (deg)</label> <br>
-            <input type="number" step="0.01" id="angle">
-            <br> <br>
-
-            <label>Displacement (m)</label> <br>
-            <input type="number" step="0.01" id="displacement">
-            <br> <br>
-
-            <label>Work</label> <br>
-            <input type="number" step="0.01" id="work" placeholder="Please enter other details first!"> 
-            <br><br>
-
-
-            <button id="submitbtn">
-                Submit!
-            </button>
+        <div class="second-container flex">
+            <div class="profile">
+                <img src="/zyrox.jpg" alt="zyrox.jpg">
+                <div class="creator-details">
+                    <h3>Creator</h3>
+                    <h3>Zyrox</h3>
+                </div>
+                <img src="/mama_chess.jpg" alt="">
+                <div class="creator-details">
+                    <h3>Css Designer</h3>
+                    <h3>Mama_Chess</h3>
+                </div>
+            </div>
 
         </div>
 

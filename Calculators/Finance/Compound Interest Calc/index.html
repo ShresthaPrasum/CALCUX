@@ -9,60 +9,80 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Pixelify+Sans:wght@400..700&amp;family=Unbounded:wght@200..900&amp;display=swap" rel="stylesheet">
     <title>Compound Interest Calculator</title>
     <link rel="stylesheet" href="/Calculators/Finance/Compound Interest Calc/style.css">
+    <link rel="stylesheet" href="/global.css">
 </head>
 <body>
     <div id="container">
-        <a href="/finance" class="back" >←Back</a>
-        <h1>Compound Interest Calculator</h1>
+        <div>
 
-        <div id="calculator">
-
-            <p>Find Compound intrest of given details by entering all inputs!</p>
-
-            <form id="form">
-
-                <label>Principle (Balance)</label>
-                <br>
-                <input type="number" step="0.01" id="principle" placeholder="1000$">
-            
-
-                <label>Rate of interest (%)</label>
-                <br>
-                <input type="number" step="0.1" id="rate" placeholder="7%">
-            
-
-                <label>Time (months)</label>
-                <br>
-                <input type="number" step="1" id="months" placeholder="12">
-            
-
-                <label>Frequency:</label> <br> 
-
-                <select name="frequency" id="frequency">
-
-                    <option value="1">Yearly(1/yr)</option>
-
-                    <option value="2">Semi Annualy (2/yr)</option>
-
-                    <option value="4">Quaterly Annualy (4/yr)</option>
-
-                </select>
-
+            <a href="/finance" class="back" >←Back</a>
+            <h1>Compound Interest Calculator</h1>
+    
+            <div id="calculator">
+    
+                <p>Find Compound intrest of given details by entering all inputs!</p>
+    
+                <form id="form">
+    
+                    <label>Principle (Balance)</label>
+                    <br>
+                    <input type="number" step="0.01" id="principle" placeholder="1000$">
                 
-                <button type="submit">
-                    Find Result
-                </button>
+    
+                    <label>Rate of interest (%)</label>
+                    <br>
+                    <input type="number" step="0.1" id="rate" placeholder="7%">
+                
+    
+                    <label>Time (months)</label>
+                    <br>
+                    <input type="number" step="1" id="months" placeholder="12">
+                
+    
+                    <label>Frequency:</label> <br> 
+    
+                    <select name="frequency" id="frequency">
+    
+                        <option value="1">Yearly(1/yr)</option>
+    
+                        <option value="2">Semi Annualy (2/yr)</option>
+    
+                        <option value="4">Quaterly Annualy (4/yr)</option>
+    
+                    </select>
+    
+                    
+                    <button type="submit">
+                        Find Result
+                    </button>
+    
+                </form>
+    
+    
+             <button id="amountt" class="hide"> 
+                Find Amount
+             </button>
+    
+                <div id="output">
+                    <div id="outputt">
+                
+                    </div>
+                </div>
+    
+            </div>
+        </div>
 
-            </form>
-
-
-         <button id="amountt" class="hide"> 
-            Find Amount
-         </button>
-
-            <div id="output">
-                <div id="outputt">
-            
+        <div class="second-container flex">
+            <div class="profile">
+                <img src="/zyrox.jpg" alt="zyrox.jpg">
+                <div class="creator-details">
+                    <h3>Creator</h3>
+                    <h3>Zyrox</h3>
+                </div>
+                <img src="/mama_chess.jpg" alt="">
+                <div class="creator-details">
+                    <h3>Css Designer</h3>
+                    <h3>Mama_Chess</h3>
                 </div>
             </div>
 
