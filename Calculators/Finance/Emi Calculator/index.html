@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emi Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pixelify+Sans:wght@400..700&family=Stack+Sans+Notch:wght@200..700&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Pixelify+Sans:wght@400..700&amp;family=Unbounded:wght@200..900&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/global.css">
+
+    <style>
+        .container{
+            position: relative;
+            height: fit-content;
+            /* min-width: 45vw; */
+            width: fit-content;
+            background-color: rgb(51,127,126);
+            border: none;
+            padding: 40px;
+            border-radius: 10px;
+            gap: 20px;
+        }
+
+        h1{
+            font-size: 3.8vw;
+            text-align: center;
+        }
+
+        p{
+            font-size: 1.1vw;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .emi{
+            gap: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        
+    
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container flex">
+        <div>      
+            <h1>Emi Calculator</h1>
+            <p>Calculate monthly emi loan and pay it</p>
+            <a href="/finance.html" class="back">←Back</a>
+        
+            <h2>Enter the details: </h2>
+            <div class="emi flex column">
+                <label for="loan">Loan Amount</label>
+                <input type="number" name="loan" id="loan" value="10000">
+
+                <label for="interest">Interest Rate%</label>
+                <input type="number" name="interest" id="interest" value="10">
+
+                <label for="tenure">Loan Tenure (Years)</label>
+                <input type="number" name="tenure" id="tenure" value="1">
+
+                <label for="emi">Equated Monthly Installment (EMI)</label>
+                <input type="number" name="emi" id="emi" readonly>
+
+                <label for="totalpayable">Total Amount Payable</label>
+                <input type="number" name="totalpayable" id="totalpayable" readonly>
+
+                <label for="totalinterest">Total Interest</label>
+                <input type="number" name="totalinterest" id="totalinterest" readonly>
+
+            </div>
+        </div>
+
+        <div class="second-container flex">
+            <div class="profile">
+                
+                <img src="/mama_chess.jpg" alt="">
+                <div class="creator-details">
+                    <h3>Creator</h3>
+                    <h3>Mama_Chess</h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        let loan = document.getElementById('loan');
+
+        let interest = document.getElementById('interest')
+
+        let emi = document.getElementById('emi')
+
+        let tpayable = document.getElementById('tpayable')
+    </script>
+</body>
+</html>

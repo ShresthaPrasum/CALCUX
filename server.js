@@ -74,6 +74,11 @@ app.get('/finance/vat-calculator', (req,res)=>{
     res.sendFile(path.join(__dirname, 'Calculators', 'Finance', 'VAT Calculator', 'index.html'));
 })
 
+app.get('/finance/emi-calculator', (req,res)=>{
+    res.sendFile(path.join(__dirname, 'Calculators', 'Finance', 'Emi Calculator', 'index.html'));
+})
+
+
 
 app.listen(port, ()=>{
     console.log("server running on http://localhost:5000");
