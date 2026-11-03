@@ -21,9 +21,10 @@ body{
     padding: 50px;
     border-radius: 10px;
     min-height: fit-content;
+    position: relative;
 }
 h1{
-    font-size: 38px;
+    font-size: 58px;
     font-weight: 800;
     text-align: center;
     margin-bottom: 20px;
@@ -64,4 +65,5 @@ button{
     top: 20px;
     left: 20px;
     text-decoration: none;
+    color: white;
 }
