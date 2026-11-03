@@ -63,7 +63,7 @@
 <hr>
 
 ## Live Demo
-- [here](https://calcux-calc.netlify.app/).
+- [here](https://mama-calcux.onrender.com/).
 
 <hr>
 
