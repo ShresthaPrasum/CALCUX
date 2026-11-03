@@ -16,32 +16,32 @@
 
             <h2>Fill up all the details and the answer will be displayed!</h2>
 
-            <label>Initial Velocity (v)</label> <br>
+            <label>Initial Velocity (m/s)</label> <br>
             <input type="number" step="0.01" id="init-vel">
             <br> <br>
 
-            <label>Angle of launch</label> <br>
+            <label>Angle of launch (deg)</label> <br>
             <input type="number" step="0.01" id="angle">
             <br> <br>
 
-            <label>Initial Height</label> <br>
+            <label>Initial Height (m)</label> <br>
             <input type="number" step="0.01" id="init-height">
             <br> <br>
 
 
-            <label>Maximum Height reached</label> <br>
-            <input type="number" step="0.01" id="max-height">
+            <label>Maximum Height reached (m)</label> <br>
+            <input type="number" step="0.01" id="max-height" readonly placeholder="Only for outputs!" class="outputss">
             <br> <br>
 
-            <label>Distance travelled</label> <br>
-            <input type="number" step="0.01" id="distance">
+            <label>Distance travelled (m)</label> <br>
+            <input type="number" step="0.01" id="distance" readonly placeholder="Only for outputs!" class="outputss">
             <br> <br>
 
-            <label>Time taken</label> <br>
-            <input type="number" step="0.01" id="time">
+            <label>Time taken (sec)</label> <br>
+            <input type="number" step="0.01" id="time" readonly placeholder="Only for outputs!" class="outputss">
             <br> <br>
 
-            <button type="submit">
+            <button id="submit">
                 Submit
             </button>
 

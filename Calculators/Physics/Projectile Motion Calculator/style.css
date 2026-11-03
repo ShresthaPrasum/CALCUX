@@ -44,8 +44,9 @@ input[type="number"]{
     border: none;
     border-radius: 6px;
     outline: none;
-    color: black;
+    /* color: black; */
     opacity: 1;
+    padding-left: 4px;
 }
 #app{
     margin-top: 7px;
@@ -57,4 +58,9 @@ button{
     border-radius: 10px;
     cursor: pointer;
     text-align: center;
+}
+.outputss{
+    color: rgb(59, 104, 252);
+    font-weight: 500;
+    font-size: 18px;
 }
