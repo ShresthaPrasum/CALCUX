@@ -1,21 +1,7 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Stack Sans Notch", sans-serif;
-    min-height: 100vh;
-    background: linear-gradient(45deg,rgb(219, 237, 249),rgb(166, 193, 195));
-}
 #container{
     position: relative;
-    min-height: 67vh;
-    width: 67vw;
+    min-height: fit-content;
+    width: fit-content;
     background-color: rgb(51, 127, 126);
     display: flex;
     flex-direction: column;
@@ -28,28 +14,23 @@ body{
     color: white;
     font-weight: bold;
     position: absolute;
-    top: 30px;
-    left: 30px;
+    top: 20px;
+    left: 20px;
 }
 h1{
     font-size: 2.8rem;
     text-align: center;
-    margin-bottom: 10px;
 }
 p{
     font-size: 18px;
 }
-#details{
-    text-align: center;
-}
+
 #calculator{
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 50vh;
-    width: 50vw;
+    height: fit-content;
     border-radius: 15px;
-    padding: 30px;
 }
 form{
     /* padding: 10px; */
@@ -69,7 +50,7 @@ input[type="number"],select{
     min-height: 36px;
     opacity: 1;
     text-align: left;
-    width: 90%;
+    width: 100%;
     font-size: 18px;
     line-height: 40px;
     font-weight: 500;
