@@ -58,3 +58,14 @@ document.querySelector('#height').addEventListener('input', ()=>{
     document.querySelector('#area-fourwalls-floor').value = areafloorceiling;
 
 })
+document.querySelector('#rate').addEventListener('input', ()=>{
+    let area = parseFloat(document.querySelector('#area-fourwalls').value);
+    let rate = parseFloat(document.querySelector('#rate').value);
+
+    if(!area){
+        alert("Please first calculate area!!");
+        return;
+    }
+    let cost = area * rate;
+    document.querySelector('#total-cost').value = cost;
+})
