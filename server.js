@@ -69,7 +69,7 @@ app.get('/finance/vat-calculator', (req,res)=>{
 })
 
 
-// app.listen(port, ()=>{
-//     console.log("server running on http://localhost:5000");
-// })
-module.exports = app;
+app.listen(port, ()=>{
+    console.log("server running on http://localhost:5000");
+})
+// module.exports = app;
