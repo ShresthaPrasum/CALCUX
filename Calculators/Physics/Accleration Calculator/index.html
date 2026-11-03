@@ -5,100 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accleration Calculator</title>
     <link rel="stylesheet" href="/Calculators/Physics/Accleration Calculator/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pixelify+Sans:wght@400..700&family=Stack+Sans+Notch:wght@200..700&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Pixelify+Sans:wght@400..700&amp;family=Unbounded:wght@200..900&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/global.css">
 </head>
 <body>
     
     <div id="container">
-        <a href="/physics" class="back" >←Back</a>
-        <h1>Accleration Calculator</h1>
-
-        <div class="choose">
-
-            <h3>Select one of these ways!</h3>
-
-            <input type="radio" name="choose" value="speed" checked id="speedd">
-            <label>Speed Difference</label>
-            <br><br>
-
-            <input type="radio" name="choose" value="distance" id="dista">
-            <label>Distance Travelled</label>
-            <br><br>
-
-            <input type="radio" name="choose" value="mass" id="mass">
-            <label>Mass and Volume</label>
-            <br><br>
-
-
-        </div>
-
-        <div id="calc">
-
-            <h3>Enter all the values for the result!</h3>
-
-            <div id="speed">
-
-            <label>Initial Speed</label> <br>
-            <input type="number" step="0.1" id="u">
-            <br> <br>
-
-            <label>Final speed</label> <br>
-            <input type="number" step="0.1" id="v">
-            <br> <br>
-
-            <label>Time</label> <br>
-            <input type="number" step="0.1" id="t">
-            <br><br>
-
-            <label>Accleration </label> <br>
-            <input type="number" step="0.1" id="a">
-            <br><br>
-
-            <button id="speed-btn">Submit!</button>
-
+        <div>
+            <a href="/physics" class="back" >←Back</a>
+            <h1>Accleration Calculator</h1>
+    
+            <div class="choose">
+    
+                <input type="radio" name="choose" value="speed" checked id="speedd">
+                <label>Speed Difference</label>
+                
+    
+                <input type="radio" name="choose" value="distance" id="dista">
+                <label>Distance Travelled</label>
+                
+    
+                <input type="radio" name="choose" value="mass" id="mass">
+                <label>Mass and Volume</label>
+                
+    
+    
             </div>
-
-            <div id="distance" class="hide">
-
-                <label>Speed</label> <br>
-                <input type="number" step="0.1" id="sp"> 
+    
+            <div id="calc">
+    
+                <div id="speed">
+    
+                <label>Initial Speed</label> <br>
+                <input type="number" step="0.1" id="u">
                 <br> <br>
-
-                <label>Distance</label> <br>
-                <input type="number" step="0.1" id="di">
+    
+                <label>Final speed</label> <br>
+                <input type="number" step="0.1" id="v">
                 <br> <br>
-
+    
                 <label>Time</label> <br>
-                <input type="number" step="0.1" id="ti"> 
-                <br> <br>
-
-                <label>Accleration</label> <br>
-                <input type="number" step="0.1" id="acc">
+                <input type="number" step="0.1" id="t">
                 <br><br>
-
-                <button id="distance-btn">Submit</button>
-
+    
+                <label>Accleration </label> <br>
+                <input type="number" step="0.1" id="a">
+                <br><br>
+    
+                <button id="speed-btn">Submit!</button>
+    
+                </div>
+    
+                <div id="distance" class="hide">
+    
+                    <label>Speed</label> <br>
+                    <input type="number" step="0.1" id="sp"> 
+                    <br> <br>
+    
+                    <label>Distance</label> <br>
+                    <input type="number" step="0.1" id="di">
+                    <br> <br>
+    
+                    <label>Time</label> <br>
+                    <input type="number" step="0.1" id="ti"> 
+                    <br> <br>
+    
+                    <label>Accleration</label> <br>
+                    <input type="number" step="0.1" id="acc">
+                    <br><br>
+    
+                    <button id="distance-btn">Submit</button>
+    
+                </div>
+    
+                <div id="force" class="hide">
+    
+                    <label>Mass </label> <br>
+                    <input type="number" step="0.1" id="masss">
+                    <br><br>
+    
+                    <label>Force </label> <br>
+                    <input type="number" step="0.1" id="forcee">
+                    <br> <br>
+    
+                    <label>Accleration</label> <br>
+                    <input type="number" step="0.1" id="accleration">
+                    <br><br>
+    
+                    <button id="force-btn">Submit</button>
+    
+                </div>
+    
             </div>
+            
+        </div>
 
-            <div id="force" class="hide">
-
-                <label>Mass </label> <br>
-                <input type="number" step="0.1" id="masss">
-                <br><br>
-
-                <label>Force </label> <br>
-                <input type="number" step="0.1" id="forcee">
-                <br> <br>
-
-                <label>Accleration</label> <br>
-                <input type="number" step="0.1" id="accleration">
-                <br><br>
-
-                <button id="force-btn">Submit</button>
-
+        <div class="second-container flex">
+            <div class="profile">
+                <img src="/zyrox.jpg" alt="zyrox.jpg">
+                <div class="creator-details">
+                    <h3>Creator</h3>
+                    <h3>Zyrox</h3>
+                </div>
+                <img src="/mama_chess.jpg" alt="">
+                <div class="creator-details">
+                    <h3>Css Designer</h3>
+                    <h3>Mama_Chess</h3>
+                </div>
             </div>
 
         </div>
-        
     </div>
 
     <script src="/Calculators/Physics/Accleration Calculator/script.js"></script>

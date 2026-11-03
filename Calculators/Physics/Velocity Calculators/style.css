@@ -1,24 +1,11 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Stack Sans Notch", sans-serif;
-    min-height: 100vh;
-    background: linear-gradient(45deg,rgb(219, 237, 249),rgb(166, 193, 195));
-}
+
 #container{
     position: relative;
     min-height: 67vh;
-    width: 67vw;
+    min-width: fit-content;
     background-color: rgb(51, 127, 126);
     display: flex;
-    flex-direction: column;
+    gap: 20px;
     border: none;
     padding: 40px;
     border-radius: 10px;
@@ -34,6 +21,7 @@ body{
 #distancee{
     margin: 20px 0px;
 }
+
 h1{
     font-size: 56px;
     font-weight: 800;
@@ -44,7 +32,7 @@ h1{
     margin: 5px 0;
 }
 #radios{
-    margin-top: 10px;
+    margin: 10px 0px;
 }
 label{
     font-weight: bold;
@@ -58,7 +46,7 @@ input[type="number"],select{
     min-height: 36px;
     opacity: 1;
     text-align: left;
-    width: 90%;
+    width: 100%;
     font-size: 18px;
     line-height: 40px;
     font-weight: 500;
@@ -72,6 +60,7 @@ input[type="number"],select{
     display: none;
 }
 button{
-    width: 110px;
-    height: 30px;
+    padding: 12px 30px;
+    border-radius: 8px;
+    border: none;
 }

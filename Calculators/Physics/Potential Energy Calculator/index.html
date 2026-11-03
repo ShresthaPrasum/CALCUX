@@ -7,27 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pixelify+Sans:wght@400..700&family=Stack+Sans+Notch:wght@200..700&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Pixelify+Sans:wght@400..700&amp;family=Unbounded:wght@200..900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/global.css">
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: "Stack Sans Notch", sans-serif;
-            height: 100vh;
-            color: white;
-            background: linear-gradient(45deg,rgb(219, 237, 249),rgb(166, 193, 195));
-        }
-
         #container{
             display: flex;
-            flex-direction: column;
             position: relative;
             height: fit-content;
             max-width: 70vw;
@@ -36,24 +21,17 @@
             border: none;
             padding: 40px;
             border-radius: 10px;
+            gap: 20px;
         }
-
-        .back{
-            position: absolute;
-            top: 30px;
-            left: 30px;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-        }
+        
 
         h1{
-            font-size: clamp(2rem, 3.8vw, 3.5rem);
+            font-size: 3.8vw;
             text-align: center;
         }
 
         p{
-            font-size: clamp(0.7rem, 1.1vw, 1.8rem);
+            font-size: 1.1vw;
             text-align: center;
             margin-bottom: 8px;
         }
@@ -105,35 +83,54 @@
 </head>
 <body>
     <div id="container">
-        <h1>Potential Energy</h1>
-        <p> Calculate the motion of the object, speed(m/s2), momentum, gravity(g) and pressure(kg/m2).</p>
-        <a href="/physics" class="back">←Back</a>
+        <div>
 
-        <div class="potential-energy">
-            <label for="gravity">Acceleration due to gravity</label>
-            <input type="number" name="gravity" id="gravity" value="9.80665">
+            <h1>Potential Energy</h1>
+            <p> Calculate the motion of the object, speed(m/s2), momentum, gravity(g) and pressure(kg/m2).</p>
+            <a href="/physics" class="back">←Back</a>
+    
+            <div class="potential-energy">
+                <label for="gravity">Acceleration due to gravity</label>
+                <input type="number" name="gravity" id="gravity" value="9.80665">
+    
+                <label for="mass">Mass</label>
+                <div class="inputSection">
+                    <input type="number" name="mass" id="mass">
+                    <select name="unit" class="unit" id="massUnit">
+                        <option value="gram">Gram(g)</option>
+                        <option value="kilogram">KiloGram(kg)</option>
+                    </select>
+                </div>
+    
+                <label for="Height">Height</label>
+                <div class="inputSection">
+                    <input type="number" name="height" id="height">
+                    <select name="unit" class="unit" id="heightUnit">
+                        <option value="meter">Meter(m)</option>
+                        <option value="kilometer">KiloMeter(km)</option>
+                    </select>
+                </div>
+    
+                <label for="potential-energy">Potential Energy</label>
+                <input type="text" name="potential-energy" id="potential-energy" readonly>
+                
+            </div>
+        </div>
 
-            <label for="mass">Mass</label>
-            <div class="inputSection">
-                <input type="number" name="mass" id="mass">
-                <select name="unit" class="unit" id="massUnit">
-                    <option value="gram">Gram(g)</option>
-                    <option value="kilogram">KiloGram(kg)</option>
-                </select>
+        <div class="second-container flex">
+            <div class="profile">
+                <img src="/zyrox.jpg" alt="zyrox.jpg">
+                <div class="creator-details">
+                    <h3>Creator</h3>
+                    <h3>Zyrox</h3>
+                </div>
+                <img src="/mama_chess.jpg" alt="">
+                <div class="creator-details">
+                    <h3>Css Designer</h3>
+                    <h3>Mama_Chess</h3>
+                </div>
             </div>
 
-            <label for="Height">Height</label>
-            <div class="inputSection">
-                <input type="number" name="height" id="height">
-                <select name="unit" class="unit" id="heightUnit">
-                    <option value="meter">Meter(m)</option>
-                    <option value="kilometer">KiloMeter(km)</option>
-                </select>
-            </div>
-
-            <label for="potential-energy">Potential Energy</label>
-            <input type="text" name="potential-energy" id="potential-energy" readonly>
-            
         </div>
     </div>
 

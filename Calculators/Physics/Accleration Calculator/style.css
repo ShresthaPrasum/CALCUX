@@ -1,28 +1,13 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Stack Sans Notch", sans-serif;
-    min-height: 100vh;
-    background: linear-gradient(45deg,rgb(219, 237, 249),rgb(166, 193, 195));
-}
 #container{
     position: relative;
-    min-height: fit-content;
-    width: 67vw;
     background-color: rgb(51, 127, 126);
     display: flex;
-    flex-direction: column;
     border: none;
+    gap: 30px;
     padding: 40px;
     border-radius: 10px;
 }
+
 .back{
     text-decoration: none;
     color: white;
@@ -33,7 +18,7 @@ body{
 }
 
 h1{
-    font-size: clamp(35px, 3.5vw, 4vw);
+    font-size: 3vw;
     font-weight: 800;
     text-align: center;
     letter-spacing: -1px;
@@ -41,7 +26,7 @@ h1{
 }
 
 h3{
-    font-size: clamp(20px, 2vw, 2vw);
+    font-size: 2vw;
     font-weight: 670;
     margin-bottom: 10px;
 }
@@ -55,7 +40,7 @@ input[type="number"], select{
     text-indent: 10px;
     opacity: 1;
     text-align: left;
-    width: 90%;
+    width: 100%;
     font-size: 18px;
     line-height: 40px;
     font-weight: 500;
@@ -66,7 +51,7 @@ input[type="number"], select{
 }
 
 #calc{
-    margin-top: 6px;
+    margin-top: 10px;
 }
 
 .hide{
