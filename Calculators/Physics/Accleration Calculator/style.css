@@ -8,6 +8,14 @@
     border-radius: 10px;
 }
 
+.back{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
 
 h1{
     font-size: 3vw;
@@ -28,7 +36,7 @@ label{
 
 input[type="number"], select{
     min-height: 30px;
-
+    color: black;
     text-indent: 10px;
     opacity: 1;
     text-align: left;

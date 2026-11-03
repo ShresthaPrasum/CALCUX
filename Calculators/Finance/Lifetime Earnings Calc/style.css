@@ -1,24 +1,46 @@
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Stack Sans Notch", sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(45deg,rgb(219, 237, 249),rgb(166, 193, 195));
+}
+.back{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
 
 #container{
     position: relative;
     min-height: 67vh;
-    width: 45vw;
+    width: 50vw;
     background-color: rgb(51, 127, 126);
     display: flex;
+    flex-direction: column;
     border: none;
-    padding: 40px;
-    gap: 30px;
+    padding: 40px   ;
     border-radius: 10px;
 }
 h1{
-    font-size: 2.8vw;
+    font-size: 56px;
     font-weight: 800;
     text-align: center;
     margin-bottom: 10px;
 }
 input[type="number"], select{
     height: 35px;
+    color: black;
     text-indent: 10px;
     opacity: 1;
     text-align: left;
@@ -39,7 +61,7 @@ label{
 }
 
 h2{
-    font-size: 1.6vw;
+    font-size: 36px;
     margin-bottom: 15px;
 }
 button{
@@ -47,4 +69,5 @@ button{
     border: none;
     border-radius: 15px;
     font-weight: bold;
+    margin-bottom: 15px;
 }
