@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Probability Calculator (3 events)</title>
     <link rel="stylesheet" href="/Calculators/Maths/Probability Calculator/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pixelify+Sans:wght@400..700&family=Stack+Sans+Notch:wght@200..700&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Pixelify+Sans:wght@400..700&amp;family=Unbounded:wght@200..900&amp;display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/global.css">
 </head>
 <body>
 
@@ -19,45 +25,47 @@
         </h1>
 
         <div id="app">
+            <div>
+                <h2>Enter the details:</h2>
+    
+                <label>P(A)</label> <br>
+                <input type="number" id="pa" step="0.01" placeholder="In %">
+                <br> <br>
+    
+                <label>P(B)</label> <br>
+                <input type="number" id="pb" step="0.01" placeholder="In %">
+                <br> <br>
+    
+                <label>P(C)</label> <br>
+                <input type="number" id="pc" step="0.01" placeholder="In %">
+            </div>
 
-            <h2>Fill up all the infos asked:</h2>
+            <div>
 
-            <label>P(A)</label> <br>
-            <input type="number" id="pa" step="0.01" placeholder="In %">
-            <br> <br>
-
-            <label>P(B)</label> <br>
-            <input type="number" id="pb" step="0.01" placeholder="In %">
-            <br> <br>
-
-            <label>P(C)</label> <br>
-            <input type="number" id="pc" step="0.01" placeholder="In %">
-            <br> <br>
-
-            <br> <br>
-            <h2>Probability:</h2>
-
-            <label>For all 3</label> <br>
-            <input type="number" id="all" placeholder="Read only" readonly>
-            <br> <br>
-
-            <label>At Least One</label> <br>
-            <input type="number" id="atleastone" placeholder="Read Only" readonly>
-            <br> <br>
-
-            <label>None of them</label> <br>
-            <input type="number" id="none" placeholder="Read Only" readonly>
-            <br> <br>
-
-            <label>Exactly One</label> <br>
-            <input type="number" id="exactly-one" placeholder="Read Only" readonly>
-            <br> <br>
-
-            <button id="submit">
-                Submit!
-            </button>
-
+                <h2>Probability:</h2>
+    
+                <label>For all 3</label> <br>
+                <input type="number" id="all" placeholder="Read only" readonly>
+                <br> <br>
+    
+                <label>At Least One</label> <br>
+                <input type="number" id="atleastone" placeholder="Read Only" readonly>
+                <br> <br>
+    
+                <label>None of them</label> <br>
+                <input type="number" id="none" placeholder="Read Only" readonly>
+                <br> <br>
+    
+                <label>Exactly One</label> <br>
+                <input type="number" id="exactly-one" placeholder="Read Only" readonly>
+                <br> <br>
+            </div>
+    
         </div>
+
+        <button id="submit">
+            Submit!
+        </button>
 
     </div>
     

@@ -8,31 +8,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pixelify+Sans:wght@400..700&family=Stack+Sans+Notch:wght@200..700&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Pixelify+Sans:wght@400..700&amp;family=Unbounded:wght@200..900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/global.css">
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body{
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: "Stack Sans Notch", sans-serif;
-            min-height: 100vh;
-            background: linear-gradient(45deg,rgb(219, 237, 249),rgb(166, 193, 195));
-        }
 
         #container{
+            display: flex;
             position: relative;
             background-color: rgb(51,127,126);
             min-width: fit-content;
             min-height: fit-content;
             padding: 40px;
             border-radius: 10px;
+            gap: 20px;
         }
+
 
         .back{
             position: absolute;
@@ -54,14 +43,10 @@
             margin-bottom: 1rem;
         }
         .lcm{
-            display: flex;
-            flex-direction: column;
             gap: 0.5rem;
             margin-bottom: 1.2rem;
         }
-        #number-input{
-            display: flex;
-            align-self: flex-start;
+       #number-input{
             text-indent: 10px;
             color: black;
             min-height: 36px;
@@ -76,7 +61,7 @@
             border-style: solid;
             outline: none;
         }
-
+        
         #calc-btn{
             padding: 0.8rem 1rem;
             border: none;
@@ -96,50 +81,44 @@
             background-color: rgb(39 107 106);
             border-radius: 8px;
         }
-
-        /* .mode{
-            display: flex;
-            justify-content: center;
-            gap: 2px;
-            align-items: center;
-            margin-bottom: 0.5rem;
-        }
-
-        .mode input[type="radio"]{
-            accent-color: #1a6169;
-            width: 20px;
-            height: 20px;
-        }
-
-        .mode label{
-            font-size: 1.2rem;
-            margin-right: 10px;
-        } */
     </style>
 </head>
 <body>
     <div id="container">
-        <h1>LCM AND HCF</h1>
-        <p>Enter the numbers separated by commas to calculate the LCM and HCF</p>
-        <a href="/math" class="back" >←Back</a>
-
-        <div class="lcm">
-            <!-- <div class="mode">
-                <input type="radio" name="select" class="select" checked id="LCM">
-                <label for="LCM">LCM(Lowest Common Multiple)</label>
-
-                <input type="radio" name="select" class="select" id="HCF"> 
-                <label for="HCF">HCF(Highest Common Factor)</label>
-            </div> -->
-            <label for="number-input">Numbers:</label>
-            <input type="text" id="number-input" placeholder="eg: 12, 15, 20, 30">
+        <div>
+            <h1>LCM AND HCF</h1>
+            <p>Enter the numbers separated by commas to calculate the LCM and HCF</p>
+            <a href="/math" class="back" >←Back</a>
+    
+            <div class="lcm flex column">
+                <!-- <div class="mode">
+                    <input type="radio" name="select" class="select" checked id="LCM">
+                    <label for="LCM">LCM(Lowest Common Multiple)</label>
+    
+                    <input type="radio" name="select" class="select" id="HCF"> 
+                    <label for="HCF">HCF(Highest Common Factor)</label>
+                </div> -->
+                <label for="number-input">Numbers:</label>
+                <input type="text" id="number-input" placeholder="eg: 12, 15, 20, 30">
+            </div>
+    
+    
+            <div class="result-section">
+                <div class="result">
+                    Result: --
+                </div>
+            </div>
         </div>
 
-
-        <div class="result-section">
-            <div class="result">
-                Result: --
+        <div class="second-container flex ai">
+            <div class="profile">
+                <img src="/mama_chess.jpg" alt="zyrox.jpg">
+                <div class="creator-details">
+                    <h3>Creator</h3>
+                    <h3>Mama_Chess</h3>
+                </div>
             </div>
+
         </div>
     </div>
     <script>
