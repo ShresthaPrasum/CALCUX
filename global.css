@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Stack Sans Notch", sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(45deg,rgb(219, 237, 249),rgb(166, 193, 195));
+}
+
+.second-container{
+    display: flex;
+    align-items: flex-start;
+    /* flex-direction: column; */
+}
+
+.profile img{
+    width: 100px;
+}
+
+.flex{
+    display: flex;
+}
+
+.align-item{
+    align-items: center;
+}
+
+.justify-content{
+    justify-content: center;
+}
+
+.grid{
+    display: grid;
+}
+
+.white{
+    color: white;
+}
+
+
+
