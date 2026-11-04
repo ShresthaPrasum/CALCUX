@@ -315,5 +315,65 @@
             </div>
         </div>
     </div>
+
+    <script>
+        let genderInput = document.getElementById('gender')
+
+    let ageInput = document.getElementById('age')
+
+
+        let heightFeet = document.getElementById('heightfeet')
+
+        let heightInch = document.getElementById('heightinch');
+
+        let weightInput = document.getElementById('weight');
+
+        let carbodydrateO = document.getElementById('carbodydrate')
+
+        let proteinOutput = document.getElementById('protein');
+
+        let fiberOutput = document.getElementById('fiber');
+
+        let fatOutput = document.getElementById('fat');
+
+        let linoleicOutput = document.getElementById('linoleic')
+
+        let waterOutput = document.getElementById('water');
+
+        let inputs = document.querySelectorAll('input')
+
+        inputs.forEach(e=>{
+            e.addEventListener('input',()=>{
+                calculateNutrient();
+            })
+        })
+
+        function calculateNutrient(){
+            let gender = genderInput.value;
+            let age = parseFloat(ageInput.value);
+
+            let feet= parseFloat(heightFeet.value)
+
+            let inches = parseFloat(heightInch.value)
+
+            let weight = parseFloat(weightInput.value);
+
+
+            let totalInch = (feet*12) + inches;
+
+            let heightCm = totalInches * 2.54;
+
+            let EER =0;
+
+            if(gender === 'male'){
+                EER = 19.12 + (3.68 * age) + (8.62* heightCm) + (20.28*weight) + 20; 
+            }
+
+            else{
+                EER = 263.4 - (54.8 * age) + (15.5* heightCm) + (30.8 * weightKg) + 20;
+            }
+
+        }
+    </script>
 </body>
 </html>
