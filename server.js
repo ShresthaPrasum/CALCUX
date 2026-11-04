@@ -77,6 +77,9 @@ app.get('/finance/vat-calculator', (req,res)=>{
 app.get('/finance/emi-calculator', (req,res)=>{
     res.sendFile(path.join(__dirname, 'Calculators', 'Finance', 'Emi Calculator', 'index.html'));
 })
+app.get('/finance/discount-calculator', (req,res)=>{
+    res.sendFile(path.join(__dirname, 'Calculators', 'Finance', 'Discount Calculator', 'index.html'));
+})
 
 
 
