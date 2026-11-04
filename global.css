@@ -44,8 +44,9 @@ button{
 
 }
 
-.container{
+.container, #container{
     display: flex;
+    flex-direction: column;
     position: relative;
     background-color: rgb(51,127,126);
     border: none;

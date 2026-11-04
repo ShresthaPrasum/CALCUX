@@ -6,8 +6,50 @@
     <title>Gallons Calculator (US Gallons)</title>
     <link rel="stylesheet" href="/Calculators/Construction/Gallons Calculator/style.css">
     <link rel="stylesheet" href="/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pixelify+Sans:wght@400..700&family=Stack+Sans+Notch:wght@200..700&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Pixelify+Sans:wght@400..700&amp;family=Unbounded:wght@200..900&amp;display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <div id="container">
+
+        <a href="/construction" class="back">
+            Back
+        </a>
+
+        <h1>Gallons Calculator</h1>
+        <p>If you are having trouble converting, you can use our <a href="/math/conversion"> conversion calculator </a> too!</p>
+
+        <div id="app">
+
+            <h2>Enter all the details:</h2>
+
+            <div id="calc">
+
+                <label>Area in sq. ft:</label> <br>
+                <input type="number" step="0.01" id="area">
+                <br> <br>
+
+                <label>Height (ft):</label> <br>
+                <input type="number" step="0.01" id="height">
+                <br> <br>
+
+                <label>Volume (US GAL):</label> <br>
+                <input type="number" step="0.01" id="vol-gal">
+                <br> <br>
+
+                <label>Gallons per sq ft:</label> <br>
+                <input type="number"  id="gal-sq" step="0.01">
+                <br> <br>
+ 
+            </div>
+
+        </div>
+
+    </div>
     
     <script src="/Calculators/Construction/Gallons Calculator/script.js"></script>
 </body>
