@@ -95,6 +95,13 @@ app.get('/finance/fuel-cost', (req,res)=>{
 app.get('/math/mass-converter', (req,res)=>{
     res.sendFile(path.join(__dirname, 'Calculators', 'Maths', 'Mass Unit Converter', 'index.html'));
 })
+app.get('/health/nutrient-calculator', (req,res)=>{
+    res.sendFile(path.join(__dirname, 'Calculators', 'Health', 'Nutrient Calculator', 'index.html'));
+})
+
+app.get('/health', (req,res)=>{
+    res.sendFile(path.join(__dirname,  'health.html'));
+})
 
 
 app.listen(port, ()=>{

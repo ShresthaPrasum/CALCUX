@@ -7,10 +7,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pixelify+Sans:wght@400..700" rel="stylesheet">
-    <link rel="stylesheet" href="/global.css">
-    <style>
-       
+ <style>
+       *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body{
+            display: flex;
+            align-items: center;
+            color: white;
+            justify-content: center;
             font-family: "Pixelify Sans", sans-serif;
             position: relative;
             background: linear-gradient(45deg,rgb(22, 22, 22),rgb(0, 0, 0));
@@ -107,6 +114,8 @@
         }
 
         .input{
+            display: flex;
+            align-items: center;
             justify-content: space-between;
             padding: 20px;
             gap: 20px;
@@ -151,6 +160,15 @@
             padding: 10px;
             font-size: 14px;
         }
+
+        .back{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -163,7 +181,7 @@
                 Calculate your weight and jump height across the solar system
             </p>
 
-            <div class="input flex ai">
+            <div class="input">
                 <div class="input-group">
                     <label for="weight">Weight in Earth (kg):</label>
                     <br>
