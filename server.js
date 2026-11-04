@@ -91,6 +91,9 @@ app.get('/construction/four-walls', (req,res)=>{
 app.get('/finance/fuel-cost', (req,res)=>{
     res.sendFile(path.join(__dirname, 'Calculators', 'Finance', 'Fuel Cost', 'index.html'));
 })
+app.get('/construction/weight-calculator', (req,res)=>{
+    res.sendFile(path.join(__dirname, 'Calculators', 'Construction', 'Size to Weight Calculator', 'index.html'))
+})
 
 app.get('/math/mass-converter', (req,res)=>{
     res.sendFile(path.join(__dirname, 'Calculators', 'Maths', 'Mass Unit Converter', 'index.html'));

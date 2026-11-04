@@ -38,3 +38,20 @@ document.querySelector('#height').addEventListener('input', ()=>{
     let volume = length * breadth * height;
     document.querySelector('#volume').value = volume;
 })
+
+document.querySelector('#density').addEventListener('input', ()=>{
+    let density = parseFloat(document.querySelector('#density').value);
+    let volume = parseFloat(document.querySelector('#volume').value);
+
+    if(!volume){
+        alert("Please find the volume first");
+        return;
+    }
+    let mass = density * volume;
+    let weight = mass * 9.8;
+    console.log(mass);
+    console.log(weight);
+
+    document.querySelector('#mass').value = mass;
+    document.querySelector('#weight').value = weight;
+})
