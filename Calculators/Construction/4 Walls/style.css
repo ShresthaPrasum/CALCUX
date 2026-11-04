@@ -25,6 +25,7 @@ body{
     border: none;
     border-radius: 10px;
     padding: 50px;
+    position: relative;
 }
 h1{
     font-size: 48px;
@@ -53,4 +54,11 @@ label{
 p{
     margin-bottom: 5px;
     margin-top: -5px;
+}
+.back{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+    color: white;
 }

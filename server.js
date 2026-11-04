@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const port = 5000;
 const path = require('path');
+const { traceDeprecation } = require('process');
 
 app.use(express.static(__dirname));
 
@@ -78,6 +79,12 @@ app.get('/finance/emi-calculator', (req,res)=>{
     res.sendFile(path.join(__dirname, 'Calculators', 'Finance', 'Emi Calculator', 'index.html'));
 })
 
+app.get('/construction', (req,res)=>{
+    res.sendFile(path.join(__dirname, 'construction.html'));
+})
+app.get('/construction/four-walls', (req,res)=>{
+    res.sendFile(path.join(__dirname, 'Calculators', 'Construction', '4 Walls', 'index.html'));
+})
 
 
 app.listen(port, ()=>{
