@@ -16,7 +16,12 @@
             box-sizing: border-box;
         }
         body{
-              font-family: "Righteous", sans-serif;
+            display: flex;
+            /* align-items: center; */
+            min-height: 100vh;
+            color: white;
+            justify-content: center;
+            font-family: "Righteous", sans-serif;
             position: relative;
             background: linear-gradient(45deg,rgb(22, 22, 22),rgb(0, 0, 0));
         }
@@ -47,6 +52,7 @@
         .header h1{
             font-size: 5vw;
             margin-top: 20px;
+            margin-bottom: 6px;
             font-weight: 100;
             color: rgb(0,255,255);
             text-shadow: 0px 0px 10px aqua;
@@ -54,10 +60,83 @@
 
         .header p{
             font-size: 1vw;
-            color: aqua;
+            color: rgb(0, 183, 255);
             margin-bottom: 20px;
             text-shadow: 0px 0px 7px aqua;
         }
+
+        .input{
+            display: flex;
+            gap: 20px;
+            margin-top: 6px;
+        }
+
+        input, select {
+            padding: 12px 10px;
+            background-color: rgb(0, 6, 9);
+            color: white;
+            width: 100%;
+            font-size: 1rem;
+            border: 1px solid grey;
+            border-radius: 8px;
+        }
+
+        #weight{
+            grid: 2;
+        }
+
+        .input-group{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label{
+            font-size: 1rem;
+            color: aqua;
+            margin-bottom: 5px;
+        }
+
+        .nutrient-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            width: 100%;
+        }
+
+        .nutrient-card{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid rgba(0, 0, 0, 0.115);
+            border-radius: 12px;
+            padding: 15px;
+            overflow: hidden;
+            background-color: rgb(7, 7, 7);
+        }
+
+        .nutrient-data{
+            display: flex;
+            background-color: rgba(0, 0, 0, 0.452);
+            border-radius: 12px;
+            flex-direction: column;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: fit-content;
+            margin-top: 15px;
+        }
+
+        .nutrient-data p{
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            gap: 6px;
+        }
+
+        .data-value{
+            color: rgb(0, 204, 255);
+            text-shadow:  0px 0px 7px aqua;
+            overflow-x:auto;
+        }
+    
 
         
     </style>
@@ -72,9 +151,152 @@
                 Calculate your daily macro nutrients intake that your body needs!
             </p>
 
-            <div class="input flex ai">
+            <div class="input">
                 <div class="input-group">
-                    <label for=""></label>
+                    <label for="gender">Gender</label>
+                    <select name="gender" id="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+
+                    <label for="age">Age(years)</label>
+                    <input type="number" id="age" name="age" value="15">
+                </div>
+
+                <div class="input-group">
+                    <label for="heightfeet">Height(Feet)</label>
+                    <input type="number" id="heightfeet" name="heightfeet" value="5">   
+                </div>
+
+                <div class="input-group">
+                    <label for="heightinch">Height(Inch)</label>
+                    <input type="number" name="heightinch" id="heightinch" value="10">
+                </div>
+
+                <div class="input-group">
+                    <label for="weight">Weight(kg)</label>
+                    <input type="number" name="weight" id="weight">
+                </div>
+
+                </div>
+        </div>
+
+        <div class="nutrient-grid">
+            <div class="nutrient-card">
+                <div class="card-first flex column ai jc">
+                    <img src="" alt="">
+                    <h2>Carbohydrate</h2>
+                </div>
+
+                <div class="nutrient-data">
+                    <p>
+                        <span class="data-name">
+                            Gram:
+                        </span>
+
+                        <span class="data-value" id="carbohydrate">
+                            60kg
+                        </span>
+                    </p>
+        
+                </div>
+            </div>
+            <div class="nutrient-card">
+                <div class="card-first flex column ai jc">
+                    <img src="" alt="">
+                    <h2>Protein</h2>
+                </div>
+
+                <div class="nutrient-data">
+                    <p>
+                        <span class="data-name">
+                            Gram:
+                        </span>
+
+                        <span class="data-value" id="protein">
+                            60kg
+                        </span>
+                    </p>
+        
+                </div>
+            </div>
+            <div class="nutrient-card">
+                <div class="card-first flex column ai jc">
+                    <img src="" alt="">
+                    <h2>Fiber</h2>
+                </div>
+
+                <div class="nutrient-data">
+                    <p>
+                        <span class="data-name">
+                            Gram:
+                        </span>
+
+                        <span class="data-value" id="fiber">
+                            60kg
+                        </span>
+                    </p>
+        
+                </div>
+            </div>
+            <div class="nutrient-card">
+                <div class="card-first flex column ai jc">
+                    <img src="" alt="">
+                    <h2>Fat</h2>
+                </div>
+
+                <div class="nutrient-data">
+                    <p>
+                        <span class="data-name">
+                            Gram:
+                        </span>
+
+                        <span class="data-value" id="fat">
+                            60kg
+                        </span>
+                    </p>
+        
+                </div>
+            </div>
+            <div class="nutrient-card">
+                <div class="card-first flex column ai jc">
+                    <img src="" alt="">
+                    <h2>Linoleic Acid</h2>
+                </div>
+
+                <div class="nutrient-data">
+                    <p>
+                        <span class="data-name">
+                            Gram:
+                        </span>
+
+                        <span class="data-value" id="linoleic">
+                            60kg
+                        </span>
+                    </p>
+        
+                </div>
+            </div>
+            <div class="nutrient-card">
+                <div class="card-first flex column ai jc">
+                    <img src="" alt="">
+                    <h2>Water</h2>
+                </div>
+
+                <div class="nutrient-data">
+                    <p>
+                        <span class="data-name">
+                            Litre:
+                        </span>
+
+                        <span class="data-value" id="water">
+                            60kg
+                        </span>
+                    </p>
+        
                 </div>
             </div>
         </div>
