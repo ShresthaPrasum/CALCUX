@@ -63,9 +63,21 @@ document.querySelector('#rate').addEventListener('input', ()=>{
     let rate = parseFloat(document.querySelector('#rate').value);
 
     if(!area){
-        alert("Please first calculate area!!");
+        alert("Please calculate area first!!");
         return;
     }
     let cost = area * rate;
     document.querySelector('#total-cost').value = cost;
+})
+document.querySelector('#ratee').addEventListener('input', ()=>{
+    let area_floor = parseFloat(document.querySelector('#area-floor').value);
+    let rate = parseFloat(document.querySelector('#ratee').value);
+
+    if(!area_floor){
+        alert("Please calculate the area of floor first!");
+        return;
+    }
+
+    let totalcost = area_floor * rate;
+    document.querySelector('#cost-carpet').value = totalcost;
 })
