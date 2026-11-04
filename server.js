@@ -19,8 +19,8 @@ app.get('/math/goal-calculator', (req,res)=>{
 app.get('/math/lcm-calculator', (req,res)=>{
     res.sendFile(path.join(__dirname, 'Calculators', 'Maths', 'LCM Calculator', 'index.html'));
 })
-app.get('/math/conversion',(req,res)=>{
-    res.sendFile(path.join(__dirname, 'Calculators', 'Maths', 'Metric, Imperial Unit Conversion', 'index.html'))
+app.get('/math/distance-converter',(req,res)=>{
+    res.sendFile(path.join(__dirname, 'Calculators', 'Maths', 'Distance Unit Converter', 'index.html'))
 })
 app.get('/math/percentage-change', (req,res)=>{
     res.sendFile(path.join(__dirname,'Calculators', 'Maths', 'Percentage Change Calculator', 'index.html'));
@@ -87,6 +87,13 @@ app.get('/construction', (req,res)=>{
 })
 app.get('/construction/four-walls', (req,res)=>{
     res.sendFile(path.join(__dirname, 'Calculators', 'Construction', '4 Walls', 'index.html'));
+})
+app.get('/finance/fuel-cost', (req,res)=>{
+    res.sendFile(path.join(__dirname, 'Calculators', 'Finance', 'Fuel Cost', 'index.html'));
+})
+
+app.get('/math/mass-converter', (req,res)=>{
+    res.sendFile(path.join(__dirname, 'Calculators', 'Maths', 'Mass Unit Converter', 'index.html'));
 })
 
 

@@ -18,6 +18,10 @@ h1{
     text-align: center;
 }
 
+h2{
+    font-size: 1.7vw;
+}
+
 p{
     font-size: 1.1vw;
     text-align: center;
@@ -83,6 +87,7 @@ img{
     border-radius: 12px;
 }
 
+
 .second-container{
     display: flex;
     align-items: flex-start;
@@ -132,5 +137,7 @@ img{
 .border{
     border: 1px solid ;
 }
+
+
 
 

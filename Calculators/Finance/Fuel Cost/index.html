@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Cost Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pixelify+Sans:wght@400..700&family=Stack+Sans+Notch:wght@200..700&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Pixelify+Sans:wght@400..700&amp;family=Unbounded:wght@200..900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/global.css">
+    <style>
+        .container div{
+            display: flex;
+            flex-direction: column;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div>
+            <a href="/finance" class="back">←Back</a>
+            <h1>Fuel Cost Calculator</h1>
+
+            <div class="fuel">
+                <h2>Enter the details: </h2>
+                <label for="distance">Total Distance(km)</label>
+                <input type="number" name="distance" id="distance" min="0" value="120">
+
+                <label for="mileage">Vehicle Mileage(km/l)</label>
+                <input type="number" name="mileage" id="mileage" value="45">
+
+                <label for="fuel-price">Fuel Price(per litre)</label>
+                <input type="number" name="fuel-price" id="fuel-price" min="0" value="140">
+
+                <label for="fuel-required">Fuel Required</label>
+                <input type="number" name="fuel-required" id="fuel-required" readonly class="result">
+
+                <label for="total-cost">Total Cost</label>
+                <input type="number" name="total-cost" id="total-cost" readonly class="result">
+            </div>
+        </div>
+        
+        <div class="second-container flex">
+            <div class="profile">
+                
+                <img src="/mama_chess.jpg" alt="">
+                <div class="creator-details">
+                    <h3>Creator</h3>
+                    <h3>Mama_Chess</h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        let distance = document.getElementById('distance');
+
+        let mileage = document.getElementById('mileage')
+
+        let fPrice = document.getElementById('fuel-price')
+
+        let fRequired = document.getElementById('fuel-required')
+
+        let totalCost = document.getElementById('total-cost')
+
+        let inputs= document.querySelectorAll('input')
+
+        inputs.forEach(element => {
+            element.addEventListener('input', ()=>{
+                fuelCost();
+            })
+        });
+
+
+        function fuelCost(){
+            let d = parseFloat(distance.value);
+
+            let m = parseFloat(mileage.value);
+
+            let p = parseFloat(fPrice.value);
+
+            let totalFuel = d/m;
+
+            let tCost = totalFuel * p;
+
+
+            fRequired.value = totalFuel.toFixed(2);
+
+            totalCost.value = tCost.toFixed(2);
+        }
+
+        fuelCost();
+    </script>
+</body>
+</html>
