@@ -7,6 +7,47 @@
     <link rel="stylesheet" href="/Calculators/Construction/Size to Weight Calculator/style.css">
 </head>
 <body>
+
+    <div id="container">
+
+        <h1>Size to Weight Calculator (Box)</h1>
+
+        <div id="calc">
+
+            <h2>Enter all the details to get the answer!</h2>
+
+
+            <h2>Size:</h2>
+
+            <label>Length(m):</label> <br>
+            <input type="number" id="length" step="0.01">
+            <br> <br>
+
+            <label>Width (m):</label> <br>
+            <input type="number" id="width" step="0.01">
+            <br> <br>
+
+            <label>Height (m):</label> <br>
+            <input type="number" id="height" step="0.01">
+            <br> <br>
+
+            <label>Volume (cubic m):</label> <br>
+            <input type="number" id="volume" step="0.01" readonly placeholder="Read Only!">
+            <br> <br>
+
+            <h2>Weight:</h2>
+
+            <label>Density (kg/cubic metre)</label> <br>
+            <input type="number" id="density" step="0.01">
+            <br> <br>
+
+            <label>Weight (kg)</label> <br>
+            <input type="number" id="weight" step="0.01" readonly placeholder="Read Only">
+            <br> <br>
+
+        </div>
+
+    </div>
     
     <script src="/Calculators/Construction/Size to Weight Calculator/script.js"></script>
 </body>
