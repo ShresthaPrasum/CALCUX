@@ -1,33 +1,10 @@
 
-#container{
-    position: relative;
-    min-height: 67vh;
-    min-width: fit-content;
-    background-color: rgb(51, 127, 126);
-    display: flex;
-    gap: 20px;
-    border: none;
-    padding: 40px;
-    border-radius: 10px;
-}
-.back{
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    position: absolute;
-    top: 30px;
-    left: 30px;
-}
+
 #distancee{
     margin: 20px 0px;
 }
 
-h1{
-    font-size: 56px;
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 10px;
-}
+
 .select{
     margin: 5px 0;
 }
@@ -40,27 +17,7 @@ label{
 #accleration, #distancee{
     flex-direction: column;
 }
-input[type="number"],select{
-    text-indent: 10px;
-    color: rgb(33, 36, 39);
-    min-height: 36px;
-    opacity: 1;
-    text-align: left;
-    width: 100%;
-    font-size: 18px;
-    line-height: 40px;
-    font-weight: 500;
-    border-radius: 6px;
-    border-width: 1px;
-    border-style: solid;
-    outline: none;
-    margin-bottom: 20px;
-}
+
 .hide{
     display: none;
-}
-button{
-    padding: 12px 30px;
-    border-radius: 8px;
-    border: none;
 }

@@ -1,25 +1,4 @@
-#container{
-    position: relative;
-    background-color: rgb(51, 127, 126);
-    gap: 20px;
-    border: none;
-    padding: 40px;
-    border-radius: 10px;
-}
-.back{
-    text-decoration: none;
-    font-weight: bold;
-    position: absolute;
-    top: 30px;
-    left: 30px;
-}
-h1{
-    font-size: 50px;
-    font-weight: 800;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 10px;
-}
+
 
 .info{
     text-align: center;
@@ -37,39 +16,10 @@ h1{
     align-items: flex-start;
 }
 
-h2{
-    font-size: 38px;
-    font-weight: 750;
-    margin-bottom: 5px;
-}
-input[type="number"],select{
-    text-indent: 10px;
-    color: rgb(33, 36, 39);
-    min-height: 36px;
-    opacity: 1;
-    text-align: left;
-    width: 100%;
-    font-size: 18px;
-    line-height: 40px;
-    font-weight: 500;
-    border-radius: 6px;
-    border-width: 1px;
-    border-style: solid;
-    outline: none;
-}
 .must{
     margin-bottom: 10px;
 }
-label{
-    font-weight: bold;
-}
-button{
-    padding: 1rem 1.4rem;
-    border: none;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    font-weight: bold;
-}
+
 .result{
     display: flex;
     width: 100%;
