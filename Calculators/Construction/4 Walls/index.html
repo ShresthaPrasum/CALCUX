@@ -4,73 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Area of 4 Walls Calculator</title>
-    <link rel="stylesheet" href="/Calculators/Construction/4 Walls/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pixelify+Sans:wght@400..700&family=Stack+Sans+Notch:wght@200..700&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Pixelify+Sans:wght@400..700&amp;family=Unbounded:wght@200..900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/global.css">
+
+    <style>
+        #app{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 3fr));
+            gap: 1rem;
+        }
+    </style>
 </head>
 <body>
 
-    <div id="container">
+    <div class="container">
+        <div>
 
-        <a href="/construction" class="back">
-            Back
-        </a>
+        
+            <a href="/construction" class="back">
+                <-Back
+            </a>
 
-        <h1>
-            Area of 4 Walls Calculator
-        </h1>
+            <h1>
+                Area of 4 Walls Calculator
+            </h1>
 
-        <div id="app">
+            <div id="app">
+                <div>   
+                    <h2>Enter the details:</h2>
 
-            <h2>Enter all the details asked here!</h2>
+                    <label>
+                        Length of the wall (m):
+                    </label> <br>
+                    <input type="number" step="0.01" id="length">
+                    <br> 
 
-            <label>
-                Length of the wall (m):
-            </label> <br>
-            <input type="number" step="0.01" id="length">
-            <br> <br>
+                    <label>Width of the wall</label> <br>
+                    <input type="number" id="width" step="0.01">
+                    <br> 
 
-            <label>Width of the wall</label> <br>
-            <input type="number" id="width" step="0.01">
-            <br> <br>
+                    <label>Height (m)</label> <br>
+                    <input type="number" id="height" step="0.01">
+                    <br> 
 
-            <label>Height (m)</label> <br>
-            <input type="number" id="height" step="0.01">
-            <br> <br>
+                    <label>Area of floor/ceiling</label> <br>
+                    <input type="number" id="area-floor" step="0.01" readonly placeholder="Read Only">
+                    <br> 
 
-            <label>Area of floor/ceiling</label> <br>
-            <input type="number" id="area-floor" step="0.01" readonly placeholder="Read Only">
-            <br> <br>
+                    <label>Area of 4 walls</label> <br>
+                    <input type="number" id="area-fourwalls" step="0.01" readonly placeholder="Read Only">
+                    <br> 
 
-            <label>Area of 4 walls</label> <br>
-            <input type="number" id="area-fourwalls" step="0.01" readonly placeholder="Read Only">
-            <br> <br>
+                    <label>Area of 4 walls, floor and Ceiling</label> <br>
+                    <input type="number" id="area-fourwalls-floor" step="0.01" readonly placeholder="Read Only">
+                    <br> 
 
-            <label>Area of 4 walls, floor and Ceiling</label> <br>
-            <input type="number" id="area-fourwalls-floor" step="0.01" readonly placeholder="Read Only">
-            <br> <br>
+                </div>
+                <div>
 
-            <h2>Find the price for painting!</h2>
+                
+                <h2>Find paining price:</h2>
 
-            <label>Rate (per sq. m)</label> <br>
-            <input type="number" step="0.01" id="rate">
-            <br> <br>
+                <label>Rate (per sq. m)</label> <br>
+                <input type="number" step="0.01" id="rate">
+                <br> 
+
+                
 
 
-            <label>Total Cost:</label> <br>
-            <input type="number" step="0.01" id="total-cost" readonly placeholder="Read Only">
-            <br> <br>
 
-            <h2>Find the price for carpets!</h2>
+                <label>Total Cost:</label> <br>
+                <input type="number" step="0.01" id="total-cost" readonly placeholder="Read Only">
+                <br> 
+                </div>
 
-            <label>Rate (per sq. m)</label> <br>
-            <input type="number" step="0.01" id="ratee">
-            <br><br>
+                <div>
 
-            <label>Total Cost:</label> <br>
-            <input type="number" step="0.01" id="cost-carpet" readonly placeholder="Read Only">
-            <br> <br>
+                
 
+                <h2>Find the price for carpets!</h2>
+
+                <label>Rate (per sq. m)</label> <br>
+                <input type="number" step="0.01" id="ratee">
+                <br>
+
+                <label>Total Cost:</label> <br>
+                <input type="number" step="0.01" id="cost-carpet" readonly placeholder="Read Only">
+                <br> 
+                </div>
+
+            </div>
         </div>
-
     </div>
     
     <script src="/Calculators/Construction/4 Walls/script.js"></script>
