@@ -21,7 +21,9 @@
 -Construction
     - Calculate areas, and plan your room/rectangular things size.
     - Currently 3 calculators in this category!
-
+- Health
+      - Calculate and track your health activities
+      - Currently 1 calculators
 <hr>
 
 ## Features:
