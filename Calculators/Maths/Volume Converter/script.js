@@ -122,3 +122,63 @@ document.querySelector('#vol-cups').addEventListener('input', ()=>{
     document.querySelector('#vol-table').value = tablespoon;
     document.querySelector('#vol-teaspoons').value = teaspoon;
 })
+document.querySelector('#vol-ounces').addEventListener('input', ()=>{
+    let ounces = parseFloat(document.querySelector('#vol-cups').value);
+    let ml = ounces * 29.57;
+    let l = ounces * 0.02957;
+    let gal = ounces/128;
+    let quarts = ounces/32;
+    let pints = ounces/16;
+    let cups = ounces/8;
+    let tablespoon = ounces * 2;
+    let teaspoon = ounces * 6;
+
+    document.querySelector('#vol-ml').value = ml;
+    document.querySelector('#vol-l').value = l;
+    document.querySelector('#vol-gal').value = gal;
+    document.querySelector('#vol-quarts').value = quarts;
+    document.querySelector('#vol-pints').value = pints;
+    document.querySelector('#vol-cups').value = cups;
+    document.querySelector('#vol-table').value = tablespoon;
+    document.querySelector('#vol-teaspoon').value = teaspoon;
+})
+document.querySelector('#vol-table').addEventListener('input', ()=>{
+    let tablespoon = parseFloat(document.querySelector('#vol-table').value);
+    let ml = tablespoon * 14.78;
+    let l = tablespoon * 0.01478;
+    let gal = tablespoon /256;
+    let quarts = tablespoon / 64;
+    let pints = tablespoon/32;
+    let cups = tablespoon/16;
+    let ounces = tablespoon/2;
+    let teaspoon = tablespoon*3;
+
+    document.querySelector('#vol-ml').value = ml;
+    document.querySelector('#vol-l').value  = l;
+    document.querySelector('#vol-gal').value = gal;
+    document.querySelector('#vol-quarts').value =quarts;
+    document.querySelector('#vol-pints').value = pints;
+    document.querySelector('#vol-cups').value = cups;
+    document.querySelector('#ounces').value = ounces;
+    document.querySelector('#teaspoon').value = teaspoon;
+})
+document.querySelector('#vol-teaspoon').addEventListener('input', ()=>{
+    let teaspoon = parseFloat(document.querySelector('#vol-teaspoon').value);
+    let ml = teaspoon * 4.928;
+    let l = teaspoon * 0.0049;
+    let gal = teaspoon/768;
+    let quarts = teaspoon/192;
+    let pints = teaspoon/96;
+    let cups = teaspoon/48;
+    let ounces = teaspoon/6;
+    let tablespoon = teaspoon/3;
+
+    document.querySelector('#vol-ml').value = ml;
+    document.querySelector('#vol-l').value = l;
+    document.querySelector('#vol-gal').value = gal;
+    document.querySelector('#vol-quarts').value = quarts;
+    document.querySelector('#vol-pints').value = pints;
+    document.querySelector('#vol-cups').value = cups;
+    document.querySelector('#vol-ounces').value = ounces;
+    document.querySelector('#vol-table').value = tablespoon;
+})
