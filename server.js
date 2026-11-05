@@ -31,6 +31,9 @@ app.get('/math/perfect-square', (req,res)=>{
 app.get('/math/probability-calculator', (req,res)=>{
     res.sendFile(path.join(__dirname, 'Calculators', 'Maths', 'Probability Calculator', 'index.html'));
 })
+app.get('/math/volume-converter', (req,res)=>{
+    res.sendFile(path.join(__dirname, 'Calculators', 'Maths', 'Volume Converter', 'index.html'));
+})
 
 app.get('/physics', (req,res)=>{
     res.sendFile(path.join(__dirname,  'physic.html'));

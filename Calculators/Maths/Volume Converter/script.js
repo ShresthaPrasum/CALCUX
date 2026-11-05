@@ -196,7 +196,7 @@ document.querySelector('#vol-table').addEventListener('input', ()=>{
     let pints = tablespoon/32;
     let cups = tablespoon/16;
     let ounces = tablespoon/2;
-    let teaspoon = tablespoon*3;
+    let teaspoon = tablespoon * 3;
 
     document.querySelector('#vol-ml').value = ml;
     document.querySelector('#vol-l').value  = l;
@@ -205,7 +205,7 @@ document.querySelector('#vol-table').addEventListener('input', ()=>{
     document.querySelector('#vol-pints').value = pints;
     document.querySelector('#vol-cups').value = cups;
     document.querySelector('#vol-ounces').value = ounces;
-    document.querySelector('#teaspoon').value = teaspoon;
+    document.querySelector('#vol-teaspoons').value = teaspoon;
 })
 document.querySelector('#vol-teaspoons').addEventListener('input', ()=>{
     let teaspoon = parseFloat(document.querySelector('#vol-teaspoons').value);
