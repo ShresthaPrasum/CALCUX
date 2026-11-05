@@ -42,7 +42,7 @@ document.querySelector('#vol-l').addEventListener('input', ()=>{
 })
 document.querySelector('#vol-gal').addEventListener('input', ()=>{
     let gal = parseFloat(document.querySelector('#vol-gal').value);
-    
+
     let ml = gal * 3785.41;
     let l = gal * 3.78541;
     let quarts = gal * 4;
@@ -78,6 +78,46 @@ document.querySelector('#vol-quarts').addEventListener('input', ()=>{
     document.querySelector('#vol-gal').value = gal;
     document.querySelector('#vol-pints').value = pints;
     document.querySelector('#vol-cups').value = cups;
+    document.querySelector('#vol-ounces').value = ounces;
+    document.querySelector('#vol-table').value = tablespoon;
+    document.querySelector('#vol-teaspoons').value = teaspoon;
+})
+document.querySelector('#vol-pints').addEventListener('input', ()=>{
+    let pints = parseFloat(document.querySelector('#vol-pints').value);
+    let ml = pints * 473.17;
+    let l = pints *0.437;
+    let gal = pints/8;
+    let quarts = pints/2;
+    let cups = pints *2;
+    let ounces = pints * 16;
+    let tablespoon = pints * 32;
+    let teaspoon = pints * 96;
+
+    document.querySelector('#vol-ml').value = ml;
+    document.querySelector('#vol-l').value = l;
+    document.querySelector('#vol-gal').value = gal;
+    document.querySelector('#vol-quarts').value = quarts;
+    document.querySelector('#vol-cups').value = cups;
+    document.querySelector('#vol-ounces').value = ounces;
+    document.querySelector('#vol-table').value = tablespoon;
+    document.querySelector('#vol-teaspoons').value = teaspoon;
+})
+document.querySelector('#vol-cups').addEventListener('input', ()=>{
+    let cups = parseFloat(document.querySelector('#vol-cups').value);
+    let ml = cups * 236.58;
+    let l = cups * 0.236;
+    let gal = cups/16;
+    let quarts = cups/4;
+    let pints = cups/2;
+    let ounces = cups * 8;
+    let tablespoon = cups * 16;
+    let teaspoon = cups * 48;
+
+    document.querySelector('#vol-ml').value = ml;
+    document.querySelector('#vol-l').value = l;
+    document.querySelector('#vol-gal').value = gal;
+    document.querySelector('#vol-quarts').value = quarts;
+    document.querySelector('#vol-pints').value = pints;
     document.querySelector('#vol-ounces').value = ounces;
     document.querySelector('#vol-table').value = tablespoon;
     document.querySelector('#vol-teaspoons').value = teaspoon;
