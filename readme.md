@@ -18,7 +18,9 @@
     - Calculate the problems created by the existence of money and make more money using money
     - There are currently 3 calculators in this category
 
--Others (Pending)
+-Construction
+    - Calculate areas, and plan your room/rectangular things size.
+    - Currently 3 calculators in this category!
 
 <hr>
 
@@ -53,6 +55,7 @@
 - HTML
 - CSS
 - Javascript
+- Node + Express JS
 
 <hr>
 
@@ -63,7 +66,7 @@
 <hr>
 
 ## Live Demo
-- [here](https://mama-calcux.onrender.com/).
+- [here](https://mama-calcuxx.onrender.com/).
 
 <hr>
 
