@@ -1,5 +1,10 @@
 document.querySelector('#vol-ml').addEventListener('input', ()=>{
     let ml = parseFloat(document.querySelector('#vol-ml').value);
+
+    if(isNaN(ml)){
+        alert("Please enter values properly!");
+        return;
+    }
     
     let litres = ml/1000;
     let gal = ml/3785.41;
@@ -21,15 +26,21 @@ document.querySelector('#vol-ml').addEventListener('input', ()=>{
     document.querySelector('#vol-teaspoons').value = teaspoon;
 })
 document.querySelector('#vol-l').addEventListener('input', ()=>{
-    let l = parseFloat(document.querySelector('vol-l').value);
-    let ml = l*1000;
-    let gal = l/3.785;
-    let quarts = 1/0.946;
-    let pints = l/0.473;
-    let cups = l/0.236;
-    let ounces = 1/0.029;
-    let tablespoon = l/0.0147;
-    let teaspoon = l/0.0049;
+    let l = parseFloat(document.querySelector('#vol-l').value);
+
+    if(isNaN(l)){
+        alert("Please enter values properly!");
+        return;
+    }
+
+    let ml = l * 1000;
+    let gal = l * 0.264172;
+    let quarts = l * 1.05669;
+    let pints = l * 2.11338;
+    let cups = l * 4.22675;
+    let ounces = l * 33.814;
+    let tablespoon = l * 67.628;
+    let teaspoon = l * 202.884;
 
     document.querySelector('#vol-ml').value = ml;
     document.querySelector('#vol-gal').value= gal;
@@ -42,6 +53,11 @@ document.querySelector('#vol-l').addEventListener('input', ()=>{
 })
 document.querySelector('#vol-gal').addEventListener('input', ()=>{
     let gal = parseFloat(document.querySelector('#vol-gal').value);
+
+    if(isNaN(gal)){
+        alert("Please enter values properly!");
+        return;
+    }
 
     let ml = gal * 3785.41;
     let l = gal * 3.78541;
@@ -64,6 +80,11 @@ document.querySelector('#vol-gal').addEventListener('input', ()=>{
 document.querySelector('#vol-quarts').addEventListener('input', ()=>{
     let quarts = parseFloat(document.querySelector('#vol-quarts').value);
 
+    if(isNaN(quarts)){
+        alert("Please enter values properly!");
+        return;
+    }
+
     let ml = quarts * 946.35;
     let l = quarts * 0.946;
     let gal = quarts/4;
@@ -84,8 +105,14 @@ document.querySelector('#vol-quarts').addEventListener('input', ()=>{
 })
 document.querySelector('#vol-pints').addEventListener('input', ()=>{
     let pints = parseFloat(document.querySelector('#vol-pints').value);
+
+    if(isNaN(pints)){
+        alert("Please enter values properly!");
+        return;
+    }
+
     let ml = pints * 473.17;
-    let l = pints *0.437;
+    let l = pints *0.473;
     let gal = pints/8;
     let quarts = pints/2;
     let cups = pints *2;
@@ -104,6 +131,12 @@ document.querySelector('#vol-pints').addEventListener('input', ()=>{
 })
 document.querySelector('#vol-cups').addEventListener('input', ()=>{
     let cups = parseFloat(document.querySelector('#vol-cups').value);
+
+    if(isNaN(cups)){
+        alert("Please enter values properly!");
+        return;
+    }
+
     let ml = cups * 236.58;
     let l = cups * 0.236;
     let gal = cups/16;
@@ -123,7 +156,13 @@ document.querySelector('#vol-cups').addEventListener('input', ()=>{
     document.querySelector('#vol-teaspoons').value = teaspoon;
 })
 document.querySelector('#vol-ounces').addEventListener('input', ()=>{
-    let ounces = parseFloat(document.querySelector('#vol-cups').value);
+    let ounces = parseFloat(document.querySelector('#vol-ounces').value);
+
+    if(isNaN(ounces)){
+        alert("Please enter values properly!");
+        return;
+    }
+
     let ml = ounces * 29.57;
     let l = ounces * 0.02957;
     let gal = ounces/128;
@@ -140,10 +179,16 @@ document.querySelector('#vol-ounces').addEventListener('input', ()=>{
     document.querySelector('#vol-pints').value = pints;
     document.querySelector('#vol-cups').value = cups;
     document.querySelector('#vol-table').value = tablespoon;
-    document.querySelector('#vol-teaspoon').value = teaspoon;
+    document.querySelector('#vol-teaspoons').value = teaspoon;
 })
 document.querySelector('#vol-table').addEventListener('input', ()=>{
     let tablespoon = parseFloat(document.querySelector('#vol-table').value);
+
+    if(isNaN(tablespoon)){
+        alert("Please enter values properly!");
+        return;
+    }
+
     let ml = tablespoon * 14.78;
     let l = tablespoon * 0.01478;
     let gal = tablespoon /256;
@@ -159,11 +204,17 @@ document.querySelector('#vol-table').addEventListener('input', ()=>{
     document.querySelector('#vol-quarts').value =quarts;
     document.querySelector('#vol-pints').value = pints;
     document.querySelector('#vol-cups').value = cups;
-    document.querySelector('#ounces').value = ounces;
+    document.querySelector('#vol-ounces').value = ounces;
     document.querySelector('#teaspoon').value = teaspoon;
 })
-document.querySelector('#vol-teaspoon').addEventListener('input', ()=>{
-    let teaspoon = parseFloat(document.querySelector('#vol-teaspoon').value);
+document.querySelector('#vol-teaspoons').addEventListener('input', ()=>{
+    let teaspoon = parseFloat(document.querySelector('#vol-teaspoons').value);
+
+    if(isNaN(teaspoon)){
+        alert("Please enter values properly!");
+        return;
+    }
+
     let ml = teaspoon * 4.928;
     let l = teaspoon * 0.0049;
     let gal = teaspoon/768;
