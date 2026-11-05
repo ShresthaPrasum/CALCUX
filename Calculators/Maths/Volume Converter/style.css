@@ -1,0 +1,9 @@
+#container{
+    height: fit-content;
+    width: 65vw;
+    margin: 10px;
+}
+.back{
+    top: 20px;
+    left: 20px;
+}
