@@ -113,6 +113,7 @@
             width: 100%;
         }
 
+
         .nutrient-card{
             display:flex;
             flex-direction: column;
@@ -130,7 +131,7 @@
 
         .nutrient-data{
             display: flex;
-            background-color: rgba(0, 0, 0, 0.452);
+            background-color: rgba(0, 0, 0, 0.262);
             border-radius: 12px;
             flex-direction: column;
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -192,7 +193,7 @@
 
                 <div class="input-group">
                     <label for="weight">Weight(kg)</label>
-                    <input type="number" name="weight" id="weight">
+                    <input type="number" name="weight" id="weight" value="60">
                 </div>
 
                 </div>
@@ -328,7 +329,7 @@
 
         let weightInput = document.getElementById('weight');
 
-        let carbodydrateO = document.getElementById('carbodydrate')
+        let carbodydrateO = document.getElementById('carbohydrate')
 
         let proteinOutput = document.getElementById('protein');
 
@@ -340,13 +341,13 @@
 
         let waterOutput = document.getElementById('water');
 
-        let inputs = document.querySelectorAll('input')
+        let inputs = document.querySelectorAll('input, section')
 
         inputs.forEach(e=>{
             e.addEventListener('input',()=>{
                 calculateNutrient();
-            })
-        })
+            });
+        });
 
         function calculateNutrient(){
             let gender = genderInput.value;
@@ -361,7 +362,7 @@
 
             let totalInch = (feet*12) + inches;
 
-            let heightCm = totalInches * 2.54;
+            let heightCm = totalInch * 2.54;
 
             let EER =0;
 
@@ -370,9 +371,57 @@
             }
 
             else{
-                EER = 263.4 - (54.8 * age) + (15.5* heightCm) + (30.8 * weightKg) + 20;
+                EER = 263.4 - (54.8 * age) + (15.5* heightCm) + (30.8 * weight) + 20;
             }
 
+
+            let minCarb = ((EER * 0.45)/4).toFixed(0);
+
+            let maxCarb = ((EER * 0.65)/ 4).toFixed(0);
+
+            let proteinGrams = (weight*0.85).toFixed(0);
+
+            let fiberGrams = ((EER / 1000)*14).toFixed(0);
+
+
+            let minFat = ((EER*0.25 )/9).toFixed(0);
+
+            let maxFat = ((EER*0.35)/9).toFixed(0);
+
+            console.log(maxFat)
+
+            let linoleicAcid;
+
+            if(gender === 'male'){
+                linoleicAcid = 16;
+            }
+            else{
+                linoleicAcid = 11;
+            }
+
+            let waterLiters;
+
+            if(gender === 'male'){
+                waterLiters = 3.3;
+            }
+            else{
+                waterLiters = 2.3;
+            }
+
+            carbodydrateO.textContent = `${minCarb} - ${maxCarb}g`;
+            
+
+            proteinOutput.textContent = `${proteinGrams}g`
+
+            fiberOutput.textContent = `${fiberGrams}g`
+
+            fatOutput.textContent = `${minFat} - ${maxFat}g`
+
+            linoleicOutput.textContent = `${linoleicAcid}g`;
+
+            waterOutput.textContent =`${waterLiters}L`
+
+            
         }
     </script>
 </body>

@@ -46,7 +46,6 @@ button{
 
 .container, #container{
     display: flex;
-    flex-direction: column;
     position: relative;
     background-color: rgb(51,127,126);
     border: none;
@@ -55,6 +54,9 @@ button{
     gap: 20px;
 }
 
+#container{
+    flex-direction: column;
+}
 .back{
     position: absolute;
     top: 30px;
