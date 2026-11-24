@@ -1,0 +1,21 @@
+#container{
+    width: fit-content;
+    background-color: rgb(51, 127, 126);
+    border: none;
+    padding: 50px;
+    border-radius: 10px;
+    min-height: fit-content;
+    position: relative;
+}
+
+#app div{
+    border: 1px solid black;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: rgb(1, 116, 145);
+}
+#app{
+    display: flex;
+    gap: 20px;
+    margin-bottom: 10px;
+}

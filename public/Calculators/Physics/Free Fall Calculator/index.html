@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fall</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pixelify+Sans:wght@400..700&family=Stack+Sans+Notch:wght@200..700&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Pixelify+Sans:wght@400..700&amp;family=Unbounded:wght@200..900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/global.css">
+    
+    <style>
+
+        .free-fall{
+
+            gap: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        #velocity{
+            width: 80%;
+        }
+
+        #unit{
+            width: 20%;
+            height: 42px;
+            outline: none;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div>
+            <h1>FreeFall Calc</h1>
+            <p> Calculate the velocity of a falling object along with the distance it travels.</p>
+            <a href="/physics" class="back">←Back</a>
+    
+            <div class="free-fall flex column">
+                <label for="gravity">Acceleration due to gravity (g)</label>
+                <input type="number" id="gravity" value="9.80665" readonly">
+                
+    
+                <label for="initalVelocity">Initial Velocity (v₀)</label>
+    
+                    <input type="number"  id="initialVelocity"  placeholder="Enter the value"> 
+                    
+                
+    
+                <label for="height">Height (h)</label>
+                <input type="number" id="height" placeholder="Enter the value">
+    
+                <label for="time">Time of fall (t)</label>
+                <input type="text" id="time" readonly placeholder="Result:"> 
+    
+                <label for="velocity">Final Velocity (v)</label>
+    
+                <div style="display: flex; align-items: center;">
+                    <input type="text" id="velocity" readonly placeholder="Result:"> 
+                    <select id="unit">
+                        <option value="meter">m/s</option>
+                        <option value="kilometer">km/h</option>
+                    </select>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="second-container flex ai">
+            <div class="profile">
+
+                <img src="/mama_chess.jpg" alt="">
+                <div class="creator-details">
+                    <h3>Creator</h3>
+                    <h3>Mama_Chess</h3>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+
+
+        let timeInput = document.getElementById('time');
+
+        let v = document.getElementById('velocity');
+
+        let input = document.querySelectorAll('input , select');
+
+
+
+        const g = 9.80665;
+
+        input.forEach(e =>{
+            e.addEventListener('input',(btn)=>{
+                let heightInput = parseFloat(document.getElementById("height").value);
+
+                let u = parseFloat(document.querySelector('#initialVelocity').value);
+
+                let unit = document.querySelector('#unit').value;
+
+                const finalVelocity = Math.sqrt((u*u)+(2*g*heightInput));
+
+
+                const time = (-u + finalVelocity)/g;
+
+                const kmh = finalVelocity * 3.6;
+
+                timeInput.value = `${time.toFixed(2)} s`;
+
+                if(unit === 'meter'){
+
+                    v.value = `${finalVelocity.toFixed(2)} m/s`;
+                }
+
+                else{
+                    v.value = `${kmh.toFixed(2)} km/h`
+                }
+
+                
+            })
+        })
+
+    </script>
+</body>
+</html>

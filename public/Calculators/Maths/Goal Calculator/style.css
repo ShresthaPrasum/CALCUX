@@ -1,0 +1,45 @@
+
+
+.info{
+    text-align: center;
+}
+
+#app{
+    padding: 20px;
+    width: 100%;
+    height: 80%;
+    border: none;
+    border-radius: 10px;
+}
+
+.second-container{
+    align-items: flex-start;
+}
+
+.must{
+    margin-bottom: 10px;
+}
+
+.result{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    padding: 20px;
+    background-color: rgb(10, 87, 128);
+     border-radius: 12px;
+}
+.hide{
+    display: none;
+}
+#progress-bar{
+    height: 35px;
+    width: 90%;
+}
+#progresss{
+    background-color: green;
+    width: 100%;
+    height: 100%;
+}
+#progresss-bar{
+    margin-bottom: 5px;
+}
