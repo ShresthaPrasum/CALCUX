@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcux - Calculate anything</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pixelify+Sans:wght@400..700&family=Stack+Sans+Notch:wght@200..700&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Pixelify+Sans:wght@400..700&amp;family=Unbounded:wght@200..900&amp;display=swap" rel="stylesheet">
+
+    <style>
+        :root{
+            --font-family : "Unbounded", sans-serif;
+            --grey-text: rgba(9,9,9,0.5);
+
+        }
+        
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,body{
+            background-color: rgb(62, 205, 224);
+            scroll-behavior: smooth;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            height: 100%;
+            
+        }
+
+        header{
+            display: none;
+            position: fixed;
+            height: 100%;
+            z-index: 0;
+            top: 0;
+            right: 0;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        nav{
+            display: flex;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            top: 0;
+            right: 0;
+            width: fit-content;
+            height: 100%;
+        }
+
+        .brand{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-family: "Unbounded", sans-serif;
+            position: absolute;
+            top: 17px;
+            font-size: 1rem;
+            left: 70px;
+        }
+
+        .brand i{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.3rem;
+            border: 1px solid var(--grey-text);
+        }
+
+        nav ul{
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav ul li{
+            display: flex;
+            margin: 0 20px;
+        }
+
+        nav ul li a{
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        a{
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            z-index: 10;
+        }
+
+        
+
+        .nav-main{
+            display: flex;
+            gap: 20px;
+            font-size: 1rem;
+        }
+
+        .main{
+            border-right: 1px solid var(--grey-text);
+            transition  : all 0.6s ease;
+        }
+
+        .logo{
+            position: fixed;
+            padding: 12px 13px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            background-color: black;
+            color: white;
+            right: 42px;
+            top: 14px;
+            cursor: pointer;
+            z-index: 6967;
+        }
+
+        .nav{
+            transform: translateX(-248px);
+        }
+
+        .active{
+            display: block;
+        }
+        
+
+        .hero, .frequently-used, .howitworks, .about-us{
+            display: flex;
+            background: linear-gradient(45deg,rgb(219, 237, 249),rgb(166, 193, 195));
+            padding: 5vw;
+            height: 100vh;
+             font-family: var(--font-family);
+            border-bottom: 1px solid var(--grey-text);
+            /* width: 80%; */
+        }
+
+        .calculator{
+            display: flex;
+            background: linear-gradient(45deg,rgb(219, 237, 249),rgb(166, 193, 195));
+            padding: 5vw;
+            height: 70vh;
+             font-family: var(--font-family);
+            border-bottom: 1px solid var(--grey-text);
+        }
+
+        .container{
+            display: flex;
+            width: 70%;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin: 0 auto;
+            height: 90vh;
+        }
+
+        .hero-first h1{
+            font-size: clamp(3vw, 3.8vw, 7vw);
+            line-height: 1.2;
+            letter-spacing: -1.5px;
+            /* font-family: var(--font-family); */
+            margin-bottom: 10px;
+        }
+
+        .hero-first span{
+            white-space: nowrap;
+        }
+
+        .horizontal{
+            position: absolute;
+            top: 70px;
+            width: 100%;
+            border: 1px solid rgba(23, 23, 23, 0.192);
+        }
+
+        .hero-first p{
+            /* font-family: var(--font-family); */
+            color: var(--grey-text);
+            width: 80%;
+        }
+
+        .hero-visual{
+            width: 50%;
+        }
+
+        .mini-calculator{
+            width: 25vw;
+
+            background-color: rgb(9, 9, 9);
+            border-radius: 10px;
+            padding: 2vw;
+            border: 2px solid   black;
+        }
+
+        .calculator-display{
+            color: white;
+            height: 7vw;
+            padding: 1.5vw 1vw;
+            border-radius: 8px;
+            border: 2px solid black;
+            background-color: rgba(68, 68, 68, 0.522);
+            text-align: right;
+            font-size: 2vw;
+            font-weight: 777;
+            margin-bottom: 1rem;
+            overflow-wrap: break-word;
+        }
+
+        .calculator-btns{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5vw;
+        }
+
+        .calc-btn{
+            color: white;
+            padding: 1vw;
+            background-color: black;
+            border: 2px solid grey;
+            font-size: 1.2vw;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .calc-btn:hover{
+            background-color: rgba(0, 145, 153, 0.697);
+            transform: scale(1.08);
+        }
+
+        .operator:hover{
+            background-color: red;
+        }
+
+        .equalto:hover{
+            background-color: green;
+        }
+
+        .hero-btn{
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .hero-btn a{
+            padding: 1rem 1.4rem;
+            background-color:rgb(62, 205, 224);
+            font-size: clamp(1.2vw, 12px, 20px);
+            border-radius: 10px;
+            /* font-family: var(--font-family); */
+        }
+
+        .calculator, .frequently-used,.about-us{
+            min-height: fit-content;
+            
+            font-family: "Stack Sans Notch", sans-serif;
+            flex-direction: column;
+        }
+
+        .layout-header{
+            text-align: center;
+        }
+        .layout-header h1{
+            font-size: 6vh;
+            font-weight: bolder;
+            word-spacing: -6px;
+            margin-bottom: 8px;
+        }
+
+        .layout-header p{
+            color: var(--grey-text);
+            font-size: 1.2rem;
+
+        }
+
+        .layout-main{
+                display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .calc-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fill,minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .calc-card{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+            border-radius: 12px;
+            min-height: 180px;
+            gap: 10px;
+            color: white;
+            background-color: rgb(25, 94, 118);
+        }
+
+        .calc-card:hover{
+            transform: scale(1.05);
+            border: 2px solid rgb(0, 170, 255);
+        }
+        
+        .calc-card h3{
+            font-size: 2.5rem;
+            line-height: 1;
+        }
+
+        .calc-card p {
+            color: whitesmoke;
+        }
+
+        .frequently-used{
+            height: fit-content;
+            font-family: var(--font-family);
+        }
+
+        .layout-p{
+            font-size: 1rem !important;
+        }
+
+        .freq-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+            place-items: center;
+            margin: 1.8rem 0rem;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .freq-card{
+            display: flex;
+            position: relative;
+            width: 90%;
+            flex-direction: column;
+            background-color: rgb(60, 77, 156);
+            align-items: center;
+            border: 1px solid var(--grey-text);
+            padding: 2rem;
+            min-height: 180px;
+            
+            border-radius: 12px;
+            color: white;
+            transition: all 0.3s ease-in-out;
+        }
+        
+
+        
+
+        .freq-card h3{
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 10px; 
+        }
+
+        .freq-card p{
+            color: rgba(255, 255, 255, 0.763);
+            font-size: 0.8rem;
+            margin-bottom: 1.6rem;
+        }
+
+        .freq-card a{
+            padding: 0.5rem 1rem;
+            border: 1px solid rgb(34, 147, 151);
+            border-radius: 8px;
+            color: rgb(4, 198, 237);
+        }
+
+        .freq-card a:hover{
+            border: 1px solid rgb(0, 251, 255)
+        }
+        
+        .freq-btn{
+            color: aliceblue;
+            padding: 1rem 1.4rem;
+            background-color: rgb(63, 68, 207);
+            font-size: 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        
+
+        .about-us{
+            height: 45vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-container{
+            display: flex;
+            width: 88%; 
+            padding: 3vw;
+            border-radius: 12px;
+            min-height: fit-content;
+            background-color: rgb(70, 11, 125);
+            color: white;
+
+        }
+
+        .about-first{
+            width: 70%;
+        }
+
+        .about-container h1{
+            font-size: 3vw;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .about-first p{
+            font-size: 1.4vw;
+            margin-bottom: clamp(10px, 2vw, 2vw);
+        }
+
+        .about-container a{
+            padding: 1vw 1.4vw;
+            background-color: rgb(215 4 209);
+            border-radius: 8px;
+            font-size: clamp(10px, 1vw,1vw);
+        }
+
+        .about-second h3{
+            font-size:3vw;
+            
+        }
+
+        .about-card p{
+            font-size: clamp(12px, 1.8vw, 1.8vw);
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 721px){
+            .layout-header h1{
+                font-size:clamp(30px,6vw,6vw);
+            }
+
+            .layout-header p{
+                font-size: 2.4  vw !important;
+            }
+
+            .hero-first h1{
+                font-size: 8vw;
+            }
+
+            .brand{
+                left: 25px;
+            }
+
+            .container{
+                width: 90%;
+                height: 100vh;
+            }
+
+            .hero-visual{
+                display: none;
+            }
+        }
+
+        @media(max-width: 728px){
+            
+        }
+
+        .pending{
+            cursor: not-allowed;
+        }
+
+        .freq-card button{
+            background-color: transparent;
+            font-size: 1.3rem;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            top: 5px;
+            right: 12px;
+            color: none;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <header>  
+        <nav>
+            <ul>
+                <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="#calculators"><i class="fa-solid fa-calculator"></i>Calculators</a></li>
+                <li><a href="#frequently-used"><i class="fa-solid fa-earth-americas"></i>Most Popular</a></li>
+                <li><a href="#about-us"><i class="fas fa-circle-info"></i>About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main">
+        <div class="header">
+            <div class="brand">
+            <i class="fa-solid fa-calculator"></i>
+            <h1>Calcux</h1>
+        </div>
+        <hr class="horizontal">
+
+        <i class="fas fa-bars logo">
+
+        </i>
+        </div>
+        
+        <div class="hero" id='hero'>
+            <div class="container">
+                <div class="hero-first">
+                    <h1>
+                        <span>Calculate the</span> <br> <span>numbers and</span> <span>solve problem</span>  
+                    </h1>
+                    <p>
+                        From calculating percentage changes to solving economics problems and improving it.
+                    </p>
+                    <div class="hero-btn">
+                        <a href="#calculators">View all calculators</a>
+                        <a href="#about-us">About Us</a>
+                    </div>
+                </div>
+    
+                <div class="hero-visual">
+                    <div class="mini-calculator">
+                        <div class="calculator-display">
+
+                        </div>
+
+                        <div class="calculator-btns">
+                            <button class="calc-btn operator ">C</button>
+                            <button class="calc-btn operator">/</button>
+                            <button class="calc-btn operator">×</button>
+                            <button class="calc-btn operator">⌫</button>
+                            <button class="calc-btn">7</button>
+                            <button class="calc-btn">8</button>
+                            <button class="calc-btn">9</button>
+                            <button class="calc-btn operator">-</button>
+                            <button class="calc-btn">4</button>
+                            <button class="calc-btn">5</button>
+                            <button class="calc-btn">6</button>
+                            <button class="calc-btn operator">+</button>
+                            <button class="calc-btn">1</button>
+                            <button class="calc-btn">2</button>
+                            <button class="calc-btn">3</button>
+                            <button class="calc-btn equalto" style="grid-row: span 2;">=</button>
+                            <button class="calc-btn" style="grid-column: span 2;">0</button>
+                            <button class="calc-btn operator">.</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="calculator "id="calculators">
+            <div class="layout-header">
+                <h1>EVERY CALCULATORS</h1>
+                <p>
+                    Choose the calculator according to your need and calculate the problem to solve it in must faster way.
+                </p>
+            </div>
+
+            <div class="layout-main">
+                <div class="calc-grid">
+                    <a href="/math" class="calc-card">
+                        <h3>Mathematics</h3>
+                        <p>Calculate the angles°, percentage% change, simple interest or convert units(cm, m , km)</p>
+                    </a>
+                    <a href="/physics" class="calc-card">
+                        <h3>
+                            Physics
+                        </h3>
+                        <p>Calculate the motion of the object, speed(m/s2), momentum, gravity(g) and pressure(kg/m2).</p>
+                    </a>
+                    <!-- <a href="index.html" class="calc-card pending">
+                        <h3>
+                            Chemistry
+                        </h3>
+                        <p>
+                            Calculate the atomic mass of an element, no of protons and neutron, valency
+                        </p>
+                    </a> -->
+                    <a href="/finance" class="calc-card">
+                        <h3>
+                            Finance
+                        </h3>
+                        <p>
+                            Calculate the problems created by the existence of money and make more money using money
+                        </p>
+                    </a>
+                    <a href="/construction"  class="calc-card">
+                        <h3>
+                            Construction
+                        </h3>
+
+                        <p>
+                            Calculate the area, volume, area of four wall to paint the wall or carpetting the floor!
+                        </p>
+                    </a>
+                    <a href="/health"  class="calc-card">
+                        <h3>
+                            Health
+                        </h3>
+
+                        <p>
+                            Calculate your bmi, bmr, daily macro nutrient intake, ideal weight and make your life healthier than before.
+                        </p>
+                    </a>
+                </div> 
+            </div>
+        </div>
+
+        <div class="frequently-used" id="frequently-used">
+            <div class="layout-header">
+                <h1>Frequently Used</h1>
+
+                <p class="layout-p">
+                    Explore most frequently used mathematical utilities and calculators to solve your problem
+                </p>
+            </div>
+
+            <div class="layout-main">
+                <div class="freq-grid">
+                    <div class="freq-card">
+                        <h3>
+                            Interplanetary Calc
+                        </h3>
+                        <p>
+                           Imagine if you were born on another planet
+                        </p>
+                        <button>★</button>
+                        <a href="/physics/interplanetary-calculator">Try Now</a>
+                    </div>
+                    <div class="freq-card">
+                        <h3>
+                            Unit Converter
+                        </h3>
+                        <p>
+                            Convert different units of measurement
+                        </p>
+                        <button>★</button>
+                        <a href="/math/distance-converter">Try Now</a> 
+                        
+                    </div>
+                    <div class="freq-card">
+                        <h3>
+                            Free Fall 
+                        </h3>
+                        <p>
+                            Calculate the velocity of a falling object.
+                        </p>
+                        <button>★</button>
+                        <a href="/physics/freefall-calculator">Try Now</a>
+                    </div>
+                </div>
+               
+                    <a href="#calculators" class="freq-btn">View All Tools-></a>
+                
+            </div>
+        </div>
+
+        <div class="about-us" id="about-us">
+            <div class="about-container">
+                <div class="about-first">
+                    <h1>
+                        ABOUT CALCUX
+                    </h1>
+    
+                    <p>
+                        Calcux is a all in one calculation hub designed to make problem solving effortless. From calculating percentage changes, compound interest and perfect square to solving complex physics motion problem and engineering problems. Calcux is created by professional developer who knows what they are actually making in detail.
+                    </p>
+    
+                    <a class="about-btn" href="#calculators">
+                        View our work
+                    </a>
+                </div>
+                <div class="about-second">
+                    <h3>Team Mama</h3>
+                    <div class="about-card">
+                        <p>1. Zyrox</p>
+                        <p>2. Mama_Chess</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        const navbtn = document.querySelector('.logo');
+
+        const classHeader = document.querySelector('.header');
+
+        const navContainer = document.querySelector('header');
+
+        const nav = document.querySelector('nav');
+
+        const mainContainer = document.querySelector('.main')
+
+        const ulContainer = document.querySelectorAll('ul');
+
+        const ulList = document.querySelectorAll('nav ul li a')
+
+        const calcdisplay = document.querySelector('.calculator-display')
+
+        const calcbtns = document.querySelectorAll('.calc-btn')
+        
+        let active = false;
+
+        // const bgColor = window.getComputedStyle(document.body).backgroundColor;
+        const bgColor = window.getComputedStyle(document.body).getPropertyValue('background-color');
+
+        let currentInput = '';
+
+        console.log(bgColor);
+
+
+        calcbtns.forEach(e =>{
+            e.addEventListener('click',()=>{
+                const btnValue = e.textContent.trim();
+
+                if(btnValue ==='C'){
+                    currentInput = '';
+                    calcdisplay.textContent = ''
+                }
+                else if(btnValue === '⌫'){
+                    currentInput = currentInput.slice(0, -1);
+                    calcdisplay.textContent= currentInput;
+                }
+                else if(btnValue === '='){
+                    try{
+                        const exp = currentInput.replace(/×/g,'*');
+
+                        const result = eval(exp);
+                        calcdisplay.textContent = result;
+                        currentInput = result.toString();
+                    }
+                    catch{
+                        calcdisplay.textContent = 'Error';
+                    }
+                }
+                else{
+
+                    currentInput += btnValue;
+                    calcdisplay.textContent = currentInput;
+                    
+                }
+            });
+        });
+
+
+        navbtn.addEventListener('click',()=>{
+            if(!active){
+                active= true;
+                navContainer.classList.add('active')
+                mainContainer.classList.add('nav')
+                nav.append(navbtn);
+            }
+
+            else{
+                active= false;
+                // navContainer.classList.remove('active');
+                setTimeout(()=>{
+                    navContainer.classList.remove('active')
+                    classHeader.append(navbtn);
+                }, 550)
+
+                mainContainer.classList.remove('nav');
+            }
+        })
+
+        ulList.forEach(e => {
+            e.addEventListener('click', ()=>{
+                active  = false;
+                // navContainer.classList.remove('active')
+
+                setTimeout(()=>{
+                    navContainer.classList.remove('active')
+                    classHeader.append(navbtn);
+                }, 550)
+                mainContainer.classList.remove('nav')    
+            })
+        });
+    </script>
+
+
+</body>
+</html>

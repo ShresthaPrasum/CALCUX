@@ -1,0 +1,83 @@
+document.querySelector('#length').addEventListener('input', ()=>{
+    let length = parseFloat(document.querySelector('#length').value);
+    let width = parseFloat(document.querySelector('#width').value);
+    let height = parseFloat(document.querySelector('#height').value);
+
+    if(!length || !width || !height){
+        console.log("Waiting for full details");
+        return;
+    }
+
+    let area_floor = length * width;
+    document.querySelector('#area-floor').value = area_floor;
+
+    let areaofwalls = 2 * height * (length+ width);
+    document.querySelector('#area-fourwalls').value = areaofwalls;
+
+    let areafloorceiling = (2* height* (length+width)) + (2*length*width);
+    document.querySelector('#area-fourwalls-floor').value = areafloorceiling;
+
+})
+document.querySelector('#width').addEventListener('input', ()=>{
+    let length = parseFloat(document.querySelector('#length').value);
+    let width = parseFloat(document.querySelector('#width').value);
+    let height = parseFloat(document.querySelector('#height').value);
+
+    if(!length || !width || !height){
+        console.log("Waiting for full details");
+        return;
+    }
+
+    let area_floor = length * width;
+    document.querySelector('#area-floor').value = area_floor;
+
+    let areaofwalls = 2 * height * (length+width);
+    document.querySelector('#area-fourwalls').value = areaofwalls;
+
+    let areafloorceiling = (2* height* (length+width)) + (2*length*width);
+    document.querySelector('#area-fourwalls-floor').value = areafloorceiling;
+
+})
+document.querySelector('#height').addEventListener('input', ()=>{
+    let length = parseFloat(document.querySelector('#length').value);
+    let width = parseFloat(document.querySelector('#width').value);
+    let height = parseFloat(document.querySelector('#height').value);
+
+    if(!length || !width || !height){
+        console.log("Waiting for full details");
+        return;
+    }
+
+    let area_floor = length * width;
+    document.querySelector('#area-floor').value = area_floor;
+
+    let areaofwalls = 2 * height * (length+width);
+    document.querySelector('#area-fourwalls').value = areaofwalls;
+
+    let areafloorceiling = (2* height* (length+width)) + (2*length*width);
+    document.querySelector('#area-fourwalls-floor').value = areafloorceiling;
+
+})
+document.querySelector('#rate').addEventListener('input', ()=>{
+    let area = parseFloat(document.querySelector('#area-fourwalls').value);
+    let rate = parseFloat(document.querySelector('#rate').value);
+
+    if(!area){
+        alert("Please calculate area first!!");
+        return;
+    }
+    let cost = area * rate;
+    document.querySelector('#total-cost').value = cost;
+})
+document.querySelector('#ratee').addEventListener('input', ()=>{
+    let area_floor = parseFloat(document.querySelector('#area-floor').value);
+    let rate = parseFloat(document.querySelector('#ratee').value);
+
+    if(!area_floor){
+        alert("Please calculate the area of floor first!");
+        return;
+    }
+
+    let totalcost = area_floor * rate;
+    document.querySelector('#cost-carpet').value = totalcost;
+})

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fall</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pixelify+Sans:wght@400..700&family=Stack+Sans+Notch:wght@200..700&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Pixelify+Sans:wght@400..700&amp;family=Unbounded:wght@200..900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/global.css">
+    <style>
+        .potential-energy{
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+
+        .inputSection{
+            display: flex;
+            align-items: center;
+        }
+
+        #mass, #height{
+            width: 80%;
+   
+        }
+
+        .unit{
+            width: 20%;
+            font-size: 18px;
+            height: 42px;
+            outline: none;
+            text-indent: 5px;  
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+
+            <h1>Potential Energy</h1>
+            <p> Calculate the motion of the object, speed(m/s2), momentum, gravity(g) and pressure(kg/m2).</p>
+            <a href="/physics" class="back">←Back</a>
+    
+            <div class="potential-energy">
+                <label for="gravity">Acceleration due to gravity</label>
+                <input type="number" name="gravity" id="gravity" value="9.80665">
+    
+                <label for="mass">Mass</label>
+                <div class="inputSection">
+                    <input type="number" name="mass" id="mass">
+                    <select name="unit" class="unit" id="massUnit">
+                        <option value="gram">Gram(g)</option>
+                        <option value="kilogram">KiloGram(kg)</option>
+                    </select>
+                </div>
+    
+                <label for="Height">Height</label>
+                <div class="inputSection">
+                    <input type="number" name="height" id="height">
+                    <select name="unit" class="unit" id="heightUnit">
+                        <option value="meter">Meter(m)</option>
+                        <option value="kilometer">KiloMeter(km)</option>
+                    </select>
+                </div>
+    
+                <label for="potential-energy">Potential Energy</label>
+                <input type="text" name="potential-energy" id="potential-energy" readonly>
+                
+            </div>
+        </div>
+
+        <div class="second-container flex">
+            <div class="profile">
+                <img src="/zyrox.jpg" alt="zyrox.jpg">
+                <div class="creator-details">
+                    <h3>Creator</h3>
+                    <h3>Zyrox</h3>
+                </div>
+                <img src="/mama_chess.jpg" alt="">
+                <div class="creator-details">
+                    <h3>Css Designer</h3>
+                    <h3>Mama_Chess</h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        let gravityInput = document.getElementById('gravity');
+
+        let massInput = document.getElementById('mass')
+
+        let heightInput = document.getElementById('height')
+
+        let energyInput = document.getElementById('potential-energy')
+
+        let inputs = document.querySelectorAll('input, select');
+
+        let massUnit = document.querySelector('#massUnit')
+
+        let heightUnit = document.querySelector('#heightUnit')
+
+        inputs.forEach(e=>{
+            e.addEventListener('input', (e)=>{
+
+                g = gravityInput.value.trim();
+
+                m = massInput.value.trim();
+
+                h = heightInput.value.trim();
+
+                mU = massUnit.value;
+
+                hU= heightUnit.value;
+
+                if(mU === "gram"){
+                    m = m/1000;
+                }
+                
+                if(hU==="kilometer"){
+                    h =  h * 1000;
+                }
+
+                const gValueHas = null;
+                if(g !== ''){
+                    ValueHas = true;
+                }
+                const mValueHas = null;
+                if(m !== ''){
+                    ValueHas = true;
+                }
+                const hValueHas = null;
+                if(h!==""){
+                    ValueHas = true;
+                }
+
+
+                if (g === ''|| m === '' || h==='') {
+                    inputs.forEach(e=>{
+                        if(e.name==="potential-energy"){
+                            e.placeholder = "Result:"
+                        }
+                        else{
+
+                            e.placeholder = "Please fill this field"
+                        }
+                    })
+                    return;
+                }
+                else{
+                    inputs.forEach(e=>{
+                        e.placeholder = ""
+                    })
+                }
+                
+                let energy = (m*g*h).toFixed(4)
+                
+                energyInput.value = `${energy} J`;
+
+            })
+        })
+    </script>
+</body>
+</html>

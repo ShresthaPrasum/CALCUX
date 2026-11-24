@@ -1,0 +1,14 @@
+#container{
+    height: fit-content;
+    width: 60vw;
+}
+h1{
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+h2{
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
